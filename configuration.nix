@@ -44,13 +44,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-      neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      firefox
-  ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -64,6 +57,20 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   programs.zsh.enable = true;
+
+  security.sudo.enable = false;
+  security.doas.enable = true;
+  security.doas.extraRules = [
+    { groups = ["wheel"]; noPass = false; keepenv = true;}
+  ]
+
+  users.users.jordy = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    #Needed for podman rootless
+    subUidRanges = [{ startUid = 100000; count = 65536; }];
+    subGidRanges = [{ startGid = 100000; count = 65536; }];
+  }
 
   virtualisation = {
     podman = {
