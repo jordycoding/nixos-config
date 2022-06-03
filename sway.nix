@@ -17,7 +17,12 @@
       xfce.thunar
       stow
       wl-clipboard
-      zenity
+      gnome.zenity
+      pavucontrol
+      xdg-utils
+      xdg-user-dirs
+      xdg-desktop-portal
+      xdg-desktop-portal-wlr
     ];
   };
   fonts.fonts = with pkgs; [

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    nodejs
+    nodejs_latest
     python3
     vscode
     neovim

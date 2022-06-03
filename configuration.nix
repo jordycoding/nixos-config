@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 
 {
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -61,8 +62,8 @@
   security.sudo.enable = false;
   security.doas.enable = true;
   security.doas.extraRules = [
-    { groups = ["wheel"]; noPass = false; keepenv = true;}
-  ]
+    { groups = ["wheel"]; noPass = false; keepEnv = true;}
+  ];
 
   users.users.jordy = {
     isNormalUser = true;
@@ -70,7 +71,9 @@
     #Needed for podman rootless
     subUidRanges = [{ startUid = 100000; count = 65536; }];
     subGidRanges = [{ startGid = 100000; count = 65536; }];
-  }
+  };
+  xdg.portal.enable = true;
+  services.flatpak.enable = true;
 
   virtualisation = {
     podman = {
