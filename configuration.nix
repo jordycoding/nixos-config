@@ -8,8 +8,8 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   imports =
     [ # Include the results of the hardware scan.
+      <home-manager/nixos> 
       ./hardware-configuration.nix
-      ./sway.nix
       ./coreapps.nix
       ./devpackages.nix
     ];
@@ -64,15 +64,17 @@
   security.doas.extraRules = [
     { groups = ["wheel"]; noPass = false; keepEnv = true;}
   ];
-
+  
   users.users.jordy = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "libvirtd" ];
     #Needed for podman rootless
     subUidRanges = [{ startUid = 100000; count = 65536; }];
     subGidRanges = [{ startGid = 100000; count = 65536; }];
   };
+  home-manager.users.jordy = import ./home.nix;
   xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [ pkgs.xdg-desktop-portal-wlr ];
   services.flatpak.enable = true;
 
   virtualisation = {
@@ -80,6 +82,7 @@
       enable = true;
       dockerCompat = true;
     };
+    libvirtd.enable = true;
   };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

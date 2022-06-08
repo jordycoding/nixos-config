@@ -4,7 +4,7 @@ let dotfiles = pkgs.fetchFromGitHub {
   owner = "jordycoding";
   repo = "Dotfiles-Xps";
   rev = "c4dfb8e";
-  sha256 = "kgdkYOddanBYT81dE8jjD6bDPTBqe8vKr1awX8v9zE=";
+  sha256 = "/kgdkYOddanBYT81dE8jjD6bDPTBqe8vKr1awX8v9zE=";
 }; 
 nvimconfig = pkgs.fetchFromGitHub {
   owner = "jordycoding";
@@ -33,6 +33,24 @@ nvimconfig = pkgs.fetchFromGitHub {
 
   home.packages = [
     pkgs.thefuck
+    pkgs.alacritty
+    pkgs.mako
+    pkgs.swayidle
+    pkgs.swaylock
+    pkgs.waybar
+    pkgs.grim 
+    pkgs.slurp
+    pkgs.alacritty
+    pkgs.wlogout
+    pkgs.playerctl
+    pkgs.pulseaudio
+    pkgs.wl-clipboard
+    pkgs.gnome.zenity
+    pkgs.pavucontrol
+    pkgs.xdg-utils
+    pkgs.xdg-user-dirs
+    pkgs.xdg-desktop-portal
+    pkgs.xdg-desktop-portal-wlr
   ];
 
   programs.zsh = {
@@ -113,6 +131,12 @@ nvimconfig = pkgs.fetchFromGitHub {
     enableZshIntegration = true;
   };
 
+  programs.git = {
+    enable = true;
+    userName = "Jordy Alkema";
+    userEmail = "6128820+jordycoding@users.noreply.github.com";
+  };
+
   home.file = {
     ".p10k.zsh" = {
       source = "${dotfiles}/p10k/.p10k.zsh"; 
@@ -127,6 +151,11 @@ nvimconfig = pkgs.fetchFromGitHub {
       source = "${dotfiles}/sway/.config/sway";
       recursive = true;
     };
+
+    ".config/sway/scripts" = {
+      source = "${dotfiles}/swaycripts/.config/sway/scripts";
+      recursive = true;
+     };
 
     ".config/waybar" = {
       source = "${dotfiles}/waybar/.config/waybar";
@@ -144,6 +173,11 @@ nvimconfig = pkgs.fetchFromGitHub {
 
      ".config/btop" = {
       source = "${dotfiles}/btop/.config/btop";
+      recursive = true;
+     };
+
+     ".config/mako" = {
+      source = "${dotfiles}/mako/.config/mako";
       recursive = true;
      };
   };
