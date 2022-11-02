@@ -10,7 +10,8 @@
     [ # Include the results of the hardware scan.
       <home-manager/nixos> 
       ./hardware-configuration.nix
-      ./coreapps.nix
+      ./coreui.nix
+      ./corecli.nix
       ./devpackages.nix
     ];
 
@@ -25,7 +26,15 @@
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
-  networking.interfaces.enp34s0.useDHCP = true;
+  networking.interfaces.enp34s0.wakeOnLan.enable = true;
+  systemd.network.networks."40-wired" = {
+    matchConfig.Name = "enp34s0";
+    DHCP = "no";
+    addresses = [ { addressConfig.Address = "192.168.1.25/24"; }];
+    dns = [ "84.200.69.80" ];
+    gateway = [ "192.168.1.1" ];
+    WakeOnLan = "magic";
+  };
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -34,6 +43,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  hardware.pulseaudio.enable = false;
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -62,7 +72,7 @@
   security.sudo.enable = false;
   security.doas.enable = true;
   security.doas.extraRules = [
-    { groups = ["wheel"]; noPass = false; keepEnv = true;}
+    { groups = ["wheel"]; noPass = false; keepEnv = true; persist = true; }
   ];
   
   users.users.jordy = {
@@ -71,6 +81,7 @@
     #Needed for podman rootless
     subUidRanges = [{ startUid = 100000; count = 65536; }];
     subGidRanges = [{ startGid = 100000; count = 65536; }];
+    shell = pkgs.zsh;
   };
   home-manager.users.jordy = import ./home.nix;
   xdg.portal.enable = true;
@@ -78,12 +89,16 @@
   services.flatpak.enable = true;
 
   virtualisation = {
-    podman = {
+    docker = {
       enable = true;
-      dockerCompat = true;
+      rootless = {
+        enable = true;
+      };
     };
     libvirtd.enable = true;
   };
+
+  hardware.opengl.enable = true;
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

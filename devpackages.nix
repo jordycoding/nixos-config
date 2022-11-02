@@ -6,5 +6,7 @@
     vscode
     neovim
     git
+    jetbrains.idea-ultimate
+    jdk
   ];
 }

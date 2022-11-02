@@ -1,15 +1,14 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    docker-compose
-    home-manager
     firefox
     discord
     libreoffice
     thunderbird
     _1password-gui
     _1password
-    tmux
-    neofetch
   ];
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 }

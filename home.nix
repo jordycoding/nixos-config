@@ -26,12 +26,17 @@ nvimconfig = pkgs.fetchFromGitHub {
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.05";
+  home.stateVersion = "21.11";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+
   home.packages = [
+    pkgs.gh
+    pkgs.neovim
+    pkgs.rofi
+    pkgs.sway
     pkgs.thefuck
     pkgs.alacritty
     pkgs.mako
@@ -51,6 +56,7 @@ nvimconfig = pkgs.fetchFromGitHub {
     pkgs.xdg-user-dirs
     pkgs.xdg-desktop-portal
     pkgs.xdg-desktop-portal-wlr
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   programs.zsh = {
@@ -61,6 +67,25 @@ nvimconfig = pkgs.fetchFromGitHub {
 
     shellAliases = {
       update = "doas nixos-rebuild switch --upgrade";
+      ll = "exa -al --icons";
+      ls = "exa";
+      vim = "neovim";
+      vi = "neovim";
+      v = "neovim";
+      gs = "git status";
+      ga = "git add";
+      gc = "git commit -m";
+      gch = "git checkout";
+      gcb = "git checkout -b";
+      gp = "git push";
+      gpl = "git pull";
+      gst = "git stash";
+      gsp = "git stash pop";
+      dup = "docker-compose up";
+      ddown = "docker-compose down";
+      sudo = "doas";
+      cat = "bat";
+      top = "btop";
     };
 
     history = {
