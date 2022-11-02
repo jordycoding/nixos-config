@@ -13,6 +13,7 @@
       ./coreui.nix
       ./corecli.nix
       ./devpackages.nix
+      ./gnome.nix
     ];
 
   nixpkgs.config.allowUnfree = true;

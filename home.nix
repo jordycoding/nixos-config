@@ -9,8 +9,8 @@ let dotfiles = pkgs.fetchFromGitHub {
 nvimconfig = pkgs.fetchFromGitHub {
   owner = "jordycoding";
   repo = "neovim-lua";
-  rev = "1.0.0";
-  sha256 = "qFb8agBFl2ZHfgWM2IsV39UZeBjfA3ll+kvHbPZnoiU=";
+  rev = "6e7c0d4";
+  sha256 = "1nlclqf0i5ff67xsndvmmaxq52js46ny52zfvqcd7za18sjra8gz";
 }; in
 {
   # Home Manager needs a bit of information about you and the

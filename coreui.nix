@@ -7,8 +7,7 @@
     thunderbird
     _1password-gui
     _1password
+    piper
   ];
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.ratbagd.enable = true;
 }
