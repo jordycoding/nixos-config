@@ -6,7 +6,10 @@
   environment.systemPackages = with pkgs; [
     tilix
     gnome.gnome-tweaks
-    gnome-feeds
+    newsflash
     gnome.geary
+    adw-gtk3
+    ulauncher
+    papirus-icon-theme
   ];
 }

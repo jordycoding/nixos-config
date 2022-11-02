@@ -28,16 +28,21 @@
   time.timeZone = "Europe/Amsterdam";
 
   networking.interfaces.enp34s0.wakeOnLan.enable = true;
-  systemd.network.networks."40-wired" = {
-    matchConfig.Name = "enp34s0";
-    DHCP = "no";
-    addresses = [ { addressConfig.Address = "192.168.1.25/24"; }];
-    dns = [ "84.200.69.80" ];
-    gateway = [ "192.168.1.1" ];
-    WakeOnLan = "magic";
-  };
+  networking.networkmanager.insertNameservers = [ "192.168.1.21" ];
 
   security.rtkit.enable = true;
+  security.pki.certificates = [ "-----BEGIN CERTIFICATE-----
+    MIICBzCCAaygAwIBAgIUXmj14sDxC/5atKG6ew4Zv4j+5dcwCgYIKoZIzj0EAwIw
+    bGluZ2VuMQ8wDQYDVQQKDAZBbGtlbWExEjAQBgNVBAMMCWFsa2VtYS5jbzEeMBwG
+    CSqGSIb3DQEJARYPam9yZHlAYWxrZW1hLmNvMB4XDTIyMTAyMTEzNTAzNVoXDTIz
+    MTAyMTEzNTAzNVowejELMAkGA1UEBhMCTkwxEjAQBgNVBAgMCUZyaWVzbGFuZDES
+    MBAGA1UEBwwJSGFybGluZ2VuMQ8wDQYDVQQKDAZBbGtlbWExEjAQBgNVBAMMCWFs
+    a2VtYS5jbzEeMBwGCSqGSIb3DQEJARYPam9yZHlAYWxrZW1hLmNvMFkwEwYHKoZI
+    zj0CAQYIKoZIzj0DAQcDQgAEYTIN+uWbsUoT8Or8z6kdF44pVyq1u1WRuw+zRLV3
+    06rU6OvzuSY9HJ7sxm5p7tMuVKKVoFSNFET0rslEYBVwHaMQMA4wDAYDVR0TBAUw
+    AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
+    /ePfJArhn7oCIQDS6qX2U94OLyqamDWqD5c0KPIRUqIXUaDxqCs2mZdzkg==
+  -----END CERTIFICATE-----"];
   services.pipewire = {
     enable = true;
     alsa.enable = true;

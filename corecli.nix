@@ -10,5 +10,6 @@
     httpie
     exa
     broot
+    bind
   ];
 }
