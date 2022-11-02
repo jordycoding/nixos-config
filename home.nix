@@ -9,7 +9,7 @@ let dotfiles = pkgs.fetchFromGitHub {
 nvimconfig = pkgs.fetchFromGitHub {
   owner = "jordycoding";
   repo = "neovim-lua";
-  rev = "6e7c0d4";
+  rev = "0e01635";
   sha256 = "1nlclqf0i5ff67xsndvmmaxq52js46ny52zfvqcd7za18sjra8gz";
 }; in
 {
@@ -56,6 +56,7 @@ nvimconfig = pkgs.fetchFromGitHub {
     pkgs.xdg-user-dirs
     pkgs.xdg-desktop-portal
     pkgs.xdg-desktop-portal-wlr
+    pkgs.rnix-lsp 
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
