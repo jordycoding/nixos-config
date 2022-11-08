@@ -8,6 +8,8 @@
     _1password-gui
     _1password
     piper
+    vistafonts
+    texlive.combined.scheme-medium
   ];
   services.ratbagd.enable = true;
 }

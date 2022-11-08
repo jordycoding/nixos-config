@@ -3,8 +3,8 @@
 let dotfiles = pkgs.fetchFromGitHub {
   owner = "jordycoding";
   repo = "Dotfiles-Xps";
-  rev = "c4dfb8e";
-  sha256 = "/kgdkYOddanBYT81dE8jjD6bDPTBqe8vKr1awX8v9zE=";
+  rev = "fbd17fd";
+  sha256 = "0d8g385hn0448nlaqmf3sywd2235058r1rhaxfnq66p398fm7sil";
 }; 
 nvimconfig = pkgs.fetchFromGitHub {
   owner = "jordycoding";
@@ -148,6 +148,15 @@ nvimconfig = pkgs.fetchFromGitHub {
 
       eval $(thefuck --alias)
       source .p10k.zsh
+      # Checks if tmux is available
+      if [ -x $(command -v tmux) ]; then
+        # Only runs pfetch when current pane is the only pane in the windows
+        if [[ $(tmux list-panes | wc -l) = "1" ]]; then
+          pfetch
+        fi
+      else
+       pfetch
+      fi
     '';
 
   };
@@ -204,6 +213,11 @@ nvimconfig = pkgs.fetchFromGitHub {
 
      ".config/mako" = {
       source = "${dotfiles}/mako/.config/mako";
+      recursive = true;
+     };
+
+     ".config/scripts" = {
+      source = "${dotfiles}/scripts/.config/scripts";
       recursive = true;
      };
   };

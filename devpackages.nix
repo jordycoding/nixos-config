@@ -8,5 +8,6 @@
     git
     jetbrains.idea-ultimate
     jdk
+    maven
   ];
 }

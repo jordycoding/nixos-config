@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   imports =
     [ # Include the results of the hardware scan.
       <home-manager/nixos> 
@@ -14,6 +14,7 @@
       ./corecli.nix
       ./devpackages.nix
       ./gnome.nix
+      ./gaming.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -52,6 +53,9 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
     pulse.enable = true;
   };
   hardware.pulseaudio.enable = false;
+
+  # Needed for steam
+  hardware.opengl.driSupport32Bit = true;
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
