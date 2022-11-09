@@ -9,5 +9,8 @@
     jetbrains.idea-ultimate
     jdk
     maven
+    rustup
+    gcc
+    rust-analyzer
   ];
 }

@@ -24,6 +24,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "ryzenix"; # Define your hostname.
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
