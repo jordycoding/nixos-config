@@ -123,6 +123,11 @@ nvimconfig = pkgs.fetchFromGitHub {
         src = pkgs.zsh-powerlevel10k;
         name = "powerlevel10k"; 
       }
+      {
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+        src = pkgs.zsh-vi-mode;
+        name = "zsh-vi-mode";
+      }
     ];
 
     initExtra =  ''
@@ -170,6 +175,12 @@ nvimconfig = pkgs.fetchFromGitHub {
     enable = true;
     userName = "Jordy Alkema";
     userEmail = "6128820+jordycoding@users.noreply.github.com";
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/input-sources" = {
+      "xkb-options" = [ "caps:escape" ];
+    };
   };
 
   home.file = {
