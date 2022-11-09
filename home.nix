@@ -70,9 +70,9 @@ nvimconfig = pkgs.fetchFromGitHub {
       update = "doas nixos-rebuild switch --upgrade";
       ll = "exa -al --icons";
       ls = "exa";
-      vim = "neovim";
-      vi = "neovim";
-      v = "neovim";
+      vim = "nvim";
+      vi = "nvim";
+      v = "nvim";
       gs = "git status";
       ga = "git add";
       gc = "git commit -m";
@@ -87,6 +87,7 @@ nvimconfig = pkgs.fetchFromGitHub {
       sudo = "doas";
       cat = "bat";
       top = "btop";
+      gl = "git log --graph --pretty=oneline --abbrev-commit";
     };
 
     history = {
