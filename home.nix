@@ -299,7 +299,8 @@ nvimconfig = pkgs.fetchFromGitHub {
           "xkb-options" = [ "caps:escape" ];
         };
       };
-
+      
+      gtk.theme.name = "Adw-gtk3";
       }
   ];
 }
