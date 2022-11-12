@@ -298,6 +298,9 @@ nvimconfig = pkgs.fetchFromGitHub {
         "org/gnome/desktop/input-sources" = {
           "xkb-options" = [ "caps:escape" ];
         };
+        "org/gnome/desktop/peripherals/touchpad" = {
+          "tap-to-click" = true;
+        };
       };
       
       gtk.theme.name = "Adw-gtk3";
