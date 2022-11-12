@@ -14,4 +14,5 @@
   networking.hostName = "nixps";
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
+  config.dotfiles.isLaptop = true;
 }
