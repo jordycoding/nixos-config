@@ -12,5 +12,6 @@
     rustup
     gcc
     rust-analyzer
+    nil
   ];
 }
