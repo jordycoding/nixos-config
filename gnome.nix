@@ -12,6 +12,7 @@
     ulauncher
     papirus-icon-theme
     wmctrl
+    fragments
   ];
   systemd.user.services."ulauncher" = {
     description = "ulauncher";

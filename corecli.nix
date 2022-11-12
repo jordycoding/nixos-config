@@ -11,5 +11,7 @@
     exa
     broot
     bind
+    pv
+    exfat
   ];
 }

@@ -17,6 +17,7 @@
       ./gaming.nix
     ];
 
+  boot.supportedFilesystems = [ "ntfs" ];
   nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
@@ -85,7 +86,7 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   security.sudo.enable = false;
   security.doas.enable = true;
   security.doas.extraRules = [
-    { groups = ["wheel"]; noPass = false; keepEnv = true; persist = true; }
+    { groups = ["wheel"]; noPass = true; keepEnv = true; }
   ];
   
   users.users.jordy = {

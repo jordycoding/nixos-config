@@ -3,14 +3,14 @@
 let dotfiles = pkgs.fetchFromGitHub {
   owner = "jordycoding";
   repo = "Dotfiles-Xps";
-  rev = "fbd17fd";
-  sha256 = "0d8g385hn0448nlaqmf3sywd2235058r1rhaxfnq66p398fm7sil";
+  rev = "40ad2f0";
+  sha256 = "10sr3nq5wp2sxqmr6cx14zvhp3l2h50lf9swwp15wr8vzv55hj4j";
 }; 
 nvimconfig = pkgs.fetchFromGitHub {
   owner = "jordycoding";
   repo = "neovim-lua";
-  rev = "0e01635";
-  sha256 = "1nlclqf0i5ff67xsndvmmaxq52js46ny52zfvqcd7za18sjra8gz";
+  rev = "6f1a6f5";
+  sha256 = "1dzq87k7illq97y5dfdv9pvk1vilivz9mwgpmhwm7f0yiqhmanf7";
 }; in
 {
   # Home Manager needs a bit of information about you and the
