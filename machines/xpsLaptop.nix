@@ -27,6 +27,7 @@ in
 	  networking.hostName = "nixps";
 	  networking.networkmanager.enable = true;
 	  hardware.bluetooth.enable = true;
+      systemd.services.NetworkManager-wait-online.enable = false;
 
 	  environment.systemPackages = with pkgs; [ nvidia-offload mesa-demos ];
 	  services.xserver.videoDrivers = [ "nvidia" ];
