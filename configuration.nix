@@ -2,10 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_zen;
   imports =
     [ # Include the results of the hardware scan.
       <home-manager/nixos> 
@@ -15,7 +14,7 @@
       ./devpackages.nix
       ./gnome.nix
       ./gaming.nix
-      ./machines/ryzenDesktop.nix
+      ./machines/xpsLaptop.nix
     ];
 
   boot.supportedFilesystems = [ "ntfs" ];

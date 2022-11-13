@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    firefox
+    firefox-wayland
     discord
     libreoffice
     thunderbird
@@ -10,6 +10,7 @@
     piper
     vistafonts
     texlive.combined.scheme-medium
+    tidal-hifi
   ];
   services.ratbagd.enable = true;
 }

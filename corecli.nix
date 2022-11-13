@@ -13,5 +13,6 @@
     bind
     pv
     exfat
+    pciutils
   ];
 }

@@ -8,7 +8,7 @@ let dotfiles = pkgs.fetchFromGitHub {
   rev = "40ad2f0";
   sha256 = "10sr3nq5wp2sxqmr6cx14zvhp3l2h50lf9swwp15wr8vzv55hj4j";
 };
-laptopDotfiles = pkgs.fetchFromGithub{
+laptopDotfiles = pkgs.fetchFromGitHub{
   owner = "jordycoding";
   repo = "Dotfiles-Xps";
   rev = "8cd557a";
