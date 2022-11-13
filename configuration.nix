@@ -14,7 +14,7 @@
       ./devpackages.nix
       ./gnome.nix
       ./gaming.nix
-      ./machines/xpsLaptop.nix
+      ./machines/ryzenDesktop.nix
     ];
 
   boot.supportedFilesystems = [ "ntfs" ];
@@ -72,7 +72,6 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  programs.zsh.enable = true;
 
   security.sudo.enable = false;
   security.doas.enable = true;
