@@ -129,6 +129,11 @@ nvimconfig = pkgs.fetchFromGitHub {
       };
     })
     {
+      home.file = {
+        ".npmrc" = {
+          text = "prefix = ${HOME}/.npm-packages";
+        };
+      };
       # Home Manager needs a bit of information about you and the
       # paths it should manage.
       home.username = "jordy";
@@ -267,6 +272,8 @@ nvimconfig = pkgs.fetchFromGitHub {
           bindkey '^[OA' history-substring-search-up
           bindkey '^[[B' history-substring-search-down
           bindkey '^[OB' history-substring-search-down
+
+          export PATH=~/.npm-packages/bin:$PATH
 
           eval $(thefuck --alias)
           source ~/.p10k.zsh
