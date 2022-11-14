@@ -269,7 +269,7 @@ nvimconfig = pkgs.fetchFromGitHub {
           bindkey '^[OB' history-substring-search-down
 
           eval $(thefuck --alias)
-          source .p10k.zsh
+          source ~/.p10k.zsh
           # Checks if tmux is available
           if [ -x $(command -v tmux) ]; then
             # Only runs pfetch when current pane is the only pane in the windows
