@@ -23,7 +23,7 @@
     serviceConfig = {
       Type = "simple";
       # This is necessary for ulauncher to list all applications correctly
-      Environment = "PATH=/run/current-system/sw/bin";
+      Environment = "PATH=/run/current-system/sw/bin:/home/jordy/.nix-profile/bin";
       Restart = "always";
       restartSec = 1;
       ExecStart = "${pkgs.ulauncher}/bin/ulauncher --no-window";
