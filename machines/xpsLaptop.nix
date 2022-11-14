@@ -10,9 +10,8 @@ let
   '';
 in
 {
-
-  options.dotfiles.isLaptop = true;
   config = {
+      home-manager.users.jordy.dotfiles.isLaptop = true;
 	  boot.loader = {
 	    efi = {
 	      canTouchEfiVariables = true;

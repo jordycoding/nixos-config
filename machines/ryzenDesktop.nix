@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  home-manager.users.jordy.dotfiles.isLaptop = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
