@@ -14,8 +14,14 @@
       ./devpackages.nix
       ./gnome.nix
       ./gaming.nix
-      ./machines/xpsLaptop.nix
+      ./machines/ryzenDesktop.nix
     ];
+
+  nixpkgs.config.packageOverrides = super: {
+    catppuccinGrub = pkgs.callPackage ./catppuccin-grub.nix {};
+  };
+
+  environment.systemPackages = [ pkgs.catppuccinGrub ];
 
   boot.supportedFilesystems = [ "ntfs" ];
   nixpkgs.config.allowUnfree = true;
