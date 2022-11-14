@@ -13,6 +13,5 @@
     gcc
     rust-analyzer
     nil
-    jdt-language-server
   ];
 }

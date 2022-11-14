@@ -5,7 +5,7 @@ with lib;
 let dotfiles = pkgs.fetchFromGitHub {
   owner = "jordycoding";
   repo = "Dotfiles-Xps";
-  rev = "40ad2f0";
+  rev = "40ad2f0.zip";
   sha256 = "10sr3nq5wp2sxqmr6cx14zvhp3l2h50lf9swwp15wr8vzv55hj4j";
 };
 laptopDotfiles = pkgs.fetchFromGitHub{
@@ -17,8 +17,8 @@ laptopDotfiles = pkgs.fetchFromGitHub{
 nvimconfig = pkgs.fetchFromGitHub {
   owner = "jordycoding";
   repo = "neovim-lua";
-  rev = "e860367";
-  sha256 = "0jnccfmfc9k7813ihj12v5l3f9a5hi7jrdndfhd6cciakl2zylm5";
+  rev = "a7e7f98.zip";
+  sha256 = "1wkm3r314qrac91k4inlmwcv5cz8bdw5yc5mi2s0706fvbf8p734";
 }; in
 {
   options.dotfiles = {
@@ -178,6 +178,7 @@ nvimconfig = pkgs.fetchFromGitHub {
         pkgs.xdg-desktop-portal
         pkgs.xdg-desktop-portal-wlr
         pkgs.rnix-lsp 
+        pkgs.jdt-language-server
         (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       ];
 
