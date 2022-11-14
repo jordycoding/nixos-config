@@ -47,6 +47,8 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   };
   hardware.pulseaudio.enable = false;
 
+  services.onedrive.enable = true;
+
   # Needed for steam
   hardware.opengl.driSupport32Bit = true;
 

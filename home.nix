@@ -301,6 +301,9 @@ nvimconfig = pkgs.fetchFromGitHub {
         "org/gnome/desktop/peripherals/touchpad" = {
           "tap-to-click" = true;
         };
+        "org/gnome/desktop/wm/preferences" = {
+          "button-layout" = "appmenu:minimize,maximize,close";
+        };
       };
       
       gtk.theme.name = "Adw-gtk3";

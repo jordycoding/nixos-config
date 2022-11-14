@@ -8,6 +8,7 @@
     gnome.gnome-tweaks
     newsflash
     gnome.geary
+    gnome.gnome-boxes
     adw-gtk3
     ulauncher
     papirus-icon-theme
