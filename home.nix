@@ -17,8 +17,8 @@ laptopDotfiles = pkgs.fetchFromGitHub{
 nvimconfig = pkgs.fetchFromGitHub {
   owner = "jordycoding";
   repo = "neovim-lua";
-  rev = "20484a2";
-  sha256 = "0qjf2sldi4yj6sngc0zzk0ivl9gls89px6imzi81na5nmlxidc4b";
+  rev = "e860367";
+  sha256 = "0jnccfmfc9k7813ihj12v5l3f9a5hi7jrdndfhd6cciakl2zylm5";
 }; in
 {
   options.dotfiles = {
