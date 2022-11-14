@@ -14,7 +14,7 @@
       ./devpackages.nix
       ./gnome.nix
       ./gaming.nix
-      ./machines/ryzenDesktop.nix
+      ./machines/xpsLaptop.nix
     ];
 
   boot.supportedFilesystems = [ "ntfs" ];

@@ -292,6 +292,9 @@ nvimconfig = pkgs.fetchFromGitHub {
         enable = true;
         userName = "Jordy Alkema";
         userEmail = "6128820+jordycoding@users.noreply.github.com";
+        extraConfig = {
+          pull.rebase = true;
+        };
       };
 
       dconf.settings = {
