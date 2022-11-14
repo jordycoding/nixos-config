@@ -131,7 +131,7 @@ nvimconfig = pkgs.fetchFromGitHub {
     {
       home.file = {
         ".npmrc" = {
-          text = "prefix = ${HOME}/.npm-packages";
+          text = "prefix = \${HOME}/.npm-packages";
         };
       };
       # Home Manager needs a bit of information about you and the
