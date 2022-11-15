@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    sabnzbd
     fragments
   ];
+  services.sabnzbd.enable = true;
 }
