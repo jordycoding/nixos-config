@@ -14,6 +14,7 @@
       ./devpackages.nix
       ./gnome.nix
       ./gaming.nix
+      ./downloading.nix
       ./machines/ryzenDesktop.nix
     ];
 
