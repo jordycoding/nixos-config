@@ -1,18 +1,32 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, ... }:
+with lib;
+
 {
-  environment.systemPackages = with pkgs; [
-    nodejs_latest
-    python3
-    vscode
-    neovim
-    git
-    jetbrains.idea-ultimate
-    jdk
-    maven
-    rustup
-    gcc
-    rust-analyzer
-    nil
-    nixpkgs-fmt
-  ];
+  options.languageservers = {
+    enable = mkEnableOption "Enable language servers and related packages";
+  };
+  config = {
+    environment.systemPackages = with pkgs; [
+      nodejs_latest
+      python3
+      vscode
+      neovim
+      git
+      jetbrains.idea-ultimate
+      jdk
+      maven
+      rustup
+      gcc
+    ]
+    ++ (
+      optionals(config.languageservers.enable) [
+        nixpkgs-fmt
+        nil
+        rust-analyzer
+        checkstyle
+        sumneko-lua-language-server
+      ]
+    );
+      };
+
 }

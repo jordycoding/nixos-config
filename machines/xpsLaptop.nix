@@ -11,6 +11,7 @@ let
 in
 {
   config = {
+      languageservers.enable = true;
       home-manager.users.jordy.dotfiles.isLaptop = true;
 	  boot.loader = {
 	    efi = {
