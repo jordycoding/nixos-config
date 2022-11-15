@@ -13,8 +13,8 @@ stdenv.mkDerivation rec {
 
   installPhase =
     ''
-    mkdir -p "$out/grub/themes"
-    mv src/* "$out/grub/themes"
+      mkdir -p "$out/grub/themes"
+      mv src/* "$out/grub/themes"
     '';
 
   meta = with lib; {

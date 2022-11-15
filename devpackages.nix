@@ -13,5 +13,6 @@
     gcc
     rust-analyzer
     nil
+    nixpkgs-fmt
   ];
 }
