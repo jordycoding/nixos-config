@@ -19,7 +19,7 @@ with lib;
       gcc
     ]
     ++ (
-      optionals(config.languageservers.enable) [
+      optionals (config.languageservers.enable) [
         nixpkgs-fmt
         nil
         rust-analyzer
@@ -27,6 +27,5 @@ with lib;
         sumneko-lua-language-server
       ]
     );
-      };
-
+  };
 }
