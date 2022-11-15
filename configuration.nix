@@ -6,8 +6,9 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      <home-manager/nixos> 
+    [
+      # Include the results of the hardware scan.
+      <home-manager/nixos>
       ./hardware-configuration.nix
       ./coreui.nix
       ./corecli.nix
@@ -19,7 +20,7 @@
     ];
 
   nixpkgs.config.packageOverrides = super: {
-    catppuccinGrub = pkgs.callPackage ./catppuccin-grub.nix {};
+    catppuccinGrub = pkgs.callPackage ./catppuccin-grub.nix { };
   };
 
   environment.systemPackages = [ pkgs.catppuccinGrub ];
@@ -32,7 +33,8 @@
   time.timeZone = "Europe/Amsterdam";
 
   security.rtkit.enable = true;
-  security.pki.certificates = [ "-----BEGIN CERTIFICATE-----
+  security.pki.certificates = [
+    "-----BEGIN CERTIFICATE-----
 MIICBzCCAaygAwIBAgIUXmj14sDxC/5atKG6ew4Zv4j+5dcwCgYIKoZIzj0EAwIw
 ejELMAkGA1UEBhMCTkwxEjAQBgNVBAgMCUZyaWVzbGFuZDESMBAGA1UEBwwJSGFy
 bGluZ2VuMQ8wDQYDVQQKDAZBbGtlbWExEjAQBgNVBAMMCWFsa2VtYS5jbzEeMBwG
@@ -45,7 +47,8 @@ zj0CAQYIKoZIzj0DAQcDQgAEYTIN+uWbsUoT8Or8z6kdF44pVyq1u1WRuw+zRLV3
 AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
 /ePfJArhn7oCIQDS6qX2U94OLyqamDWqD5c0KPIRUqIXUaDxqCs2mZdzkg==
 -----END CERTIFICATE-----
-"];
+"
+  ];
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -85,9 +88,9 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   security.sudo.enable = false;
   security.doas.enable = true;
   security.doas.extraRules = [
-    { groups = ["wheel"]; noPass = true; keepEnv = true; }
+    { groups = [ "wheel" ]; noPass = true; keepEnv = true; }
   ];
-  
+
   users.users.jordy = {
     isNormalUser = true;
     extraGroups = [ "wheel" "libvirtd" ];
@@ -120,4 +123,3 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "21.11"; # Did you read the comment?
 }
-

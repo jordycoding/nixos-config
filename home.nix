@@ -2,36 +2,38 @@
 
 with lib;
 
-let dotfiles = pkgs.fetchFromGitHub {
-  owner = "jordycoding";
-  repo = "Dotfiles-Xps";
-  rev = "40ad2f0";
-  sha256 = "10sr3nq5wp2sxqmr6cx14zvhp3l2h50lf9swwp15wr8vzv55hj4j";
-};
-laptopDotfiles = pkgs.fetchFromGitHub{
-  owner = "jordycoding";
-  repo = "Dotfiles-Xps";
-  rev = "8cd557a";
-  sha256 = "0dawiq73dzh87xqaw98m282s9kcarpcgzmwdp6aa2q5wx22i47zc";
-};
-nvimconfig = pkgs.fetchFromGitHub {
-  owner = "jordycoding";
-  repo = "neovim-lua";
-  rev = "922137d";
-  sha256 = "1m9nyyd61c7lylb7gayb2fs191agflhacxa9pcnky3iajvgqvxhd";
-}; in
+let
+  dotfiles = pkgs.fetchFromGitHub {
+    owner = "jordycoding";
+    repo = "Dotfiles-Xps";
+    rev = "40ad2f0";
+    sha256 = "10sr3nq5wp2sxqmr6cx14zvhp3l2h50lf9swwp15wr8vzv55hj4j";
+  };
+  laptopDotfiles = pkgs.fetchFromGitHub {
+    owner = "jordycoding";
+    repo = "Dotfiles-Xps";
+    rev = "8cd557a";
+    sha256 = "0dawiq73dzh87xqaw98m282s9kcarpcgzmwdp6aa2q5wx22i47zc";
+  };
+  nvimconfig = pkgs.fetchFromGitHub {
+    owner = "jordycoding";
+    repo = "neovim-lua";
+    rev = "922137d";
+    sha256 = "1m9nyyd61c7lylb7gayb2fs191agflhacxa9pcnky3iajvgqvxhd";
+  };
+in
 {
   options.dotfiles = {
-   isLaptop = mkEnableOption "Use laptop dotfiles";
+    isLaptop = mkEnableOption "Use laptop dotfiles";
   };
-  
+
   config = mkMerge [
     (mkIf config.dotfiles.isLaptop {
       home.file = {
         ".p10k.zsh" = {
-          source = "${laptopDotfiles}/p10k/.p10k.zsh"; 
+          source = "${laptopDotfiles}/p10k/.p10k.zsh";
         };
-        
+
         ".config/nvim" = {
           source = "${nvimconfig}";
           recursive = true;
@@ -45,44 +47,44 @@ nvimconfig = pkgs.fetchFromGitHub {
         ".config/sway/scripts" = {
           source = "${laptopDotfiles}/swaycripts/.config/sway/scripts";
           recursive = true;
-         };
+        };
 
         ".config/waybar" = {
           source = "${laptopDotfiles}/waybar/.config/waybar";
           recursive = true;
-         };
+        };
 
-         ".tmux.conf" = {
+        ".tmux.conf" = {
           source = "${laptopDotfiles}/tmux/.tmux.conf";
-         };
+        };
 
-         ".config/alacritty" = {
+        ".config/alacritty" = {
           source = "${laptopDotfiles}/alacritty/.config/alacritty";
           recursive = true;
-         };
+        };
 
-         ".config/btop" = {
+        ".config/btop" = {
           source = "${laptopDotfiles}/btop/.config/btop";
           recursive = true;
-         };
+        };
 
-         ".config/mako" = {
+        ".config/mako" = {
           source = "${laptopDotfiles}/mako/.config/mako";
           recursive = true;
-         };
+        };
 
-         ".config/scripts" = {
+        ".config/scripts" = {
           source = "${laptopDotfiles}/scripts/.config/scripts";
           recursive = true;
-         };
+        };
       };
     })
     (mkIf (!config.dotfiles.isLaptop) {
       home.file = {
         ".p10k.zsh" = {
-          source = "${dotfiles}/p10k/.p10k.zsh"; 
+          source = "${dotfiles}/p10k/.p10k.zsh";
         };
-        
+
         ".config/nvim" = {
           source = "${nvimconfig}";
           recursive = true;
@@ -96,36 +98,36 @@ nvimconfig = pkgs.fetchFromGitHub {
         ".config/sway/scripts" = {
           source = "${dotfiles}/swaycripts/.config/sway/scripts";
           recursive = true;
-         };
+        };
 
         ".config/waybar" = {
           source = "${dotfiles}/waybar/.config/waybar";
           recursive = true;
-         };
+        };
 
-         ".tmux.conf" = {
+        ".tmux.conf" = {
           source = "${dotfiles}/tmux/.tmux.conf";
-         };
+        };
 
-         ".config/alacritty" = {
+        ".config/alacritty" = {
           source = "${dotfiles}/alacritty/.config/alacritty";
           recursive = true;
-         };
+        };
 
-         ".config/btop" = {
+        ".config/btop" = {
           source = "${dotfiles}/btop/.config/btop";
           recursive = true;
-         };
+        };
 
-         ".config/mako" = {
+        ".config/mako" = {
           source = "${dotfiles}/mako/.config/mako";
           recursive = true;
-         };
+        };
 
-         ".config/scripts" = {
+        ".config/scripts" = {
           source = "${dotfiles}/scripts/.config/scripts";
           recursive = true;
-         };
+        };
       };
     })
     {
@@ -164,7 +166,7 @@ nvimconfig = pkgs.fetchFromGitHub {
         pkgs.swayidle
         pkgs.swaylock
         pkgs.waybar
-        pkgs.grim 
+        pkgs.grim
         pkgs.slurp
         pkgs.alacritty
         pkgs.wlogout
@@ -177,7 +179,7 @@ nvimconfig = pkgs.fetchFromGitHub {
         pkgs.xdg-user-dirs
         pkgs.xdg-desktop-portal
         pkgs.xdg-desktop-portal-wlr
-        pkgs.rnix-lsp 
+        pkgs.rnix-lsp
         pkgs.jdt-language-server
         (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       ];
@@ -244,7 +246,7 @@ nvimconfig = pkgs.fetchFromGitHub {
           {
             file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
             src = pkgs.zsh-powerlevel10k;
-            name = "powerlevel10k"; 
+            name = "powerlevel10k";
           }
           {
             file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
@@ -253,7 +255,7 @@ nvimconfig = pkgs.fetchFromGitHub {
           }
         ];
 
-        initExtra =  ''
+        initExtra = ''
           setopt hist_ignore_all_dups
           setopt hist_reduce_blanks
           setopt inc_append_history
@@ -316,8 +318,8 @@ nvimconfig = pkgs.fetchFromGitHub {
           "button-layout" = "appmenu:minimize,maximize,close";
         };
       };
-      
+
       gtk.theme.name = "Adw-gtk3";
-      }
+    }
   ];
 }
