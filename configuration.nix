@@ -88,7 +88,7 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   security.sudo.enable = false;
   security.doas.enable = true;
   security.doas.extraRules = [
-    { groups = [ "wheel" ]; noPass = true; keepEnv = true; }
+    { groups = [ "wheel" ]; keepEnv = true; persist = true; }
   ];
 
   users.users.jordy = {

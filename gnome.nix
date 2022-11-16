@@ -14,6 +14,7 @@
     papirus-icon-theme
     wmctrl
     foliate
+    celluloid
   ];
   systemd.user.services."ulauncher" = {
     description = "ulauncher";
