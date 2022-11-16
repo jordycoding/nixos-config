@@ -17,6 +17,7 @@ with lib;
       maven
       rustup
       gcc
+      glade
     ]
     ++ (
       optionals (config.languageservers.enable) [
