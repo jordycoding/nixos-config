@@ -6,14 +6,14 @@ let
   dotfiles = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "Dotfiles-Xps";
-    rev = "2c52bca";
-    sha256 = "1yzb6l3nq56lsn3y0bm93vzq12jvi3flaxw95gwwmi7nsns1v7rh";
+    rev = "f82a2d6";
+    sha256 = "1lidaayajfg3a4lwcbgghrgxlr338bfn2gav0rs6yy2h0filpbqb";
   };
   laptopDotfiles = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "Dotfiles-Xps";
-    rev = "a9d0d74";
-    sha256 = "1zn111a7fmyvcl5b2d8ilbw9pi9fgzd4axhqnafvn4npsv5g27j4";
+    rev = "0b9fcb4";
+    sha256 = "142fcc5v4qd285fh8hlfawi76vnnzkh4vycsamcp036lqc77x8ih";
   };
   nvimconfig = pkgs.fetchFromGitHub {
     owner = "jordycoding";
