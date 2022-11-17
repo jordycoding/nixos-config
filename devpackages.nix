@@ -27,6 +27,7 @@ with lib;
         rust-analyzer
         checkstyle
         sumneko-lua-language-server
+        stylua
         google-java-format
       ]
     );
