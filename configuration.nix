@@ -19,6 +19,13 @@
       ./machines/ryzenDesktop.nix
     ];
 
+  nix.settings.auto-optimise-store = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   nixpkgs.config.packageOverrides = super: {
     catppuccinGrub = pkgs.callPackage ./catppuccin-grub.nix { };
   };
