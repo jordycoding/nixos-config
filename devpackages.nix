@@ -18,6 +18,7 @@ with lib;
       rustup
       gcc
       glade
+      android-studio
     ]
     ++ (
       optionals (config.languageservers.enable) [
