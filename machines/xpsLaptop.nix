@@ -21,6 +21,7 @@ in
 	      efiSupport = true;
 	      device = "nodev";
 	      useOSProber = true;
+          extraConfig = "set theme=(hd1,gpt2)/@nixos/${pkgs.catppuccinGrub}/grub/themes/catppuccin-mocha-grub-theme/theme.txt";
 	    };
 	  };
 
