@@ -15,12 +15,8 @@
       ./devpackages.nix
       ./gnome.nix
       ./gaming.nix
-<<<<<<< HEAD
       ./downloading.nix
-      ./machines/ryzenDesktop.nix
-=======
       ./machines/xpsLaptop.nix
->>>>>>> 6d0667d (Grub theme shit)
     ];
 
   nix.settings.auto-optimise-store = true;
