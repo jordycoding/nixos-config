@@ -34,6 +34,7 @@ in
     networking.wireguard.enable = true;
     hardware.bluetooth.enable = true;
     systemd.services.NetworkManager-wait-online.enable = false;
+    systemd.services.sabnzbd.wantedBy = lib.mkForce []; # Disable service by default, reduces boot time
 
     environment.systemPackages = with pkgs; [ nvidia-offload mesa-demos ];
     services.xserver.videoDrivers = [ "nvidia" ];
