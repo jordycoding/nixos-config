@@ -14,5 +14,6 @@
     pv
     exfat
     pciutils
+    lm_sensors
   ];
 }

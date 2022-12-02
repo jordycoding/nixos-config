@@ -9,6 +9,7 @@
     _1password
     piper
     vistafonts
+    corefonts
     texlive.combined.scheme-medium
     tidal-hifi
   ];
