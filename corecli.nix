@@ -7,7 +7,7 @@
     neofetch
     pfetch
     bat
-    httpie
+    # httpie
     exa
     broot
     bind
@@ -15,5 +15,6 @@
     exfat
     pciutils
     lm_sensors
+    btop
   ];
 }

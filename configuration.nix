@@ -16,7 +16,7 @@
       ./gnome.nix
       ./gaming.nix
       ./downloading.nix
-      ./machines/xpsLaptop.nix
+      ./machines/xpsOLED.nix
     ];
 
   nix.settings.auto-optimise-store = true;
@@ -29,6 +29,17 @@
   nixpkgs.config.packageOverrides = super: {
     catppuccinGrub = pkgs.callPackage ./catppuccin-grub.nix { };
   };
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      clisp = prev.clisp.override {
+        # On newer readline8 fails as:
+        #  #<FOREIGN-VARIABLE "rl_readline_state" #x...>
+        #   does not have the required size or alignment
+        readline = pkgs.readline6;
+      };
+    })
+  ];
 
   environment.systemPackages = [ pkgs.catppuccinGrub ];
 
@@ -97,6 +108,9 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   security.doas.extraRules = [
     { groups = [ "wheel" ]; keepEnv = true; persist = true; }
   ];
+
+  # Needed for network printing
+  # services.printing.listenAddresses = [ "*:631" ]; # Not 100% sure this is needed and you might want to restrict to the local network
 
   users.users.jordy = {
     isNormalUser = true;

@@ -15,6 +15,23 @@ in
     languageservers.enable = true;
     services.fwupd.enable = true;
     services.fprintd.enable = true;
+    services.printing.enable = true;
+    services.printing.drivers = [
+      pkgs.epson-escpr
+      pkgs.epson-escpr2
+    ];
+    services.avahi.enable = true;
+    services.avahi.nssmdns = true;
+    services.printing.browsing = true;
+    services.avahi.publish.enable = true;
+    services.avahi.publish.userServices = true;
+    services.avahi.hostName = "alocal";
+    services.avahi.ipv6 = true;
+
+    systemd.services.fprintd = {
+      wantedBy = [ "multi-user.target" ];
+      serviceConfig.Type = "simple";
+    };
 
     home-manager.users.jordy.dotfiles.isLaptop = true;
     boot.loader = {
@@ -34,7 +51,7 @@ in
     networking.wireguard.enable = true;
     hardware.bluetooth.enable = true;
     systemd.services.NetworkManager-wait-online.enable = false;
-    systemd.services.sabnzbd.wantedBy = lib.mkForce []; # Disable service by default, reduces boot time
+    systemd.services.sabnzbd.wantedBy = lib.mkForce [ ]; # Disable service by default, reduces boot time
 
     environment.systemPackages = with pkgs; [ nvidia-offload mesa-demos ];
     services.xserver.videoDrivers = [ "nvidia" ];
@@ -42,6 +59,14 @@ in
       offload.enable = true;
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
+    };
+    hardware.opengl = {
+      enable = true;
+      extraPackages = with pkgs ; [
+        intel-media-driver
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
     };
   };
 }
