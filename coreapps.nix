@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs; [
     docker-compose
     home-manager
-    firefox
+    firefox-wayland
     discord
     libreoffice
     thunderbird
