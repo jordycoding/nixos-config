@@ -19,6 +19,7 @@ with lib;
       gcc
       glade
       android-studio
+      dotnet-sdk_7
     ]
     ++ (
       optionals (config.languageservers.enable) [
@@ -29,6 +30,7 @@ with lib;
         sumneko-lua-language-server
         stylua
         google-java-format
+        omnisharp-roslyn
       ]
     );
   };
