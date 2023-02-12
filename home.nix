@@ -18,8 +18,8 @@ let
   nvimconfig = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "neovim-lua";
-    rev = "a58b306";
-    sha256 = "16f84yqyywra15ysabiqvdhsvmv38maqkn7g2dw5l4m93vmpanzl";
+    rev = "10ae5e0";
+    sha256 = "1b93cvxw4db8hlyrg29n1f0kyc56vgj45gn3iiy9g5q3sfdjsykd";
   };
 in
 {
@@ -221,6 +221,7 @@ in
 
         sessionVariables = {
           EDITOR = "nvim";
+          DOTNET_ROOT = pkgs.dotnet-sdk_7.outPath;
         };
 
         plugins = [
