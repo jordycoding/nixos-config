@@ -16,5 +16,7 @@
     pciutils
     lm_sensors
     btop
+    hyperfine
+    fio
   ];
 }
