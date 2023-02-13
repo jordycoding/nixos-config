@@ -20,6 +20,8 @@ with lib;
       glade
       android-studio
       dotnet-sdk_7
+      php
+      php.packages.composer
     ]
     ++ (
       optionals (config.languageservers.enable) [

@@ -18,8 +18,8 @@ let
   nvimconfig = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "neovim-lua";
-    rev = "9c4dab0";
-    sha256 = "1j015r3iprlf8bklqz68dw47i44wj7sl14b4jszx7d3s7gnymh4m";
+    rev = "1e485f7";
+    sha256 = "1544kj4dikhjdvqfv9rv0ki3mhkbvr42ss400mml6amkanw6212s";
   };
 in
 {
@@ -277,7 +277,7 @@ in
           bindkey '^[[B' history-substring-search-down
           bindkey '^[OB' history-substring-search-down
 
-          export PATH=~/.npm-packages/bin:$PATH
+          export PATH=~/.npm-packages/bin:~/.config/composer/vendor/bin:$PATH
 
           eval $(thefuck --alias)
           source ~/.p10k.zsh
