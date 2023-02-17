@@ -255,6 +255,11 @@ in
             src = pkgs.zsh-vi-mode;
             name = "zsh-vi-mode";
           }
+          {
+            file = "share/zsh/plugins/you-should-use/you-should-use.plugin.zsh";
+            src = pkgs.zsh-you-should-use;
+            name = "zsh-you-should-use";
+          }
         ];
 
         initExtra = ''
