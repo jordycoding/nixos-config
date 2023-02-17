@@ -15,6 +15,7 @@
     wmctrl
     foliate
     celluloid
+    blackbox-terminal
   ];
   systemd.user.services."ulauncher" = {
     description = "ulauncher";
