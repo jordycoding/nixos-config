@@ -212,6 +212,7 @@ in
           cat = "bat";
           top = "btop";
           gl = "git log --graph --pretty=oneline --abbrev-commit";
+          bdinstall = "nix run nixpkgs#betterdiscordctl install";
         };
 
         history = {

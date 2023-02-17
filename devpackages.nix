@@ -13,6 +13,7 @@ with lib;
       neovim
       git
       jetbrains.idea-ultimate
+      jetbrains.datagrip
       jdk
       maven
       rustup
