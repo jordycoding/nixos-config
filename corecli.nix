@@ -18,5 +18,6 @@
     btop
     hyperfine
     fio
+    nurl
   ];
 }

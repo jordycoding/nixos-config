@@ -15,12 +15,13 @@ let
     rev = "0b9fcb4";
     sha256 = "142fcc5v4qd285fh8hlfawi76vnnzkh4vycsamcp036lqc77x8ih";
   };
-  nvimconfig = pkgs.fetchFromGitHub {
-    owner = "jordycoding";
-    repo = "neovim-lua";
-    rev = "e15508e";
-    sha256 = "1x086l20fhsybqd1hmk0rbgl3bc67jxx2siwj3f5w520zj7sx8w9";
-  };
+  nvimconfig = pkgs.fetchFromGitHub
+    {
+      owner = "jordycoding";
+      repo = "neovim-lua";
+      rev = "c8e289c";
+      hash = "0651bfm01sd433q9gd3q44w5da1wyfcl3xwdqi2x10k24kpgbb88";
+    };
 in
 {
   options.dotfiles = {
