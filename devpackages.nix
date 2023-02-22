@@ -9,6 +9,7 @@ with lib;
     environment.systemPackages = with pkgs; [
       nodejs_latest
       python3
+      python3Packages.pygments
       vscode
       neovim
       git
@@ -34,7 +35,7 @@ with lib;
         stylua
         google-java-format
         omnisharp-roslyn
-        ltex-ls
+        texlab
       ]
     );
   };

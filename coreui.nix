@@ -8,10 +8,13 @@
     _1password-gui
     _1password
     piper
-    vistafonts
-    corefonts
-    texlive.combined.scheme-medium
+    texlive.combined.scheme-full
     tidal-hifi
+  ];
+  fonts.fonts = with pkgs; [
+    vistafonts
+    open-sans
+    corefonts
   ];
   services.ratbagd.enable = true;
 }
