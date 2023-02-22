@@ -34,6 +34,7 @@ with lib;
         stylua
         google-java-format
         omnisharp-roslyn
+        ltex-ls
       ]
     );
   };
