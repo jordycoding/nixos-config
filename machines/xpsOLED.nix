@@ -55,6 +55,7 @@ in
 
     environment.systemPackages = with pkgs; [ nvidia-offload mesa-demos ];
     services.xserver.videoDrivers = [ "nvidia" ];
+    hardware.nvidia.open = true;
     hardware.nvidia.prime = {
       offload.enable = true;
       intelBusId = "PCI:0:2:0";
