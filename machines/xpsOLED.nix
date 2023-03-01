@@ -53,9 +53,9 @@ in
     systemd.services.NetworkManager-wait-online.enable = false;
     systemd.services.sabnzbd.wantedBy = lib.mkForce [ ]; # Disable service by default, reduces boot time
 
-    environment.systemPackages = with pkgs; [ nvidia-offload mesa-demos ];
+    environment.systemPackages = with pkgs; [ nvidia-offload mesa-demos easyeffects ];
     services.xserver.videoDrivers = [ "nvidia" ];
-    hardware.nvidia.open = true;
+    # hardware.nvidia.open = true;
     hardware.nvidia.prime = {
       offload.enable = true;
       intelBusId = "PCI:0:2:0";
