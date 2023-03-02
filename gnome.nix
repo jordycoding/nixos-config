@@ -32,4 +32,17 @@
       ExecStart = "${pkgs.ulauncher}/bin/ulauncher --no-window";
     };
   };
+  systemd.user.services."1password" = {
+    description = "Start 1Password minimized";
+    documentation = [ "https://1password.com/" ];
+    wantedBy = [ "graphical-session.target" ];
+    enable = true;
+    path = [ pkgs._1password-gui ];
+    serviceConfig = {
+      Type = "simple";
+      Restart = "always";
+      restartSec = 1;
+      ExecStart = "${pkgs._1password-gui}/bin/1password --silent";
+    };
+  };
 }
