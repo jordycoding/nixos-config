@@ -5,12 +5,12 @@
     discord
     libreoffice
     thunderbird
-    _1password-gui
-    _1password
     piper
     texlive.combined.scheme-full
     tidal-hifi
   ];
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
   fonts.fonts = with pkgs; [
     vistafonts
     open-sans
