@@ -181,7 +181,8 @@ in
         pkgs.xdg-desktop-portal-wlr
         pkgs.rnix-lsp
         pkgs.jdt-language-server
-        (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        pkgs.direnv
+        (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" "Meslo" ]; })
       ];
 
       programs.zsh = {
@@ -286,6 +287,7 @@ in
           export PATH=~/.dotnet/tools:~/.npm-packages/bin:~/.config/composer/vendor/bin:$PATH
 
           eval $(thefuck --alias)
+          eval "$(direnv hook zsh)"
           source ~/.p10k.zsh
           # Checks if tmux is available
           if [ -x $(command -v tmux) ]; then

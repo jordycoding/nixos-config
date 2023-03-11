@@ -17,6 +17,7 @@
     celluloid
     blackbox-terminal
     gjs
+    cambalache
   ];
   systemd.user.services."ulauncher" = {
     description = "ulauncher";
