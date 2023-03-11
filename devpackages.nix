@@ -6,7 +6,9 @@ with lib;
     enable = mkEnableOption "Enable language servers and related packages";
   };
   config = {
+    programs.wireshark.enable = true;
     environment.systemPackages = with pkgs; [
+      wireshark
       nodejs_latest
       python3
       python3Packages.pygments
@@ -24,6 +26,7 @@ with lib;
       dotnet-sdk_7
       php82
       phpPackages.composer
+      pkg-config
     ]
     ++ (
       optionals (config.languageservers.enable) [

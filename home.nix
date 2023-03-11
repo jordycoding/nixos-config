@@ -18,8 +18,8 @@ let
   nvimconfig = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "neovim-lua";
-    rev = "b8e458c";
-    sha256 = "1lixsdxf0zbfx74p2hvq7qhyabb7hns3gc01r51wjhg1gfrldsrw";
+    rev = "c47b5df";
+    sha256 = "1z0a9ihv8hq4vzfy5wh42ihllfidcj0axyqxypgc1217xm2prk0h";
   };
 in
 {
@@ -320,6 +320,9 @@ in
         };
         "org/gnome/desktop/peripherals/touchpad" = {
           "tap-to-click" = true;
+        };
+        "org/gnome/desktop/interface" = {
+          "show-battery-percentage" = true;
         };
         "org/gnome/desktop/wm/preferences" = {
           "button-layout" = "appmenu:minimize,maximize,close";

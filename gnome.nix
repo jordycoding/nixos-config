@@ -16,6 +16,7 @@
     foliate
     celluloid
     blackbox-terminal
+    gjs
   ];
   systemd.user.services."ulauncher" = {
     description = "ulauncher";

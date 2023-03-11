@@ -14,7 +14,14 @@ in
     boot.kernelPackages = pkgs.linuxPackages_latest;
     languageservers.enable = true;
     services.fwupd.enable = true;
-    services.fprintd.enable = true;
+    services.fprintd = {
+      enable = true;
+      package = pkgs.fprintd-tod;
+      tod = {
+        enable = true;
+        driver = pkgs.libfprint-2-tod1-goodix;
+      };
+    };
     services.printing.enable = true;
     services.printing.drivers = [
       pkgs.epson-escpr
@@ -28,10 +35,10 @@ in
     services.avahi.hostName = "alocal";
     services.avahi.ipv6 = true;
 
-    systemd.services.fprintd = {
-      wantedBy = [ "multi-user.target" ];
-      serviceConfig.Type = "simple";
-    };
+    # systemd.services.fprintd = {
+    #   wantedBy = [ "multi-user.target" ];
+    #   serviceConfig.Type = "simple";
+    # };
 
     home-manager.users.jordy.dotfiles.isLaptop = true;
     boot.loader = {
@@ -48,6 +55,7 @@ in
 
     networking.hostName = "nixpsOLED";
     networking.networkmanager.enable = true;
+    networking.networkmanager.insertNameservers = [ "192.168.1.21" ];
     networking.wireguard.enable = true;
     hardware.bluetooth.enable = true;
     systemd.services.NetworkManager-wait-online.enable = false;

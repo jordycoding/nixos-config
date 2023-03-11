@@ -19,5 +19,7 @@
     hyperfine
     fio
     nurl
+    openssl
+    ripgrep
   ];
 }
