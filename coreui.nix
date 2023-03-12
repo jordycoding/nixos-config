@@ -15,6 +15,7 @@
     vistafonts
     open-sans
     corefonts
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" "Meslo" ]; })
   ];
   services.ratbagd.enable = true;
 }

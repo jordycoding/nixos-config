@@ -182,7 +182,6 @@ in
         pkgs.rnix-lsp
         pkgs.jdt-language-server
         pkgs.direnv
-        (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" "Meslo" ]; })
       ];
 
       programs.zsh = {
