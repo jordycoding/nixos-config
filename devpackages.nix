@@ -27,6 +27,7 @@ with lib;
       php82
       phpPackages.composer
       pkg-config
+      cachix
     ]
     ++ (
       optionals (config.languageservers.enable) [

@@ -17,6 +17,7 @@
       ./gaming.nix
       ./downloading.nix
       ./machines/xpsOLED.nix
+      ./cachix.nix
     ];
 
   nix.settings.auto-optimise-store = true;
