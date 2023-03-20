@@ -206,8 +206,12 @@ in
           gpl = "git pull";
           gst = "git stash";
           gsp = "git stash pop";
-          dup = "docker-compose up";
-          ddown = "docker-compose down";
+          dcu = "doas docker compose up";
+          dcd = "doas docker compose down";
+          dcp = "doas docker compose stop";
+          dcub = "doas docker compose up --build";
+          dcud = "doas docker compose up -d";
+          dubd = "doas docker compose up --build -d";
           sudo = "doas";
           cat = "bat";
           top = "btop";

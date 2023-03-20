@@ -11,6 +11,7 @@ let
 in
 {
   config = {
+    virtualisation.docker.enableNvidia = true;
     boot.kernelPackages = pkgs.linuxPackages_latest;
     languageservers.enable = true;
     services.fwupd.enable = true;
