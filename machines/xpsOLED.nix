@@ -56,7 +56,7 @@ in
 
     networking.hostName = "nixpsOLED";
     networking.networkmanager.enable = true;
-    networking.networkmanager.insertNameservers = [ "192.168.1.21" ];
+    # networking.networkmanager.insertNameservers = [ "192.168.1.21" ];
     networking.wireguard.enable = true;
     hardware.bluetooth.enable = true;
     systemd.services.NetworkManager-wait-online.enable = false;
