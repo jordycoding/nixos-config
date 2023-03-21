@@ -12,6 +12,7 @@ with lib;
       nodejs_latest
       python3
       python3Packages.pygments
+      python3Packages.black
       vscode
       neovim
       git
