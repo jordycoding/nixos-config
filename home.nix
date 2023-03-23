@@ -18,8 +18,8 @@ let
   nvimconfig = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "neovim-lua";
-    rev = "d418aac";
-    sha256 = "10gpczkkjp6sdikj3877pr8cldgx2sjlgcpjmsxhb5lp33lr5x9l";
+    rev = "b2c5cb2";
+    sha256 = "0zkvww39lmxalapkq8i9w2cm0c9hwla927kcsyipnxb7l7gp16fh";
   };
 in
 {
