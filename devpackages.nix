@@ -7,6 +7,7 @@ with lib;
   };
   config = {
     programs.wireshark.enable = true;
+    programs.adb.enable = true;
     environment.systemPackages = with pkgs; [
       wireshark
       nodejs_latest
