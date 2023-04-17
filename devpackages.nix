@@ -27,7 +27,7 @@ with lib;
       android-studio
       dotnet-sdk_7
       php82
-      phpPackages.composer
+      php82Packages.composer
       pkg-config
       cachix
     ]

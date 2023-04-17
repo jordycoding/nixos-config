@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs; [
     firefox-wayland
     discord
-    libreoffice
+    libreoffice-fresh
     thunderbird
     piper
     texlive.combined.scheme-full

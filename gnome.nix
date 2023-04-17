@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     tilix
     gnome.gnome-tweaks
-    newsflash
     gnome.geary
     gnome.gnome-boxes
     adw-gtk3
