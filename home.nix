@@ -12,8 +12,8 @@ let
   laptopDotfiles = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "Dotfiles-Xps";
-    rev = "0b9fcb4";
-    sha256 = "142fcc5v4qd285fh8hlfawi76vnnzkh4vycsamcp036lqc77x8ih";
+    rev = "f7dc4de";
+    sha256 = "18nhazsbh8734mqja788anbbrkwnqgzbs4f822mjkcra8vv3vmwa";
   };
   nvimconfig = pkgs.fetchFromGitHub {
     owner = "jordycoding";
