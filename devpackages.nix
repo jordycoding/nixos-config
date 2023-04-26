@@ -42,6 +42,7 @@ with lib;
         google-java-format
         omnisharp-roslyn
         texlab
+        lldb
       ]
     );
   };
