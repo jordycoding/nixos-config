@@ -6,7 +6,7 @@
     libreoffice-fresh
     thunderbird
     piper
-    texlive.combined.scheme-full
+    # texlive.combined.scheme-full
     tidal-hifi
   ];
   programs._1password.enable = true;
