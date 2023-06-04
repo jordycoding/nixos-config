@@ -1,13 +1,13 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    firefox-wayland
     discord
     libreoffice-fresh
     thunderbird
     piper
     # texlive.combined.scheme-full
     tidal-hifi
+    firefox-bin
   ];
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
