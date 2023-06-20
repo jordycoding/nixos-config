@@ -316,6 +316,7 @@ in
         userEmail = "6128820+jordycoding@users.noreply.github.com";
         extraConfig = {
           pull.rebase = true;
+          push.autoSetupRemote = true;
         };
       };
 
