@@ -8,7 +8,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      <home-manager/nixos>
+      # <home-manager/nixos>
       ./upgrade-diff.nix
       ./hardware-configuration.nix
       ./coreui.nix
@@ -114,7 +114,7 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
     subGidRanges = [{ startGid = 100000; count = 65536; }];
     shell = pkgs.zsh;
   };
-  home-manager.users.jordy = import ./home.nix;
+  # home-manager.users.jordy = import ./home.nix;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [ pkgs.xdg-desktop-portal-wlr ];
   services.flatpak.enable = true;
