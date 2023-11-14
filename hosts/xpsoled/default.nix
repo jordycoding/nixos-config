@@ -10,6 +10,19 @@ let
   '';
 in
 {
+  imports = [
+    ../../modules/system.nix
+    ../../modules/devpackages.nix
+    ../../modules/upgrade-diff.nix
+    ../../modules/core
+    ../../modules/usecases/gaming.nix
+    ../../modules/usecases/school.nix
+    ../../modules/usecases/hardening.nix
+    ../../modules/usecases/downloading.nix
+    ../../modules/wm/gnome.nix
+    ./hardware-configuration.nix
+  ];
+
   virtualisation.docker.enableNvidia = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" ];
@@ -77,5 +90,4 @@ in
       libvdpau-va-gl
     ];
   };
-  system.stateVersion = "23.11";
 }

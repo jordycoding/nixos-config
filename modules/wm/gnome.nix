@@ -16,7 +16,7 @@
     blackbox-terminal
     gjs
     cambalache
-        gnome-network-displays
+    gnome-network-displays
   ];
   systemd.user.services."ulauncher" = {
     description = "ulauncher";

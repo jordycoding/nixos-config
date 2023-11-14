@@ -8,7 +8,7 @@
     enableCompletion = true;
 
     shellAliases = {
-      update = "doas nixos-rebuild switch --upgrade --flake /etc/nixos";
+      update = "doas nixos-rebuild switch --flake";
       ll = "exa -al --icons";
       ls = "exa";
       vim = "nvim";
