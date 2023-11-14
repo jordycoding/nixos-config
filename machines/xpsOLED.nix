@@ -13,6 +13,7 @@ in
   config = {
     virtualisation.docker.enableNvidia = true;
     boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelModules = [ "kvm-intel" ];
     languageservers.enable = true;
     services.fwupd.enable = true;
     services.fprintd = {

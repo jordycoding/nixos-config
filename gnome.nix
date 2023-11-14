@@ -10,13 +10,13 @@
     gnome.gnome-boxes
     adw-gtk3
     ulauncher
-    papirus-icon-theme
     wmctrl
     foliate
     celluloid
     blackbox-terminal
     gjs
     cambalache
+        gnome-network-displays
   ];
   systemd.user.services."ulauncher" = {
     description = "ulauncher";

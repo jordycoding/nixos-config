@@ -4,14 +4,17 @@
     discord
     libreoffice-fresh
     thunderbird
+    protonmail-bridge
     piper
-    # texlive.combined.scheme-full
+    texlive.combined.scheme-full
     tidal-hifi
     firefox-bin
+    nicotine-plus
+    qbittorrent
   ];
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     vistafonts
     open-sans
     corefonts

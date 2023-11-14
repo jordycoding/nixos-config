@@ -18,8 +18,8 @@ let
   nvimconfig = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "neovim-lua";
-    rev = "7148b52";
-    sha256 = "1kx9yi30ivla5s3hml8dw5l2xrgb0pkc0f2cid5wfw5kngfxshyz";
+    rev = "cedc533";
+    sha256 = "128is7q206lv4igdssl1x0kzcb6pzi3jfd63rwvl5ik7cf57l85l";
   };
 in
 {
@@ -154,8 +154,22 @@ in
       # Let Home Manager install and manage itself.
       programs.home-manager.enable = true;
 
+      gtk = {
+        enable = true;
+        theme = {
+          name = "Catppuccin-Mocha-Standard-Blue-dark";
+          package = pkgs.catppuccin-gtk.override {
+            accents = [ "blue" ];
+            size = "standard";
+            variant = "mocha";
+          };
+        };
+      };
 
+
+      manual.manpages.enable = false;
       home.packages = [
+        pkgs.papirus-icon-theme
         pkgs.gh
         pkgs.neovim
         pkgs.rofi
@@ -287,7 +301,8 @@ in
           bindkey '^[[B' history-substring-search-down
           bindkey '^[OB' history-substring-search-down
 
-          export PATH=~/.dotnet/tools:~/.npm-packages/bin:~/.config/composer/vendor/bin:$PATH
+          export GEM_HOME="$HOME/gems"
+          export PATH=~/.local/share/coursier/bin:~/.dotnet/tools:~/.npm-packages/bin:~/.config/composer/vendor/bin:$HOME/gems/bin:$PATH
 
           eval $(thefuck --alias)
           eval "$(direnv hook zsh)"
@@ -337,8 +352,6 @@ in
           "disable-lock-screen" = false; # Why is this disabled exactly 
         };
       };
-
-      gtk.theme.name = "Adw-gtk3";
     }
   ];
 }

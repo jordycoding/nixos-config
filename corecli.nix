@@ -7,8 +7,9 @@
     neofetch
     pfetch
     bat
+    wget
     # httpie
-    exa
+    eza
     broot
     bind
     pv
@@ -21,5 +22,6 @@
     nurl
     openssl
     ripgrep
+    libimobiledevice
   ];
 }

@@ -9,11 +9,18 @@ with lib;
     programs.wireshark.enable = true;
     programs.adb.enable = true;
     environment.systemPackages = with pkgs; [
+      ruby
+      gnumake
+      coursier
+      metals
+      circt
+      verilog
       wireshark
       nodejs_latest
       python3
       python3Packages.pygments
       python3Packages.black
+      efm-langserver
       vscode
       neovim
       git
@@ -25,6 +32,7 @@ with lib;
       gcc
       glade
       android-studio
+      androidStudioPackages.beta
       dotnet-sdk_7
       php82
       php82Packages.composer

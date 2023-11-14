@@ -9,6 +9,7 @@
     [
       # Include the results of the hardware scan.
       <home-manager/nixos>
+      ./upgrade-diff.nix
       ./hardware-configuration.nix
       ./coreui.nix
       ./corecli.nix
@@ -18,6 +19,8 @@
       ./downloading.nix
       ./machines/xpsOLED.nix
       ./cachix.nix
+      ./school.nix
+      ./hardening.nix
     ];
 
   nix.settings.auto-optimise-store = true;
