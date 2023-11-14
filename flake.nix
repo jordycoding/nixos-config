@@ -91,7 +91,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.jordy = import ./home.nix;
+            home-manager.users.jordy = import ./home;
           }
         ];
       };
