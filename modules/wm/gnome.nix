@@ -18,21 +18,21 @@
     cambalache
     gnome-network-displays
   ];
-  systemd.user.services."ulauncher" = {
-    description = "ulauncher";
-    documentation = [ "https://ulauncher.io" ];
-    wantedBy = [ "graphical-session.target" ];
-    enable = true;
-    path = [ pkgs.firefox ];
-    serviceConfig = {
-      Type = "simple";
-      # This is necessary for ulauncher to list all applications correctly
-      Environment = "PATH=/run/current-system/sw/bin:/home/jordy/.nix-profile/bin";
-      Restart = "always";
-      restartSec = 1;
-      ExecStart = "${pkgs.ulauncher}/bin/ulauncher --no-window";
-    };
-  };
+  # systemd.user.services."ulauncher" = {
+  #   description = "ulauncher";
+  #   documentation = [ "https://ulauncher.io" ];
+  #   wantedBy = [ "graphical-session.target" ];
+  #   enable = true;
+  #   path = [ pkgs.firefox ];
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     # This is necessary for ulauncher to list all applications correctly
+  #     Environment = "PATH=/run/current-system/sw/bin:/home/jordy/.nix-profile/bin";
+  #     Restart = "always";
+  #     restartSec = 1;
+  #     ExecStart = "${pkgs.ulauncher}/bin/ulauncher --no-window";
+  #   };
+  # };
   systemd.user.services."1password" = {
     description = "Start 1Password minimized";
     documentation = [ "https://1password.com/" ];

@@ -20,6 +20,12 @@ let
     rev = "cedc533";
     sha256 = "128is7q206lv4igdssl1x0kzcb6pzi3jfd63rwvl5ik7cf57l85l";
   };
+  roficatppuccin = pkgs.fetchFromGitHub {
+    owner = "catppuccin";
+    repo = "rofi";
+    rev = "5350da41a11814f950c3354f090b90d4674a95ce";
+    sha256 = "15phrl9qlbzjxmp29hak3a5k015x60w2hxjif90q82vp55zjpnhc";
+  };
   dotdir = if config.dotfiles.isLaptop then laptopDotfiles else dotfiles;
 in
 {
@@ -74,6 +80,34 @@ in
 
     ".npmrc" = {
       text = "prefix = \${HOME}/.npm-packages";
+    };
+
+    ".config/rofi/config.rasi" = {
+      text = ''
+        configuration{
+            modi: "run,drun,window";
+            font: "JetBrainsMono Nerd Font Mono 12";
+            icon-theme: "Oranchelo";
+            show-icons: true;
+            terminal: "alacritty";
+            drun-display-format: "{icon} {name}";
+            location: 0;
+            disable-history: false;
+            hide-scrollbar: true;
+            display-drun: "   Apps ";
+            display-run: "   Run ";
+            display-window: " 﩯  Window";
+            display-Network: " 󰤨  Network";
+            sidebar-mode: true;
+        }
+
+        @theme "catppuccin-mocha"
+      '';
+    };
+
+    ".local/share/rofi/themes" = {
+      source = "${roficatppuccin}/basic/.local/share/rofi/themes";
+      recursive = true;
     };
   };
 }

@@ -6,7 +6,8 @@
     extraConfig = ''
       $mod = SUPER
 
-      bind = $mod, ENTER, exec, alacritty -e tmux
+      bind = $mod, RETURN, exec, alacritty -e tmux
+      bind = $mod SHIFT, q, killactive
       #workspaces
       ${builtins.concatStringsSep "\n" (builtins.genList (
         x: let
@@ -25,6 +26,10 @@
           touchpad {
             natural_scroll = true
           }
+      }
+
+      gestures {
+        workspace_swipe = true
       }
     '';
   };
