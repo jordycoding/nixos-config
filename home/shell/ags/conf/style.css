@@ -1,0 +1,18 @@
+* {
+    font-family: "JetBrainsMono Nerd Font Mono";
+    font-size: 16px;
+}
+
+.workspaces {
+    margin: 5px 0px 0px 5px;
+    padding: 10px;
+    border-radius: 12px;
+    background: #1e1e2e;
+}
+
+.workspaces button {
+    all: unset;
+    background: #1e1e2e;
+    color: #a6e3a1;
+    margin-left: 5px;
+}

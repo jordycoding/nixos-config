@@ -8,6 +8,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
+      exec-once=ags
       source=~/.config/hypr/mocha.conf
       $mod = SUPER
       $left = h
@@ -37,6 +38,8 @@
       bind = $mod SHIFT, D, exec, hyprctl keyword general:layout "dwindle"
       bind = $mod SHIFT, M, exec, hyprctl keyword general:layout "master"
 
+      bind = CTRL, SHIFT, exec, pkill ags && ags
+
       #resize
       submap=resize
       binde=,$right,resizeactive,10 0
@@ -65,6 +68,7 @@
           touchpad {
             natural_scroll = true
           }
+          kb_options=caps:escape
       }
 
       gestures {

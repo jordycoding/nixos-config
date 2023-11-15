@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 with lib;
 
@@ -7,7 +7,8 @@ with lib;
     ./dotfiles
     ./programs
     ./gnome
-    ./hypr
+    ./shell/hypr
+    ./shell/ags
   ];
 
   options.dotfiles = {

@@ -16,6 +16,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hyprland.url = "github:hyprwm/Hyprland";
+    ags.url = "github:Aylur/ags";
   };
 
   # `outputs` are all the build result of the flake.
