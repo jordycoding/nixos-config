@@ -7,6 +7,7 @@ with lib;
     ./dotfiles
     ./programs
     ./gnome
+    ./hypr
   ];
 
   options.dotfiles = {
