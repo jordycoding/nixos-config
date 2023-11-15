@@ -5,9 +5,15 @@
     ./colors.nix
   ];
 
+  home.packages = with pkgs; [
+    hyprpaper
+    brightnessctl
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
+      exec-once=hyprpaper
       exec-once=ags
       source=~/.config/hypr/mocha.conf
       $mod = SUPER
@@ -78,6 +84,13 @@
       dwindle {
         force_split = 2
       }
+    '';
+  };
+
+  home.file.".config/hypr/hyprpaper.conf" = {
+    text = ''
+      preload = ~/Pictures/Wallpapers/wallhaven-6de766.jpg
+      wallpaper = eDP-1,~/Pictures/Wallpapers/wallhaven-6de766.jpg
     '';
   };
 }

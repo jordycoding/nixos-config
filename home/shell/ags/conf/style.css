@@ -3,8 +3,31 @@
     font-size: 16px;
 }
 
-.workspaces {
+.left {
     margin: 5px 0px 0px 5px;
+}
+
+.left > *:not(:last-child) {
+    margin-right: 5px;
+}
+
+.center {
+    margin: 5px 0px 0px 0px;
+}
+
+.center > *:not(:last-child) {
+    margin-right: 5px;
+}
+
+.right {
+    margin: 5px 5px 0px 0px;
+}
+
+.right > *:not(:last-child) {
+    margin-right: 5px;
+}
+
+.box {
     padding: 10px;
     border-radius: 12px;
     background: #1e1e2e;
@@ -12,7 +35,14 @@
 
 .workspaces button {
     all: unset;
-    background: #1e1e2e;
     color: #a6e3a1;
     margin-left: 5px;
+}
+
+.clock {
+    color: #a6e3a1;
+}
+
+.right {
+    margin: 5px 5px 0px 0px;
 }
