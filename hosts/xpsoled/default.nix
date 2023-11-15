@@ -20,6 +20,7 @@ in
     ../../modules/usecases/hardening.nix
     ../../modules/usecases/downloading.nix
     ../../modules/wm/gnome.nix
+    ../../modules/catppuccin-grub.nix
     ./hardware-configuration.nix
   ];
 
@@ -48,11 +49,6 @@ in
   services.avahi.publish.userServices = true;
   services.avahi.hostName = "alocal";
   services.avahi.ipv6 = true;
-
-  # systemd.services.fprintd = {
-  #   wantedBy = [ "multi-user.target" ];
-  #   serviceConfig.Type = "simple";
-  # };
 
   home-manager.users.jordy.dotfiles.isLaptop = true;
   boot.loader = {
