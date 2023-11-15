@@ -26,6 +26,12 @@ let
     rev = "5350da41a11814f950c3354f090b90d4674a95ce";
     sha256 = "15phrl9qlbzjxmp29hak3a5k015x60w2hxjif90q82vp55zjpnhc";
   };
+  makocatppuccin = pkgs.fetchFromGitHub {
+    owner = "catppuccin";
+    repo = "mako";
+    rev = "9dd088aa5f4529a3dd4d9760415e340664cb86df";
+    sha256 = "097x9jrkzvml6ngnhxwkzzl1l2awwv73yli1mhmpw83c0n8xck4x";
+  };
   dotdir = if config.dotfiles.isLaptop then laptopDotfiles else dotfiles;
 in
 {
@@ -68,11 +74,6 @@ in
       recursive = true;
     };
 
-    ".config/mako" = {
-      source = "${dotdir}/mako/.config/mako";
-      recursive = true;
-    };
-
     ".config/scripts" = {
       source = "${dotdir}/scripts/.config/scripts";
       recursive = true;
@@ -108,6 +109,13 @@ in
     ".local/share/rofi/themes" = {
       source = "${roficatppuccin}/basic/.local/share/rofi/themes";
       recursive = true;
+    };
+
+    ".config/mako/config" = {
+      text = ''
+
+        default-timeout=5000
+      '' + (builtins.readFile "${makocatppuccin}/src/mocha");
     };
   };
 }

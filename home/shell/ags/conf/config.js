@@ -59,7 +59,17 @@ const BrightnessLabel = () =>
 
 const BatteryLabel = () =>
   Widget.Box({
-    classNames: ["battery", "box"],
+    binds: [
+      [
+        "classNames",
+        Battery,
+        "percent",
+        (percent) => [
+          ...["battery", "box"],
+          percent > 50 ? "green" : percent > 20 ? "yellow" : "red",
+        ],
+      ],
+    ],
     children: [
       Widget.Icon({
         connections: [

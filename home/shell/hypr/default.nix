@@ -8,6 +8,11 @@
   home.packages = with pkgs; [
     hyprpaper
     brightnessctl
+    mako
+    slurp
+    libnotify
+    grim
+    wl-clipboard
   ];
 
   wayland.windowManager.hyprland = {
@@ -15,6 +20,8 @@
     extraConfig = ''
       exec-once=hyprpaper
       exec-once=ags
+      exec-once=mako
+
       source=~/.config/hypr/mocha.conf
       $mod = SUPER
       $left = h
@@ -45,6 +52,9 @@
       bind = $mod SHIFT, M, exec, hyprctl keyword general:layout "master"
 
       bind = CTRL, SHIFT, exec, pkill ags && ags
+
+      bind = $mod, PRINT, exec, grim - | wl-copy && notify-send "  Screenshot taken" "Copied to clipboard"
+      bind = $mod SHIFT, PRINT, exec, grim -g "$(slurp -d)" - | wl-copy && notify-send "  Screenshot taken" "Copied to clipboard"
 
       #resize
       submap=resize
