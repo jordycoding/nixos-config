@@ -14,6 +14,7 @@
     grim
     wl-clipboard
     xdg-desktop-portal-hyprland
+    kitty
   ];
 
   wayland.windowManager.hyprland = {
@@ -91,6 +92,11 @@
 
       decoration {
         rounding = 12
+        blur {
+            passes = 2
+            noise = 0.0125
+            brightness = 0.795
+        }
       }
 
       input {
@@ -113,6 +119,7 @@
       }
 
       animation=windows,1,4,default,slide
+      windowrulev2 = opacity 0.88 0.95,class:(kitty)
     '';
   };
 
