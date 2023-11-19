@@ -33,16 +33,24 @@ const Workspaces = () =>
   });
 
 const Clock = () =>
-  Widget.Label({
-    classNames: ["green", "mr-2"],
-    connections: [
-      [
-        1000,
-        (self) =>
-          execAsync(["date", "+%H:%M"])
-            .then((date) => (self.label = ` ${date}`))
-            .catch(console.error),
-      ],
+  Widget.Box({
+    children: [
+      Widget.Label({
+        classNames: ["green", "mr-1"],
+        label: "",
+      }),
+      Widget.Label({
+        classNames: ["mr-2"],
+        connections: [
+          [
+            1000,
+            (self) =>
+              execAsync(["date", "+%H:%M"])
+                .then((date) => (self.label = ` ${date}`))
+                .catch(console.error),
+          ],
+        ],
+      }),
     ],
   });
 
@@ -88,16 +96,23 @@ const VolumeIndicator = () =>
   );
 
 const Date = () =>
-  Widget.Label({
-    classNames: ["green"],
-    connections: [
-      [
-        10000,
-        (self) =>
-          execAsync(["date", "+%A %b %e"])
-            .then((date) => (self.label = `󰸗 ${date}`))
-            .catch(console.error),
-      ],
+  Widget.Box({
+    children: [
+      Widget.Label({
+        classNames: ["green", "mr-1"],
+        label: "󰸗",
+      }),
+      Widget.Label({
+        connections: [
+          [
+            10000,
+            (self) =>
+              execAsync(["date", "+%A %b %e"])
+                .then((date) => (self.label = ` ${date}`))
+                .catch(console.error),
+          ],
+        ],
+      }),
     ],
   });
 
