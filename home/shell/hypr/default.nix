@@ -13,6 +13,7 @@
     libnotify
     grim
     wl-clipboard
+    xdg-desktop-portal-hyprland
   ];
 
   wayland.windowManager.hyprland = {
@@ -29,6 +30,8 @@
       $right = l
       $up = k
 
+      bezier=easeoutquint,0.22,1,0.36,1
+      bezier=easeinoutquint,0.83,0,0.17,1
 
       bind = $mod, RETURN, exec, alacritty -e tmux
       bind = $mod SHIFT, q, killactive
@@ -80,6 +83,16 @@
       )
       10)}
 
+      general {
+        col.active_border = $lavender
+        col.inactive_border = $overlay0
+        gaps_out = 10
+      }
+
+      decoration {
+        rounding = 12
+      }
+
       input {
           touchpad {
             natural_scroll = true
@@ -94,6 +107,12 @@
       dwindle {
         force_split = 2
       }
+
+      misc {
+        animate_manual_resizes = true
+      }
+
+      animation=windows,1,4,default,slide
     '';
   };
 

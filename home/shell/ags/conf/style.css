@@ -1,6 +1,14 @@
 * {
-    font-family: "JetBrainsMono Nerd Font Mono";
-    font-size: 16px;
+    font-family: "Ubuntu Nerd Font";
+    font-size: 17px;
+}
+
+.bar {
+    background: red;
+}
+
+button {
+    all: unset;
 }
 
 .left {
@@ -39,14 +47,6 @@
     margin-left: 5px;
 }
 
-.clock {
-    color: #a6e3a1;
-}
-
-.right {
-    margin: 5px 5px 0px 0px;
-}
-
 .green {
     color: #a6e3a1;
 }
@@ -57,4 +57,24 @@
 
 .red {
     color: #f38ba8;
+}
+
+.bg-green {
+    background: #a6e3a1;
+}
+
+.bg-yellow {
+    background: #f9e2af;
+}
+
+.bg-red {
+    background: #f38ba8;
+}
+
+.mr-1 { 
+    margin-right: 5px;
+}
+
+.mr-2 {
+    margin-right: 10px;
 }

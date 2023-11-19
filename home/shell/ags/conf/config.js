@@ -5,10 +5,14 @@ import Widget from "resource:///com/github/Aylur/ags/widget.js";
 import { execAsync } from "resource:///com/github/Aylur/ags/utils.js";
 import Brightness from "./services/brightness.js";
 import Battery from "resource:///com/github/Aylur/ags/service/battery.js";
+import Audio from "resource:///com/github/Aylur/ags/service/audio.js";
+import Network from "resource:///com/github/Aylur/ags/service/network.js";
+import globalState from "./globalState.js";
+import HoverRevealer from "./components/hoverRevealer.js";
 
 const Workspaces = () =>
   Widget.Box({
-    classNames: ["workspaces", "box"],
+    classNames: ["workspaces", "box", "sapphire"],
     connections: [
       [
         Hyprland.active.workspace,
@@ -30,16 +34,109 @@ const Workspaces = () =>
 
 const Clock = () =>
   Widget.Label({
-    classNames: ["clock", "box"],
+    classNames: ["green", "mr-2"],
     connections: [
       [
         1000,
         (self) =>
-          execAsync(["date", "+%H:%M %b %e"])
+          execAsync(["date", "+%H:%M"])
             .then((date) => (self.label = ` ${date}`))
             .catch(console.error),
       ],
     ],
+  });
+
+const VolumeIndicator = () =>
+  HoverRevealer(
+    globalState.volume,
+    Widget.Icon({
+      classNames: ["mr-1", "sky"],
+      connections: [
+        [
+          Audio,
+          (self) => {
+            if (!Audio.speaker) return;
+
+            const vol = Audio.speaker.volume * 100;
+            const icon = [
+              [101, "overamplified"],
+              [67, "high"],
+              [34, "medium"],
+              [1, "low"],
+              [0, "muted"],
+            ].find(([threshold]) => threshold <= vol)[1];
+
+            self.icon = `audio-volume-${icon}-symbolic`;
+            self.tooltipText = `Volume ${Math.floor(vol)}%`;
+          },
+          "speaker-changed",
+        ],
+      ],
+    }),
+    Widget.Label({
+      connections: [
+        [
+          Audio,
+          (self) => {
+            const vol = Audio.speaker.volume * 100;
+            self.label = ` ${Math.floor(vol)} %`;
+          },
+          "speaker-changed",
+        ],
+      ],
+    }),
+  );
+
+const Date = () =>
+  Widget.Label({
+    classNames: ["green"],
+    connections: [
+      [
+        10000,
+        (self) =>
+          execAsync(["date", "+%A %b %e"])
+            .then((date) => (self.label = `󰸗 ${date}`))
+            .catch(console.error),
+      ],
+    ],
+  });
+
+const Separator = () =>
+  Widget.Label({
+    className: "separator",
+    label: "|",
+  });
+
+const DateTimeBox = () =>
+  Widget.Box({
+    className: "box",
+    children: [Clock(), Date()],
+  });
+
+const WifiIndicator = () =>
+  HoverRevealer(
+    globalState.wifi,
+    Widget.Icon({
+      classNames: ["mr-1", "teal"],
+      binds: [["icon", Network.wifi, "icon-name"]],
+    }),
+    Widget.Label({
+      binds: [["label", Network.wifi, "ssid"]],
+    }),
+  );
+
+const WiredIndicator = () =>
+  Widget.Icon({
+    binds: [["icon", Network.wired, "icon-name"]],
+  });
+
+const NetworkIndicator = () =>
+  Widget.Stack({
+    items: [
+      ["wifi", WifiIndicator()],
+      ["wired", WiredIndicator()],
+    ],
+    binds: [["shown", Network, "primary", (p) => p || "wifi"]],
   });
 
 const BrightnessLabel = () =>
@@ -58,43 +155,43 @@ const BrightnessLabel = () =>
   });
 
 const BatteryLabel = () =>
-  Widget.Box({
-    binds: [
-      [
-        "classNames",
-        Battery,
-        "percent",
-        (percent) => [
-          ...["battery", "box"],
-          percent > 50 ? "green" : percent > 20 ? "yellow" : "red",
+  HoverRevealer(
+    globalState.battery,
+    Widget.Icon({
+      className: "mr-1",
+      connections: [
+        [
+          Battery,
+          (self) => {
+            self.icon = Battery.icon_name;
+          },
         ],
       ],
-    ],
-    children: [
-      Widget.Icon({
-        connections: [
-          [
-            Battery,
-            (self) => {
-              self.icon = `battery-level-${
-                Math.floor(Battery.percent / 10) * 10
-              }-symbolic`;
-            },
+    }),
+    Widget.Label({
+      connections: [
+        [
+          Battery,
+          (self) => {
+            self.label = ` ${Battery.percent}%`;
+          },
+        ],
+      ],
+    }),
+    {
+      binds: [
+        [
+          "classNames",
+          Battery,
+          "percent",
+          (percent) => [
+            ...["battery", "box"],
+            percent > 50 ? "green" : percent > 20 ? "yellow" : "red",
           ],
         ],
-      }),
-      Widget.Label({
-        connections: [
-          [
-            Battery,
-            (self) => {
-              self.label = ` ${Battery.percent}%`;
-            },
-          ],
-        ],
-      }),
-    ],
-  });
+      ],
+    },
+  );
 
 const Left = () =>
   Widget.Box({
@@ -104,7 +201,7 @@ const Left = () =>
 
 const Center = () =>
   Widget.Box({
-    children: [Clock()],
+    children: [],
     className: "center",
   });
 
@@ -112,7 +209,14 @@ const Right = () =>
   Widget.Box({
     className: "right",
     hpack: "end",
-    children: [BrightnessLabel(), BatteryLabel()],
+    children: [
+      NetworkIndicator(),
+      VolumeIndicator(),
+      Separator(),
+      BatteryLabel(),
+      Separator(),
+      DateTimeBox(),
+    ],
   });
 
 const Bar = ({ monitor } = {}) =>
@@ -123,6 +227,7 @@ const Bar = ({ monitor } = {}) =>
     anchor: ["top", "left", "right"],
     exclusive: true,
     child: Widget.CenterBox({
+      className: "panel",
       startWidget: Left(),
       centerWidget: Center(),
       endWidget: Right(),
@@ -130,6 +235,6 @@ const Bar = ({ monitor } = {}) =>
   });
 
 export default {
-  style: App.configDir + "/style.css",
+  style: App.configDir + "/styles/bar.css",
   windows: [Bar()],
 };

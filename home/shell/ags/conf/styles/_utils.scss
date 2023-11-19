@@ -1,0 +1,34 @@
+@use 'constants' as c;
+@use 'themes/catppuccin-mocha' as t;
+
+@for $i from 1 through 10 {
+    .mr-#{$i} {
+        margin-right: $i * c.$base-margin;
+    }
+    .ml-#{$i} {
+        margin-left: $i * c.$base-margin;
+    }
+    .mt-#{$i} {
+        margin-top: $i * c.$base-margin;
+    }
+    .mb-#{$i} {
+        margin-bottom: $i * c.$base-margin;
+    }
+    .px-#{$i} {
+        padding-left: $i * c.$base-margin;
+        padding-right: $i * c.$base-margin;
+    }
+    .py-#{$i} {
+        padding-top: $i * c.$base-margin;
+        padding-bottom: $i * c.$base-margin;
+    }
+}
+
+@each $name, $color in t.$colors {
+    .#{$name} {
+        color: $color;
+    }
+    .bg-#{$name} {
+        background: $color;
+    }
+}

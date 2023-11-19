@@ -1,0 +1,67 @@
+@use 'constants' as c;
+@use 'themes/catppuccin-mocha' as t;
+@import '_utils.scss';
+
+$accent: t.$green;
+
+* {
+    font-family: "Ubuntu Nerd Font";
+    font-size: 18px;
+    transition: all;
+}
+
+button {
+    all: unset;
+}
+
+.left {
+    // @extend .mt-1;
+    // @extend .ml-1;
+    //
+    & > *:not(:last-child) {
+        @extend .mr-1;
+    }
+}
+
+.center {
+    // @extend .mt-1;
+
+    & > *:not(:last-child) {
+        @extend .mr-1;
+    }
+}
+
+.right {
+    // @extend .mt-1;
+    // @extend .mr-1;
+
+    & > *:not(:last-child) {
+        @extend .mr-1;
+    }
+}
+
+.box {
+    padding: c.$base-margin;
+    // border-radius: c.$radius;
+    // background: t.$surface0
+}
+
+.workspaces button {
+    all: unset;
+    @extend .ml-1;
+}
+
+.bar {
+    background: transparent;
+}
+
+.panel {
+    margin: c.$base-margin;
+    padding: c.$base-margin;
+    background: t.$base;
+    border-radius: c.$radius;
+}
+
+.separator {
+    color: t.$subtext0;
+}
