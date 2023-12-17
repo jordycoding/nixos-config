@@ -65,3 +65,9 @@ button {
 .separator {
     color: t.$subtext0;
 }
+
+.osd {
+    @extend .bg-base;
+    @extend .p-2;
+    border-radius: c.$radius;
+}

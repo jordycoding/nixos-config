@@ -19,7 +19,8 @@ in
     ../../modules/usecases/school.nix
     ../../modules/usecases/hardening.nix
     ../../modules/usecases/downloading.nix
-    ../../modules/wm/gnome.nix
+    # ../../modules/wm/gnome.nix
+    ../../modules/wm/hyprland.nix
     ../../modules/catppuccin-grub.nix
     ./hardware-configuration.nix
   ];
@@ -39,11 +40,11 @@ in
   };
   services.printing.enable = true;
   services.printing.drivers = [
-    pkgs.epson-escpr
-    pkgs.epson-escpr2
+    # pkgs.epson-escpr
+    # pkgs.epson-escpr2
   ];
   services.avahi.enable = true;
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
   services.printing.browsing = true;
   services.avahi.publish.enable = true;
   services.avahi.publish.userServices = true;

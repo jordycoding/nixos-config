@@ -6,7 +6,7 @@ with lib;
   imports = [
     ./dotfiles
     ./programs
-    ./gnome
+    # ./gnome
     ./shell/hypr
     ./shell/ags
   ];
@@ -20,6 +20,7 @@ with lib;
       username = "jordy";
       homeDirectory = "/home/jordy";
       stateVersion = "23.05";
+      sessionVariables.NIXOS_OZONE_WL = "1";
     };
 
     programs.home-manager.enable = true;

@@ -57,7 +57,7 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
 
   users.users.jordy = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "input" "wireshark" ];
+    extraGroups = [ "wheel" "libvirtd" "input" "wireshark" "video" ];
     #Needed for podman rootless
     subUidRanges = [{ startUid = 100000; count = 65536; }];
     subGidRanges = [{ startGid = 100000; count = 65536; }];
@@ -65,12 +65,13 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   };
   # home-manager.users.jordy = import ./home.nix;
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = with pkgs; [ pkgs.xdg-desktop-portal-wlr ];
+  xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
   services.flatpak.enable = true;
 
   virtualisation = {
     docker = {
       enable = true;
+      enableOnBoot = false;
       rootless = {
         enable = true;
       };

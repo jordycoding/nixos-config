@@ -17,8 +17,8 @@ let
   nvimconfig = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "neovim-lua";
-    rev = "cedc533";
-    sha256 = "128is7q206lv4igdssl1x0kzcb6pzi3jfd63rwvl5ik7cf57l85l";
+    rev = "cb4da1a";
+    sha256 = "0lfx8qgmgi2q32ms71dfchkfizqd2r5grbipa5qpbgmi04d1h6ga";
   };
   roficatppuccin = pkgs.fetchFromGitHub {
     owner = "catppuccin";
@@ -31,6 +31,12 @@ let
     repo = "mako";
     rev = "9dd088aa5f4529a3dd4d9760415e340664cb86df";
     sha256 = "097x9jrkzvml6ngnhxwkzzl1l2awwv73yli1mhmpw83c0n8xck4x";
+  };
+  kittycatppuccin = pkgs.fetchFromGitHub {
+    owner = "catppuccin";
+    repo = "kitty";
+    rev = "4820b3ef3f4968cf3084b2239ce7d1e99ea04dda";
+    sha256 = "11gp5j3jgvy681d3x369312k2vpc5bgmnvgiwzznywdkzgwv355r";
   };
   dotdir = if config.dotfiles.isLaptop then laptopDotfiles else dotfiles;
 in
@@ -116,6 +122,28 @@ in
 
         default-timeout=5000
       '' + (builtins.readFile "${makocatppuccin}/src/mocha");
+    };
+
+    ".config/kitty/kitty.conf" = {
+      text = ''       
+        # BEGIN_KITTY_THEME
+        # Catppuccin Kitty Mocha
+        include themes/mocha.conf
+        # END_KITTY_THEME
+        font_family JetBrains Mono
+        font_size 12.0
+
+        tab_bar_min_tabs            1
+        tab_bar_edge                bottom
+        tab_bar_style               powerline
+        tab_powerline_style         slanted
+        tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else /'/'}
+     '';
+    };
+
+    ".config/kitty/themes" = {
+      source = "${kittycatppuccin}/themes";
+      recursive = true;
     };
   };
 }

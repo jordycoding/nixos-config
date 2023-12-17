@@ -4,7 +4,7 @@
     docker-compose
     home-manager
     discord
-    libreoffice
+    webcord
     thunderbird
     _1password-gui
     _1password

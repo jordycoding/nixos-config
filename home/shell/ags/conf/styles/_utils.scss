@@ -22,6 +22,9 @@
         padding-top: $i * c.$base-margin;
         padding-bottom: $i * c.$base-margin;
     }
+    .p-#{$i} {
+        padding: $i * c.$base-margin;
+    }
 }
 
 @each $name, $color in t.$colors {

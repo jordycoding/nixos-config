@@ -8,7 +8,7 @@
     enableCompletion = true;
 
     shellAliases = {
-      update = "doas nixos-rebuild switch --upgrade --flake /etc/nixos";
+      update = "(cd /etc/nixos; doas nix flake update) && doas nixos-rebuild switch --upgrade --flake /etc/nixos";
       ll = "exa -al --icons";
       ls = "exa";
       vim = "nvim";
@@ -113,7 +113,7 @@
       # Checks if tmux is available
       if [ -x $(command -v tmux) ]; then
         # Only runs pfetch when current pane is the only pane in the windows
-        if [[ $(tmux list-panes | wc -l) = "1" ]]; then
+        if [[ $(tmux list-panes &> /dev/null | wc -l) = "1" ]]; then
           pfetch
         fi
       else

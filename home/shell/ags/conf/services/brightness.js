@@ -31,13 +31,17 @@ class BrightnessService extends Service {
     return this._screenValue;
   }
 
+  increment() {
+    this.screen_value = this.screen_value + 0.1;
+  }
+
   // the setter has to be in snake_case too
   set screen_value(percent) {
     if (percent < 0) percent = 0;
 
     if (percent > 1) percent = 1;
 
-    Utils.execAsync(`brightnessctl s ${percent * 100}% -q`)
+    execAsync(`brightnessctl s ${percent * 100}% -q`)
       .then(() => {
         this._screen = percent;
 

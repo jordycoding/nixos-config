@@ -68,8 +68,6 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   };
   hardware.pulseaudio.enable = false;
 
-  services.onedrive.enable = true;
-
   # Needed for steam
   hardware.opengl.driSupport32Bit = true;
 
@@ -108,7 +106,7 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
 
   users.users.jordy = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "input" "wireshark" ];
+    extraGroups = [ "wheel" "libvirtd" "input" "wireshark" "video" ];
     #Needed for podman rootless
     subUidRanges = [{ startUid = 100000; count = 65536; }];
     subGidRanges = [{ startGid = 100000; count = 65536; }];

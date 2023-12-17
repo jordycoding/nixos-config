@@ -24,8 +24,6 @@
     pavucontrol
     xdg-utils
     xdg-user-dirs
-    xdg-desktop-portal
-    xdg-desktop-portal-wlr
     rnix-lsp
     jdt-language-server
     direnv

@@ -10,6 +10,52 @@ import Network from "resource:///com/github/Aylur/ags/service/network.js";
 import globalState from "./globalState.js";
 import HoverRevealer from "./components/hoverRevealer.js";
 
+// const OsdTest = () =>
+//   Widget.Box({
+//     vertical: false,
+//     classNames: ["osd"],
+//     children: [
+//       Widget.Label({
+//         connections: [
+//           [
+//             Osd,
+//             (self) => {
+//               self.label = Osd.type;
+//             },
+//             "notify::type",
+//           ],
+//         ],
+//         classNames: ["text", "mr-2"],
+//         label: "test",
+//       }),
+//       Widget.ProgressBar({
+//         vpack: "center",
+//         fraction: 0.5,
+//         connections: [
+//           [
+//             Brightness,
+//             (self) => {
+//               self.fraction = Brightness.screen_value;
+//             },
+//             "notify::screen-value",
+//           ],
+//         ],
+//       }),
+//     ],
+//   });
+//
+// const osdMon = ({ monitor } = {}) =>
+//   Widget.Window({
+//     css: "background: transparent;",
+//     visible: false,
+//     name: "osd",
+//     anchor: ["top"],
+//     monitor,
+//     layer: "overlay",
+//     child: OsdTest(),
+//     connections: [[Osd, (self) => (self.visible = Osd.visibility)]],
+//   });
+//
 const Workspaces = () =>
   Widget.Box({
     classNames: ["workspaces", "box", "sapphire"],
