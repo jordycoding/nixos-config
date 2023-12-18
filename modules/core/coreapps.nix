@@ -6,8 +6,6 @@
     discord
     webcord
     thunderbird
-    _1password-gui
-    _1password
     tmux
     neofetch
   ];

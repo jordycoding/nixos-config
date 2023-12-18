@@ -19,8 +19,9 @@ in
     ../../modules/usecases/school.nix
     ../../modules/usecases/hardening.nix
     ../../modules/usecases/downloading.nix
-    # ../../modules/wm/gnome.nix
-    ../../modules/wm/hyprland.nix
+    ../../modules/wm/gnome.nix
+    # ../../modules/wm/hyprland.nix
+    # ../../modules/wm/kde.nix
     ../../modules/catppuccin-grub.nix
     ./hardware-configuration.nix
   ];

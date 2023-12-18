@@ -7,13 +7,16 @@
     piper
     texlive.combined.scheme-full
     tidal-hifi
-    firefox-bin
+    firefox
     nicotine-plus
     qbittorrent
     swayosd
   ];
   programs._1password.enable = true;
-  programs._1password-gui.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "jordy" ];
+  };
   services.udev.packages = with pkgs; [ swayosd ];
   fonts.packages = with pkgs; [
     vistafonts

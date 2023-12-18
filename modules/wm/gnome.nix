@@ -17,7 +17,13 @@
     gjs
     cambalache
     gnome-network-displays
+    gnome-browser-connector
+    gradience
   ];
+  programs.kdeconnect.enable = true;
+  programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.gdm.enableGnomeKeyring = true;
   # systemd.user.services."ulauncher" = {
   #   description = "ulauncher";
   #   documentation = [ "https://ulauncher.io" ];
