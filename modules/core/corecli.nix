@@ -23,5 +23,8 @@
     openssl
     ripgrep
     libimobiledevice
+    efibootmgr
+    ollama
+    # openai-whisper
   ];
 }

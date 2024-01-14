@@ -18,7 +18,9 @@
     cambalache
     gnome-network-displays
     gnome-browser-connector
-    gradience
+    # gradience
+    impression
+    fragments
   ];
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;

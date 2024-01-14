@@ -1,6 +1,17 @@
 {
   description = "Jordy's NixOS Flake";
 
+  nixConfig =
+    {
+      extra-substituters = [
+        "https://nix-community.cachix.org"
+        "https://cuda-maintainers.cachix.org"
+      ];
+      extra-trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+      ];
+    };
   # This is the standard format for flake.nix.
   # `inputs` are the dependencies of the flake,
   # and `outputs` function will return all the build results of the flake.
@@ -17,6 +28,12 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hyprland.url = "github:hyprwm/Hyprland";
     ags.url = "github:Aylur/ags";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.3.0";
+
+      # Optional but recommended to limit the size of your system closure.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # `outputs` are all the build result of the flake.
@@ -29,7 +46,7 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, hyprland, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, hyprland, lanzaboote, home-manager, ... }@inputs:
     {
       nixosConfigurations = {
         # By default, NixOS will try to refer the nixosConfiguration with
@@ -50,6 +67,12 @@
             # Import the configuration.nix here, so that the
             # old configuration file can still take effect.
             # Note: configuration.nix itself is also a Nix Module,
+            # Lanzaboote stuff(secure boot)
+            lanzaboote.nixosModules.lanzaboote
+
+            ./modules/core/lanzaboote.nix
+            #-----------
+
             ./hosts/xpsoled
             home-manager.nixosModules.home-manager
             {

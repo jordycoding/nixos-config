@@ -27,6 +27,16 @@ in
   ];
 
   virtualisation.docker.enableNvidia = true;
+  nixpkgs.config.cudaSupport = true;
+
+  # boot.plymouth = {
+  #   enable = true;
+  #   theme = "bgrt";
+  # };
+  boot.initrd.verbose = false;
+  boot.consoleLogLevel = 0;
+  boot.kernelParams = [ "quiet" "udev.log_level=0" ];
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" ];
   languageservers.enable = true;
@@ -54,14 +64,21 @@ in
 
   home-manager.users.jordy.dotfiles.isLaptop = true;
   boot.loader = {
+    timeout = null;
     efi = {
       canTouchEfiVariables = true;
     };
+    # grub = {
+    #   efiSupport = true;
+    #   device = "nodev";
+    #   useOSProber = true;
+    #   gfxmodeEfi = "1920x1080";
+    # };
     grub = {
-      efiSupport = true;
-      device = "nodev";
-      useOSProber = true;
-      gfxmodeEfi = "1920x1080";
+      enable = false;
+    };
+    systemd-boot = {
+      enable = true;
     };
   };
 
