@@ -26,5 +26,7 @@
     efibootmgr
     ollama
     # openai-whisper
+    parted
+    multipath-tools
   ];
 }

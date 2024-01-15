@@ -63,6 +63,8 @@ in
   services.avahi.ipv6 = true;
 
   home-manager.users.jordy.dotfiles.isLaptop = true;
+
+  boot.extraModprobeConfig = "options kvm_intel nested=1";
   boot.loader = {
     timeout = null;
     efi = {

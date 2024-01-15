@@ -34,6 +34,7 @@
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    pipewire-screenaudio.url = "github:IceDBorn/pipewire-screenaudio";
   };
 
   # `outputs` are all the build result of the flake.
@@ -46,7 +47,7 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, hyprland, lanzaboote, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, hyprland, lanzaboote, home-manager, pipewire-screenaudio, ... }@inputs:
     {
       nixosConfigurations = {
         # By default, NixOS will try to refer the nixosConfiguration with
@@ -63,6 +64,7 @@
         "nixpsOLED" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
+          specialArgs = { inherit inputs; }; # this is the important part
           modules = [
             # Import the configuration.nix here, so that the
             # old configuration file can still take effect.

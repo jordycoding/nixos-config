@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
     libreoffice-fresh
@@ -7,10 +7,12 @@
     piper
     texlive.combined.scheme-full
     tidal-hifi
-    firefox
+    (firefox.override { nativeMessagingHosts = [ inputs.pipewire-screenaudio.packages.${pkgs.system}.default ]; })
     nicotine-plus
     qbittorrent
     swayosd
+    discord
+    webcord
   ];
   programs._1password.enable = true;
   programs._1password-gui = {

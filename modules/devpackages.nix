@@ -38,6 +38,8 @@ with lib;
       php82Packages.composer
       pkg-config
       cachix
+      bison
+      gnum4
     ]
     ++ (
       optionals (config.languageservers.enable) [

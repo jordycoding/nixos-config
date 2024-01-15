@@ -38,8 +38,6 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   };
   hardware.pulseaudio.enable = false;
 
-  services.onedrive.enable = true;
-
   # Needed for steam
   hardware.opengl.driSupport32Bit = true;
 
@@ -74,10 +72,12 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
       enableOnBoot = false;
       rootless = {
         enable = true;
+        setSocketVariable = true;
       };
     };
     libvirtd.enable = true;
   };
 
+  programs.virt-manager.enable = true;
   hardware.opengl.enable = true;
 }
