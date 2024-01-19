@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./gtk.nix
+    # ./gtk.nix
     ./dconf.nix
   ];
 }

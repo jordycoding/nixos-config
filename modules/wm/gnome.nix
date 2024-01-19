@@ -23,6 +23,7 @@ lib.mkIf (config.shell.gnome)
     # gradience
     impression
     fragments
+    adw-gtk3
   ];
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;

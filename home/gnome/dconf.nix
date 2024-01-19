@@ -17,5 +17,8 @@
     "org/gnome/desktop/lockdown" = {
       "disable-lock-screen" = false; # Why is this disabled exactly 
     };
+    "org/gnome/desktop/interface" = {
+      "gtk-theme" = "adw-gtk3-dark";
+    };
   };
 }
