@@ -12,6 +12,8 @@
     ./hardware-configuration.nix
   ];
 
+  shell.gnome = true;
+
   languageservers.enable = true;
   home-manager.users.jordy.dotfiles.isLaptop = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
