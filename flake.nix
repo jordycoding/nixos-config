@@ -61,7 +61,7 @@
         # Run the following command in the flake's directory to
         # deploy this configuration on any NixOS system:
         #   sudo nixos-rebuild switch --flake .#nixos-test
-        "nixpsOLED" = nixpkgs.lib.nixosSystem {
+        "Krypton" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
           specialArgs = { inherit inputs; }; # this is the important part

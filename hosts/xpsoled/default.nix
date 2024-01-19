@@ -80,7 +80,7 @@ in
     };
   };
 
-  networking.hostName = "nixpsOLED";
+  networking.hostName = "Krypton";
   networking.networkmanager.enable = true;
   networking.wireguard.enable = true;
   hardware.bluetooth.enable = true;
