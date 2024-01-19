@@ -53,6 +53,8 @@ with lib;
         omnisharp-roslyn
         texlab
         lldb
+        clang
+        clang-tools
       ]
     );
   };

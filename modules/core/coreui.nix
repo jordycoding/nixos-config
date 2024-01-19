@@ -4,6 +4,7 @@
     libreoffice-fresh
     thunderbird
     protonmail-bridge
+    protonvpn-gui
     piper
     texlive.combined.scheme-full
     tidal-hifi
