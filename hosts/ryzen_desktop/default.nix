@@ -8,7 +8,7 @@
     ../../modules/core
     ../../modules/usecases/gaming.nix
     ../../modules/usecases/downloading.nix
-    ../../modules/wm/gnome.nix
+    ../../modules/wm
     ./hardware-configuration.nix
   ];
 
