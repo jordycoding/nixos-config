@@ -6,5 +6,6 @@
     ./fzf.nix
     ./git.nix
     ./zsh.nix
+    ./ssh.nix
   ];
 }

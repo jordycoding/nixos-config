@@ -10,6 +10,7 @@ lib.mkIf (config.shell.gnome)
     gnome.gnome-tweaks
     gnome.geary
     gnome.gnome-boxes
+    gnome.dconf-editor
     ulauncher
     wmctrl
     foliate
