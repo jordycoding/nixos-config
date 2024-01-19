@@ -6,9 +6,7 @@ with lib;
   imports = [
     ./dotfiles
     ./programs
-    # ./gnome
-    ./shell/hypr
-    ./shell/ags
+    ./shell
   ];
 
   options.dotfiles = {

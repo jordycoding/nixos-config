@@ -1,4 +1,6 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, ... }:
+
+lib.mkIf (config.shell.gnome)
 {
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
@@ -8,7 +10,6 @@
     gnome.gnome-tweaks
     gnome.geary
     gnome.gnome-boxes
-    adw-gtk3
     ulauncher
     wmctrl
     foliate

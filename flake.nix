@@ -88,6 +88,24 @@
             }
           ];
         };
+
+        "argon" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/ryzen_desktop
+            home-manager.nixosModules.home-manager
+            {
+              # home-manager.sharedModules = [
+              #   hyprland.homeManagerModules.default
+              # ];
+              home-manager.useGlobalPkgs = true;
+              home-manager.extraSpecialArgs = { inherit inputs hyprland; }; # allows access to flake inputs in hm modules
+              home-manager.useUserPackages = true;
+              home-manager.users.jordy = import ./home;
+            }
+          ];
+        };
       };
     };
 }

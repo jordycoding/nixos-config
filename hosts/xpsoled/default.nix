@@ -19,20 +19,16 @@ in
     ../../modules/usecases/school.nix
     ../../modules/usecases/hardening.nix
     ../../modules/usecases/downloading.nix
-    ../../modules/wm/gnome.nix
-    # ../../modules/wm/hyprland.nix
-    # ../../modules/wm/kde.nix
     ../../modules/catppuccin-grub.nix
     ./hardware-configuration.nix
+    ../../modules/wm
   ];
+
+  shell.gnome = true;
 
   virtualisation.docker.enableNvidia = true;
   nixpkgs.config.cudaSupport = true;
 
-  # boot.plymouth = {
-  #   enable = true;
-  #   theme = "bgrt";
-  # };
   boot.initrd.verbose = false;
   boot.consoleLogLevel = 0;
   boot.kernelParams = [ "quiet" "udev.log_level=0" ];
@@ -93,7 +89,6 @@ in
 
   environment.systemPackages = with pkgs; [ nvidia-offload mesa-demos easyeffects ];
   services.xserver.videoDrivers = [ "nvidia" ];
-  # hardware.nvidia.open = true;
   hardware.nvidia.prime = {
     offload.enable = true;
     intelBusId = "PCI:0:2:0";

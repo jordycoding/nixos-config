@@ -1,4 +1,6 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
+
+lib.mkIf (config.shell.sway)
 {
   programs.sway = {
     enable = true;
