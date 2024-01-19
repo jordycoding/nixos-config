@@ -19,6 +19,10 @@
     };
     "org/gnome/desktop/interface" = {
       "gtk-theme" = "adw-gtk3-dark";
+      "color-scheme" = "prefer-dark";
+    };
+    "org/gnome/shell" = {
+      "favorite-apps" = [ "firefox.desktop" "discord.desktop" "tidal-hifi.desktop" "1password.desktop" "com.raggesilver.BlackBox.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Geary.desktop" "org.gnome.Calendar.desktop" "org.gnome.Settings.desktop" ];
     };
   };
 }
