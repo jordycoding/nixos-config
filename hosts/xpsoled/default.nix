@@ -107,4 +107,10 @@ in
       libvdpau-va-gl
     ];
   };
+
+  # Automatically disable fingerprint when external monitor desk connected
+  services.udev.extraRules = ''
+    ACTION=="add", ENV{PRODUCT}=="bda/2172/100", RUN+="${pkgs.bash}/bin/bash -c \"${pkgs.coreutils}/bin/ln -s /dev/null /run/systemd/transient/fprintd.service; ${pkgs.systemd}/bin/systemctl daemon-reload\""
+    ACTION=="remove", ENV{PRODUCT}=="bda/2172/100", RUN+="${pkgs.bash}/bin/bash -c \"${pkgs.coreutils}/bin/rm -f /run/systemd/transient/fprintd.service; ${pkgs.systemd}/bin/systemctl daemon-reload\""
+  '';
 }
