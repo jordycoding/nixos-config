@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p dialog nixpkgs-fmt
 shopt -s globstar
 
 disko_config () {
@@ -20,7 +21,7 @@ disko_config () {
     local diskoconfig=$(perl -lne "print \$1 if /.*\/(disko\/.*\.nix)/" ${configs[$choice-1]})
     if [ -z "$diskoconfig" ]
     then
-        add_disko_config
+        add_disko_config ${configs[$choice-1]}
     else
         clear
         echo $diskoconfig
@@ -28,6 +29,7 @@ disko_config () {
 }
 
 add_disko_config () {
+    echo $1
     local MENU_OPTIONS=
     local DISKO_OPTIONS=
     local COUNT=
@@ -42,6 +44,11 @@ add_disko_config () {
     local cmd=(dialog --clear --menu "No disko config in selected configuration, select one:" 22 76 16)
     local options=($MENU_OPTIONS)
     local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+
+    configfile=${disko_configs[$choice-1]}
+    clear
+    perl -i -0777 -spe "s/(?<=\Nimports\s=\s\[\n)(.*?)(?=\];)/\$1\$config/s" -- -config="$configfile" $1
+    nixpkgs-fmt $1
 }
 
 disko_config
