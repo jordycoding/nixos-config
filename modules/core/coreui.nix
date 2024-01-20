@@ -1,17 +1,14 @@
 { pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    libreoffice-fresh
     thunderbird
     protonmail-bridge
     protonvpn-gui
     piper
-    texlive.combined.scheme-full
     tidal-hifi
     (firefox.override { nativeMessagingHosts = [ inputs.pipewire-screenaudio.packages.${pkgs.system}.default ]; })
     nicotine-plus
     qbittorrent
-    swayosd
     discord
     webcord
   ];

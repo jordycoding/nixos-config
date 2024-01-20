@@ -1,4 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
+with lib;
+
 {
   environment.systemPackages = with pkgs; [
     docker-compose
@@ -17,16 +19,19 @@
     pciutils
     lm_sensors
     btop
-    hyperfine
     fio
     nurl
     openssl
     ripgrep
-    libimobiledevice
     efibootmgr
-    ollama
     # openai-whisper
     parted
-    multipath-tools
-  ];
+  ] ++ (
+    optionals (!config.core.minimal) [
+      multipath-tools
+      ollama
+      libimobiledevice
+      hyperfine
+    ]
+  );
 }

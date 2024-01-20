@@ -3,10 +3,10 @@ with lib;
 
 {
   options.shell = {
-    gnome = mkEnableOption "Enable Gnome";
-    hypr = mkEnableOption "Enable Hypr";
-    sway = mkEnableOption "Enable Sway";
-    kde = mkEnableOption "Enable KDE";
+    gnome = mkEnableOption "Gnome";
+    hypr = mkEnableOption "Hypr";
+    sway = mkEnableOption "Sway";
+    kde = mkEnableOption "KDE";
   };
   imports = [
     ./gnome.nix

@@ -35,6 +35,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pipewire-screenaudio.url = "github:IceDBorn/pipewire-screenaudio";
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # `outputs` are all the build result of the flake.
@@ -47,7 +49,7 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, hyprland, lanzaboote, home-manager, pipewire-screenaudio, ... }@inputs:
+  outputs = { self, nixpkgs, hyprland, lanzaboote, home-manager, pipewire-screenaudio, disko, ... }@inputs:
     {
       nixosConfigurations = {
         # By default, NixOS will try to refer the nixosConfiguration with
@@ -94,6 +96,25 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/ryzen_desktop
+            home-manager.nixosModules.home-manager
+            {
+              # home-manager.sharedModules = [
+              #   hyprland.homeManagerModules.default
+              # ];
+              home-manager.useGlobalPkgs = true;
+              home-manager.extraSpecialArgs = { inherit inputs hyprland; }; # allows access to flake inputs in hm modules
+              home-manager.useUserPackages = true;
+              home-manager.users.jordy = import ./home;
+            }
+          ];
+        };
+
+        "testvm" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/testvm.nix
+            disko.nixosModules.disko
             home-manager.nixosModules.home-manager
             {
               # home-manager.sharedModules = [
