@@ -1,9 +1,10 @@
 {
   imports = [
-    ../modules/system.nix
-    ../modules/core
-    ../modules/wm
-    ../disko/basic_btrfs.nix
+    ../../modules/system.nix
+    ../../modules/core
+    ../../modules/wm
+    ../../disko/basic_btrfs.nix
+    ./hardware-configuration.nix
   ];
 
   core.productivity = false;

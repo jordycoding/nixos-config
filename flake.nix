@@ -113,7 +113,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-            ./hosts/testvm.nix
+            ./hosts/testvm
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
             {
