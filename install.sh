@@ -118,7 +118,7 @@ install () {
             --msgbox "Setup has finished partitioning the disk and will now begin installation" 0 0
 
     sudo nixos-generate-config --no-filesystems --root /mnt > /dev/null
-    echo $(basename $nixconfig)
+    echo $(dirname $nixconfig)
 }
 
 choose_nix_config
