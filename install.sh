@@ -101,7 +101,7 @@ partition () {
         n|N) echo "Exiting..." && exit ;;
         *) echo "Invalid input" && exit ;;
     esac
-    sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $1 --arg disks '['"/dev/$disk"']'
+    sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $1 --arg disks "[ \"/dev/$disk\" ]"
 }
 
 disko_config
