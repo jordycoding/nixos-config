@@ -101,7 +101,6 @@ partition () {
             --title "Confirm" \
             --yesno "This will erase all contents on device $CHOICE, are you sure you want to proceed?" 0 0
     dialog_status=$?                
-    echo $dialog_status
     if [ "$dialog_status" -eq 0 ];
     then
         sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $diskoconfig --arg disks "[ \"$CHOICE\"]"
@@ -117,9 +116,24 @@ install () {
             --title "Finished partitioning" \
             --msgbox "Setup has finished partitioning the disk and will now begin installation" 0 0
 
-    configdir=$(dirname $nixconfig)
+    local configdir=$(dirname $nixconfig)
     sudo nixos-generate-config --no-filesystems --root /mnt --dir $configdir &> /dev/null
-    rm $configdir/configuration.nix
+    rm -f $configdir/configuration.nix
+
+    local hostname=$(perl -lne "print \$1 if /\s+networking\.hostName\s=\s\"(.*)\"/" $nixconfig)
+    dialog  --stdout \
+            --clear \
+            --backtitle "NixOS Installation" \
+            --title "Ready for installation" \
+            --yesno "Do you want to proceed with installing NixOS"
+    local confirmation=$?
+    if [ "$confirmation" -eq 0 ];
+    then
+        sudo nixos-install --flake /mnt/etc/nixos#$hostname
+    else
+        exit
+    fi
+
 }
 
 choose_nix_config
