@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p dialog nixpkgs-fmt
+#! nix-shell -i bash -p dialog nixpkgs-fmt perl
 shopt -s globstar
 
 disko_config () {
