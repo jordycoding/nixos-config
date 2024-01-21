@@ -94,11 +94,6 @@ partition () {
     echo "Choose disk to partition"
     lsblk -f
     read disk
-    if ! [ -f /dev/$disk ];
-    then
-        echo "Invalid disk, please choose again"
-        partition $1
-    fi
     echo "This will erase the contents on drive /dev/$disk, are you sure you wanna proceed? (y/n)"
     read answer
     case $answer in
