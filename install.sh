@@ -2,7 +2,7 @@
 #! nix-shell -i bash -p dialog nixpkgs-fmt perl jq
 shopt -s globstar
 
-disko_config () {
+choose_nix_config () {
     local MENU_OPTIONS=
     local CONFIG_OPTIONS=
     local COUNT=0
@@ -21,10 +21,11 @@ disko_config () {
     local diskoconfig=$(perl -lne "print \$1 if /.*\/(disko\/.*\.nix)/" ${configs[$choice-1]})
     if [ -z "$diskoconfig" ]
     then
-        add_disko_config ${configs[$choice-1]}
+        nixconfig=${configs[$choice-1]}
+        add_disko_config
     else
         clear
-        checkconfig ${configs[$choice-1]} $diskoconfig
+        checkconfig
     fi
 }
 
@@ -45,21 +46,21 @@ add_disko_config () {
     local options=($MENU_OPTIONS)
     local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 
-    configfile=${disko_configs[$choice-1]}
+    diskoconfig=${disko_configs[$choice-1]}
 
     clear
-    perl -i -0777 -spe "s/(?<=\Nimports\s=\s\[\n)(.*?)(?=\];)/\$1\n#Auto generated\n..\/..\/\$config\ninputs.disko.nixosModules.disko/s" -- -config="$configfile" $1
-    nixpkgs-fmt $1
+    perl -i -0777 -spe "s/(?<=\Nimports\s=\s\[\n)(.*?)(?=\];)/\$1\n#Auto generated\n..\/..\/\$config\ninputs.disko.nixosModules.disko/s" -- -config="$diskoconfig" $nixconfig
+    nixpkgs-fmt $nixconfig
     
-    checkconfig $1 $configfile
+    checkconfig
 }
 
 checkconfig () {
     echo
     echo "--System config--"
-    echo $1
+    echo $nixconfig
     echo
-    cat $1 
+    cat $nixconfig
     echo "Is this correct? (y/n)"
     read answer
     case $answer in
@@ -69,9 +70,9 @@ checkconfig () {
     esac
     echo
     echo "--Disko config--"
-    echo $2
+    echo $diskoconfig
     echo
-    cat $2
+    cat $diskoconfig
     echo "Is this correct? (y/n)"
     read answer
     case $answer in
@@ -79,14 +80,7 @@ checkconfig () {
         n|N) echo "Exiting..." && exit ;;
         *) echo "Invalid input" && exit ;;
     esac
-    echo "Press enter to begin installation"
-    read answer
-    if [ "$answer" = "" ];
-    then
-        partition $2
-    else
-        echo "cancelling"
-    fi
+    partition
 }
 
 partition () {
@@ -110,10 +104,10 @@ partition () {
     echo $dialog_status
     if [ "$dialog_status" -eq 0 ];
     then
-        sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $1 --arg disks "[ \"$CHOICE\"]"
+        sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $diskoconfig --arg disks "[ \"$CHOICE\"]"
     else
         exit 
     fi
 }
 
-disko_config
+choose_nix_config
