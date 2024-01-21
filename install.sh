@@ -126,9 +126,11 @@ install () {
             --backtitle "NixOS Installation" \
             --title "Ready for installation" \
             --yesno "Do you want to proceed with installing NixOS" 0 0
+
     local confirmation=$?
     if [ "$confirmation" -eq 0 ];
     then
+        sudo mkdir -p /mnt/etc/nixos
         sudo cp -r * /mnt/etc/nixos
         sudo nixos-install --flake /mnt/etc/nixos#$hostname
     else
