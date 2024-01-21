@@ -129,6 +129,7 @@ install () {
     local confirmation=$?
     if [ "$confirmation" -eq 0 ];
     then
+        sudo cp -r * /mnt/etc/nixos
         sudo nixos-install --flake /mnt/etc/nixos#$hostname
     else
         exit
