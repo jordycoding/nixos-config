@@ -125,7 +125,7 @@ install () {
             --clear \
             --backtitle "NixOS Installation" \
             --title "Ready for installation" \
-            --yesno "Do you want to proceed with installing NixOS"
+            --yesno "Do you want to proceed with installing NixOS" 0 0
     local confirmation=$?
     if [ "$confirmation" -eq 0 ];
     then
