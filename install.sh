@@ -115,7 +115,7 @@ install () {
     dialog  --clear \
             --backtitle "NixOS Installation" \
             --title "Finished partitioning" \
-            --msgbox "Setup has finished partitioning the disk and will now begin installation"
+            --msgbox "Setup has finished partitioning the disk and will now begin installation" 0 0
 
     sudo nixos-generate-config --no-filesystems --root /mnt > /dev/null
     echo $(basename $nixconfig)
