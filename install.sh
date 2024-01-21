@@ -47,7 +47,7 @@ add_disko_config () {
 
     configfile=${disko_configs[$choice-1]}
     clear
-    perl -i -0777 -spe "s/(?<=\Nimports\s=\s\[\n)(.*?)(?=\];)/\$1\$config/s" -- -config="$configfile" $1
+    perl -i -0777 -spe "s/(?<=\Nimports\s=\s\[\n)(.*?)(?=\];)/\$1..\/..\/\$config/s" -- -config="$configfile" $1
     nixpkgs-fmt $1
 }
 
