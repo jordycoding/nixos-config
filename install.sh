@@ -108,7 +108,7 @@ partition () {
             --yesno "This will erase all contents on device $CHOICE, are you sure you want to proceed?" 0 0
     dialog_status=$?                
     echo $dialog_status
-    if [ dialog_status -eq 0 ];
+    if [ "$dialog_status" -eq 0 ];
     then
         sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $1 --arg disks "[ \"$CHOICE\"]"
     else
