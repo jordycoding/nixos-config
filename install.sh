@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p dialog nixpkgs-fmt perl
+#! nix-shell -i bash -p dialog nixpkgs-fmt perl jq
 shopt -s globstar
 
 disko_config () {
@@ -90,13 +90,30 @@ checkconfig () {
 }
 
 partition () {
-    # sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $1 --arg disks "[ \"/dev/$disk\" ]"
-    dialog --backtitle "NixOS Installation" --title "Partitioning" --menu "Select disk" 22 76 16 \
-        $(lsblk -n --output TYPE,KNAME,MODEL | awk '$1=="disk"{print i++,$2}')
-}
-
-install () {
- 
+    readarray -t options <  <(lsblk -J -d -o PATH,MODEl \
+        | jq -r '.blockdevices[] | join(";")' \
+        | awk -v OFS="\n" -F';' '{print $1, $2}'
+        )
+    CHOICE=$(dialog --clear \
+                    --backtitle "NixOS Installation" \
+                    --title "Partitioning" \
+                    --menu "Select a disk to partition" \
+                    0 0 0 \
+                    "${options[@]}" \
+                    2>&1 >/dev/tty)
+    dialog  --stdout \
+            --clear \
+            --backtitle "NixOS Installation" \
+            --title "Confirm" \
+            --yesno "This will erase all contents on device $CHOICE, are you sure you want to proceed?" 0 0
+    dialog_status=$?                
+    echo $dialog_status
+    if [ dialog_status -eq 0 ];
+    then
+        sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $1 --arg disks "[ \"$CHOICE\"]"
+    else
+        exit 
+    fi
 }
 
 disko_config
