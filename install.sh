@@ -90,18 +90,13 @@ checkconfig () {
 }
 
 partition () {
-    clear
-    echo "Choose disk to partition"
-    lsblk -f
-    read disk
-    echo "This will erase the contents on drive /dev/$disk, are you sure you wanna proceed? (y/n)"
-    read answer
-    case $answer in
-        y|Y) ;;
-        n|N) echo "Exiting..." && exit ;;
-        *) echo "Invalid input" && exit ;;
-    esac
-    sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $1 --arg disks "[ \"/dev/$disk\" ]"
+    # sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $1 --arg disks "[ \"/dev/$disk\" ]"
+    dialog --backtitle "NixOS Installation" --title "Partitioning" --menu "Select disk" 22 76 16 \
+        $(lsblk -n --output TYPE,KNAME,MODEL | awk '$1=="disk"{print i++,$2}')
+}
+
+install () {
+ 
 }
 
 disko_config
