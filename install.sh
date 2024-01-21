@@ -24,7 +24,7 @@ disko_config () {
         add_disko_config ${configs[$choice-1]}
     else
         clear
-        echo $diskoconfig
+        checkconfig ${configs[$choice-1]} $diskoconfig
     fi
 }
 
@@ -46,9 +46,67 @@ add_disko_config () {
     local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 
     configfile=${disko_configs[$choice-1]}
+
     clear
-    perl -i -0777 -spe "s/(?<=\Nimports\s=\s\[\n)(.*?)(?=\];)/\$1..\/..\/\$config\ninputs.disko.nixosModules.disko/s" -- -config="$configfile" $1
+    perl -i -0777 -spe "s/(?<=\Nimports\s=\s\[\n)(.*?)(?=\];)/\$1\n#Auto generated\n..\/..\/\$config\ninputs.disko.nixosModules.disko/s" -- -config="$configfile" $1
     nixpkgs-fmt $1
+    
+    checkconfig $1 $configfile
+}
+
+checkconfig () {
+    echo
+    echo "--System config--"
+    echo $1
+    echo
+    cat $1 
+    echo "Is this correct? (y/n)"
+    read answer
+    case $answer in
+        y|Y) ;;
+        n|N) echo "Exiting..." && exit ;;
+        *) echo "Invalid input" && exit ;;
+    esac
+    echo
+    echo "--Disko config--"
+    echo $2
+    echo
+    cat $2
+    echo "Is this correct? (y/n)"
+    read answer
+    case $answer in
+        y|Y) ;;
+        n|N) echo "Exiting..." && exit ;;
+        *) echo "Invalid input" && exit ;;
+    esac
+    echo "Press enter to begin installation"
+    read answer
+    if [ "$answer" = "" ];
+    then
+        partition $2
+    else
+        echo "cancelling"
+    fi
+}
+
+partition () {
+    clear
+    echo "Choose disk to partition"
+    lsblk -f
+    read disk
+    if ! [ -f $disk ];
+    then
+        echo "Invalid disk, please choose again"
+        partition $1
+    fi
+    echo "This will erase the contents on drive $disk, are you sure you wanna proceed? (y/n)"
+    read answer
+    case $answer in
+        y|Y) ;;
+        n|N) echo "Exiting..." && exit ;;
+        *) echo "Invalid input" && exit ;;
+    esac
+    sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $1 --arg disks '['"/dev/$disk"']'
 }
 
 disko_config
