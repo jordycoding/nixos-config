@@ -105,6 +105,7 @@ partition () {
     if [ "$dialog_status" -eq 0 ];
     then
         sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko $diskoconfig --arg disks "[ \"$CHOICE\"]"
+        install
     else
         exit 
     fi
