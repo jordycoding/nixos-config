@@ -34,7 +34,7 @@ with lib;
       glade
       android-studio
       androidStudioPackages.beta
-      dotnet-sdk_7
+      dotnet-sdk_8
       php82
       php82Packages.composer
       pkg-config
