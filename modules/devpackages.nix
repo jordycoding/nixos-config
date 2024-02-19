@@ -6,6 +6,7 @@ with lib;
     enable = mkEnableOption "Enable language servers and related packages";
   };
   config = {
+    programs.nix-ld.enable = true;
     programs.wireshark.enable = true;
     programs.adb.enable = true;
     environment.systemPackages = with pkgs; [

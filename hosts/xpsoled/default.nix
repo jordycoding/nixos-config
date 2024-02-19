@@ -1,14 +1,5 @@
 { config, pkgs, lib, ... }:
 
-let
-  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
-    export __NV_PRIME_RENDER_OFFLOAD=1
-    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-    export __GLX_VENDOR_LIBRARY_NAME=nvidia
-    export __VK_LAYER_NV_optimus=NVIDIA_only
-    exec "$@"
-  '';
-in
 {
   imports = [
     ../../modules/system.nix
@@ -27,7 +18,7 @@ in
   shell.gnome = true;
 
   virtualisation.docker.enableNvidia = true;
-  nixpkgs.config.cudaSupport = true;
+  # nixpkgs.config.cudaSupport = true;
 
   boot.initrd.verbose = false;
   boot.consoleLogLevel = 0;
@@ -48,7 +39,7 @@ in
   services.printing.enable = true;
   services.printing.drivers = [
     # pkgs.epson-escpr
-    # pkgs.epson-escpr2
+    pkgs.epson-escpr2
   ];
   services.avahi.enable = true;
   services.avahi.nssmdns4 = true;
@@ -87,13 +78,32 @@ in
   systemd.services.NetworkManager-wait-online.enable = false;
   systemd.services.sabnzbd.wantedBy = lib.mkForce [ ]; # Disable service by default, reduces boot time
 
-  environment.systemPackages = with pkgs; [ nvidia-offload mesa-demos easyeffects ];
+  environment.systemPackages = with pkgs; [ mesa-demos easyeffects ];
+
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.prime = {
-    offload.enable = true;
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
+
+  services.syncthing = {
+    enable = true;
+    user = "jordy";
+    dataDir = "/home/jordy/syncthing";
+    configDir = "/home/jordy/.config/syncthing";
   };
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
+    nvidiaSettings = true;
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+  };
+  services.switcherooControl.enable = true;
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs ; [
