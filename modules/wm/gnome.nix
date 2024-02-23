@@ -24,6 +24,7 @@ lib.mkIf (config.shell.gnome)
     impression
     fragments
     adw-gtk3
+    mission-center
   ];
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
