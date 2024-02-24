@@ -17,8 +17,8 @@ let
   nvimconfig = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "neovim-lua";
-    rev = "1c44d10";
-    sha256 = "196qs2ssaya31q0if2prrilaff0mz83algd4l9fq9fy52ava4fis";
+    rev = "e26e922";
+    sha256 = "12r4rhqjkdvi7m540idfavl8k3z4vmlsqsmlvgpy6iip7gy6ghh8";
   };
   roficatppuccin = pkgs.fetchFromGitHub {
     owner = "catppuccin";
