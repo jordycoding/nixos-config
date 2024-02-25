@@ -103,7 +103,7 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-  services.switcherooControl.enable = true;
+  # services.switcherooControl.enable = true;
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs ; [

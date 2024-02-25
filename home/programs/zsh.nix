@@ -43,7 +43,7 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      DOTNET_ROOT = pkgs.dotnet-sdk_7.outPath;
+      DOTNET_ROOT = pkgs.dotnet-sdk_8.outPath;
     };
 
     plugins = [
