@@ -10,6 +10,7 @@ with lib;
     programs.wireshark.enable = true;
     programs.adb.enable = true;
     environment.systemPackages = with pkgs; [
+      bruno
       ruby
       gnumake
       coursier
