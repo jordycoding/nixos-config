@@ -25,7 +25,6 @@
     xdg-utils
     xdg-user-dirs
     rnix-lsp
-    jdt-language-server
     direnv
   ];
 }
