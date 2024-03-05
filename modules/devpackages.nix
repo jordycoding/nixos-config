@@ -57,6 +57,7 @@ with lib;
         lldb
         clang
         clang-tools
+        kotlin-language-server
       ]
     );
   };
