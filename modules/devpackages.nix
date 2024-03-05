@@ -58,6 +58,7 @@ with lib;
         clang
         clang-tools
         kotlin-language-server
+        jdt-language-server
       ]
     );
   };
