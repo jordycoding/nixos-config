@@ -14,6 +14,8 @@
     swayosd
     discord
     webcord
+    alacritty
+    kitty
   ];
   programs._1password.enable = true;
   programs._1password-gui = {

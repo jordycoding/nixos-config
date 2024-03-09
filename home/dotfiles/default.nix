@@ -5,20 +5,20 @@ let
   dotfiles = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "Dotfiles-Xps";
-    rev = "f82a2d6";
-    sha256 = "1lidaayajfg3a4lwcbgghrgxlr338bfn2gav0rs6yy2h0filpbqb";
+    rev = "17f288db11205d8fbdda18ae8ab533ac5ca251a6";
+    sha256 = "1ib91nrvc4f5js3nbh1g3fr4i81dqn9nmhpw5051qxmxsbw8mkmf";
   };
   laptopDotfiles = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "Dotfiles-Xps";
-    rev = "f7dc4de";
-    sha256 = "18nhazsbh8734mqja788anbbrkwnqgzbs4f822mjkcra8vv3vmwa";
+    rev = "74d70eb";
+    sha256 = "1ajj9kyf6i23nlv271diyprdifbrsr9q93zfrv9kkd7cfi42ldg1";
   };
   nvimconfig = pkgs.fetchFromGitHub {
     owner = "jordycoding";
     repo = "neovim-lua";
-    rev = "43a5c73";
-    sha256 = "0ccbnnz1hvglh39j7fiy3myrx7xq9z20fvzbxssin9qh015m3byg";
+    rev = "c40ddb0";
+    sha256 = "0apdmijadpfivyyvgm1vaaz0wi9lc72xdrvlw21f98avzb152s6v";
   };
   roficatppuccin = pkgs.fetchFromGitHub {
     owner = "catppuccin";
@@ -37,6 +37,10 @@ let
     repo = "kitty";
     rev = "4820b3ef3f4968cf3084b2239ce7d1e99ea04dda";
     sha256 = "11gp5j3jgvy681d3x369312k2vpc5bgmnvgiwzznywdkzgwv355r";
+  };
+  alacrittycatppuccin = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/catppuccin/alacritty/main/catppuccin-mocha.toml";
+    sha256 = "061yalrzpqivr67k2f8hsqixr77srgd8y47xvhp5vg0sjmh5lrcy";
   };
   dotdir = if config.dotfiles.isLaptop then laptopDotfiles else dotfiles;
 in
@@ -73,6 +77,10 @@ in
     ".config/alacritty" = {
       source = "${dotdir}/alacritty/.config/alacritty";
       recursive = true;
+    };
+
+    ".config/alacritty/catppuccin-mocha.toml" = {
+      source = "${alacrittycatppuccin}";
     };
 
     ".config/btop" = {
