@@ -19,6 +19,7 @@ with lib;
       verilog
       wireshark
       nodejs_latest
+      corepack_21
       python3
       python3Packages.pygments
       python3Packages.black
@@ -59,6 +60,7 @@ with lib;
         clang-tools
         kotlin-language-server
         jdt-language-server
+        # nixd
       ]
     );
   };

@@ -23,8 +23,6 @@
     gnome.zenity
     pavucontrol
     xdg-utils
-    xdg-user-dirs
-    rnix-lsp
     direnv
   ];
 }
