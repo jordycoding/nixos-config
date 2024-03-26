@@ -8,6 +8,12 @@
   ];
 
   users.users.jordy.extraGroups = [ "wheel" "libvirtd" "video" "media" "download" ];
+
+  users.users.testuser = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+  };
+
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
   networking.hostName = "Tungsten";
