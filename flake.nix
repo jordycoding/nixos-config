@@ -49,18 +49,11 @@
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
   outputs = { self, nixpkgs, nixpkgs-stable, hyprland, lanzaboote, home-manager, pipewire-screenaudio, ... }@inputs:
-    let
-      overlay-unstable = final: prev: {
-        unstable = nixpkgs.legacyPackages.${prev.system};
-        # use this variant if unfree packages are needed:
-        # unstable = import nixpkgs-unstable {
-        #   inherit system;
-        #   config.allowUnfree = true;
-        # };
-
-      };
+    let 
+    inherit (self) outputs;
     in
     {
+      overlays = import ./overlays.nix {inherit inputs;};
       nixosConfigurations = {
         # By default, NixOS will try to refer the nixosConfiguration with
         # its hostname, so the system named `nixos-test` will use this one.
@@ -121,9 +114,8 @@
 
         "Tungsten" = nixpkgs-stable.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs outputs; };
           modules = [
-            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
             ./hosts/nas
           ];
         };

@@ -6,6 +6,5 @@ lib.mkIf (config.homelab.sonarr)
     enable = true;
     package = pkgs.unstable.sonarr;
     openFirewall = true;
-    group = "media download";
   };
 }

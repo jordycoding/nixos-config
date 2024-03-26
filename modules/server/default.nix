@@ -3,15 +3,16 @@ with lib;
 
 {
   options.homelab = {
-    sonarr = mkEnabeOption "Enable Sonarr";
+    sonarr = mkEnableOption "Enable Sonarr";
     sabnzbd = mkEnableOption "Enable SABnzbd";
     radarr = mkEnableOption "Enable Radarr";
-    samba = mkEnableOption = "Enable Samba shares";
+    samba = mkEnableOption "Enable Samba shares";
   };
 
   imports = [
     ./sonarr.nix
     ./sabnzbd.nix
     ./radarr.nix
+    ./samba.nix
   ];
 }

@@ -1,4 +1,4 @@
-{ configs, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 lib.mkIf (config.homelab.radarr)
 {
@@ -6,6 +6,5 @@ lib.mkIf (config.homelab.radarr)
     enable = true;
     package = pkgs.unstable.radarr;
     openFirewall = true;
-    group = "media download";
   };
 }
