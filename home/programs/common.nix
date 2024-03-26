@@ -12,7 +12,6 @@
     mako
     swayidle
     swaylock
-    waybar
     grim
     slurp
     alacritty

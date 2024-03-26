@@ -60,7 +60,7 @@ with lib;
         clang-tools
         kotlin-language-server
         jdt-language-server
-        # nixd
+        nixd
       ]
     );
   };

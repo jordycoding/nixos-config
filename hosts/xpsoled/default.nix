@@ -15,6 +15,8 @@
     ../../modules/wm
   ];
 
+  users.users.jordy.extraGroups = [ "wheel" "libvirtd" "input" "wireshark" "video" ];
+
   shell.gnome = true;
 
   virtualisation.docker.enableNvidia = true;

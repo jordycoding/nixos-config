@@ -24,6 +24,7 @@
 
     # Official NixOS package source, using nixos-unstable branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hyprland.url = "github:hyprwm/Hyprland";
@@ -47,7 +48,18 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, hyprland, lanzaboote, home-manager, pipewire-screenaudio, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, hyprland, lanzaboote, home-manager, pipewire-screenaudio, ... }@inputs:
+    let
+      overlay-unstable = final: prev: {
+        unstable = nixpkgs.legacyPackages.${prev.system};
+        # use this variant if unfree packages are needed:
+        # unstable = import nixpkgs-unstable {
+        #   inherit system;
+        #   config.allowUnfree = true;
+        # };
+
+      };
+    in
     {
       nixosConfigurations = {
         # By default, NixOS will try to refer the nixosConfiguration with
@@ -104,6 +116,15 @@
               home-manager.useUserPackages = true;
               home-manager.users.jordy = import ./home;
             }
+          ];
+        };
+
+        "Tungsten" = nixpkgs-stable.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+            ./hosts/nas
           ];
         };
       };
