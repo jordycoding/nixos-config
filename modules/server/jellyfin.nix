@@ -28,7 +28,7 @@ lib.mkIf (config.homelab.jellyfin)
         hostPath = "/mnt/Media/Movies";
       };
       "/anime" = {
-        hostPath = "/mnt/media/Anime";
+        hostPath = "/mnt/Media/Anime";
       };
     };
 
