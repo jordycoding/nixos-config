@@ -29,6 +29,10 @@
     extraGroups = [ "media" "download" ];
   };
 
+  users.users.sabnzbd = {
+    extraGroups = [ "download" ];
+  }
+
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
     enable = true;
@@ -55,6 +59,7 @@
   homelab.sonarr = true;
   homelab.radarr = true;
   homelab.prowlarr = true;
+  homelab.recyclarr = true;
   homelab.sabnzbd = true;
   homelab.samba = true;
 
@@ -62,7 +67,9 @@
     "d /mnt/Media/Series 0770 root media - -"
     "d /mnt/Media/Movies 0770 root media - -"
     "d /mnt/Media/Anime 0770 root media - -"
-    "d /mnt/Downloads/Sab 0770 root download - -"
+    "d /mnt/Ssd/Downloads/Sab 0770 root download - -"
+    "d /mnt/Ssd/Downloads/Sab/incomplete 0770 root download - -"
+    "d /mnt/Ssd/Downloads/Sab/complete 0770 root download - -"
   ];
 
   networking.hostId = "034146c2";

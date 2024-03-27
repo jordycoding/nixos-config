@@ -8,6 +8,7 @@ with lib;
     radarr = mkEnableOption "Enable Radarr";
     samba = mkEnableOption "Enable Samba shares";
     prowlarr = mkEnableOption "Enable Prowlarr";
+    recyclarr = mkEnableOption "Enable Recyclarr";
   };
 
   imports = [
@@ -15,6 +16,7 @@ with lib;
     ./sabnzbd.nix
     ./radarr.nix
     ./prowlarr.nix
+    ./recyclarr.nix
     ./samba.nix
   ];
 }
