@@ -54,6 +54,7 @@
 
   homelab.sonarr = true;
   homelab.radarr = true;
+  homelab.prowlarr = true;
   homelab.sabnzbd = true;
   homelab.samba = true;
 
