@@ -38,9 +38,6 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   };
   hardware.pulseaudio.enable = false;
 
-  # Needed for steam
-  hardware.opengl.driSupport32Bit = true;
-
   services.openssh.enable = true;
 
   security.sudo.enable = false;
@@ -85,5 +82,4 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   };
 
   programs.virt-manager.enable = true;
-  hardware.opengl.enable = true;
 }

@@ -12,7 +12,38 @@
     overlays = [
       outputs.overlays.unstable-packages
     ];
+    config.packageOverrides = prev: {
+      jellyfin-ffmpeg = prev.jellyfin-ffmpeg.overrideAttrs (old: rec {
+        configureFlags =
+          # Remove deprecated Intel Media SDK support
+          (builtins.filter (e: e != "--enable-libmfx") old.configureFlags)
+          # Add Intel VPL support
+          ++ [ "--enable-libvpl" ];
+        buildInputs = old.buildInputs ++ [
+          # VPL dispatcher
+          pkgs.unstable.libvpl
+        ];
+      });
+    };
   };
+
+  environment.systemPackages = with pkgs; [
+    intel-gpu-tools
+  ];
+
+  environment.shellAliases = {
+    update = "(cd /etc/nixos; doas nix flake update) && doas nixos-rebuild switch --upgrade --flake /etc/nixos";
+  };
+
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
+      (pkgs.callPackage ../../pkgs/onevpl-intel-gpu.nix { })
+    ];
+  };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
   users.users.jordy.extraGroups = [ "wheel" "libvirtd" "video" "media" "download" ];
 
@@ -29,8 +60,8 @@
     extraGroups = [ "media" "download" ];
   };
 
-  users.users.sabnzbd = {
-    extraGroups = [ "download" ];
+  users.users.jellyfin = {
+    extraGroups = [ "media" ];
   };
 
   boot.loader.efi.canTouchEfiVariables = true;
@@ -43,6 +74,7 @@
     ];
   };
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+  boot.kernelParams = [ "i915.enable_guc=3" ];
 
   networking.hostName = "Tungsten";
   services.fstrim.enable = true;
