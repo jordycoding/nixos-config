@@ -9,6 +9,7 @@ with lib;
     samba = mkEnableOption "Enable Samba shares";
     prowlarr = mkEnableOption "Enable Prowlarr";
     recyclarr = mkEnableOption "Enable Recyclarr";
+    jellyfin = mkEnableOption "Enable Jellyfin";
   };
 
   imports = [
@@ -18,5 +19,6 @@ with lib;
     ./prowlarr.nix
     ./recyclarr.nix
     ./samba.nix
+    ./jellyfin.nix
   ];
 }

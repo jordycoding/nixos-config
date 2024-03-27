@@ -31,7 +31,7 @@
 
   users.users.sabnzbd = {
     extraGroups = [ "download" ];
-  }
+  };
 
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
@@ -50,7 +50,6 @@
   networking.firewall = {
     enable = true;
     allowPing = true;
-    allowedTCPPorts = [ 8080 ];
   };
 
   users.groups.media = { };
@@ -62,6 +61,7 @@
   homelab.recyclarr = true;
   homelab.sabnzbd = true;
   homelab.samba = true;
+  homelab.jellyfin = true;
 
   systemd.tmpfiles.rules = [
     "d /mnt/Media/Series 0770 root media - -"

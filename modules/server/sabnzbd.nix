@@ -6,4 +6,6 @@ lib.mkIf (config.homelab.sabnzbd)
     enable = true;
     package = pkgs.unstable.sabnzbd;
   };
+
+  networking.firewall.allowedTCPPorts = [ 8080 ];
 }
