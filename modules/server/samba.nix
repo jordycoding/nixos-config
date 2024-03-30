@@ -25,28 +25,31 @@ lib.mkIf (config.homelab.samba)
         path = "/mnt/Media/Series";
         browseable = "yes";
         "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0760";
+        "create mask" = "0774";
+        "directory mask" = "0770";
         "force group" = "media";
         "valid users" = "@media";
+        "read only" = "no";
       };
       movies = {
         path = "/mnt/Media/Movies";
         browseable = "yes";
         "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0760";
+        "create mask" = "0774";
+        "directory mask" = "0770";
         "force group" = "media";
         "valid users" = "@media";
+        "read only" = "no";
       };
       anime = {
         path = "/mnt/Media/Anime";
         browseable = "yes";
         "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0760";
+        "create mask" = "0774";
+        "directory mask" = "0770";
         "force group" = "media";
         "valid users" = "@media";
+        "read only" = "no";
       };
     };
   };
