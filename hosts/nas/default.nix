@@ -12,19 +12,6 @@
     overlays = [
       outputs.overlays.unstable-packages
     ];
-    config.packageOverrides = prev: {
-      jellyfin-ffmpeg = prev.jellyfin-ffmpeg.overrideAttrs (old: rec {
-        configureFlags =
-          # Remove deprecated Intel Media SDK support
-          (builtins.filter (e: e != "--enable-libmfx") old.configureFlags)
-          # Add Intel VPL support
-          ++ [ "--enable-libvpl" ];
-        buildInputs = old.buildInputs ++ [
-          # VPL dispatcher
-          pkgs.unstable.libvpl
-        ];
-      });
-    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -50,18 +37,6 @@
   users.users.testuser = {
     isNormalUser = true;
     shell = pkgs.zsh;
-  };
-
-  users.users.sonarr = {
-    extraGroups = [ "media" "download" ];
-  };
-
-  users.users.radarr = {
-    extraGroups = [ "media" "download" ];
-  };
-
-  users.users.jellyfin = {
-    extraGroups = [ "media" ];
   };
 
   boot.loader.efi.canTouchEfiVariables = true;
@@ -93,7 +68,8 @@
   homelab.recyclarr = true;
   homelab.sabnzbd = true;
   homelab.samba = true;
-  homelab.jellyfin = true;
+  homelab.plex = true;
+  homelab.dnsmasq = true;
 
   systemd.tmpfiles.rules = [
     "d /mnt/Media/Series 0770 root media - -"

@@ -10,6 +10,8 @@ with lib;
     prowlarr = mkEnableOption "Enable Prowlarr";
     recyclarr = mkEnableOption "Enable Recyclarr";
     jellyfin = mkEnableOption "Enable Jellyfin";
+    plex = mkEnableOption "Enable plex";
+    dnsmasq = mkEnableOption "Enable Dnsmasq";
   };
 
   imports = [
@@ -20,5 +22,7 @@ with lib;
     ./recyclarr.nix
     ./samba.nix
     ./jellyfin.nix
+    ./plex.nix
+    ./dnsmasq.nix
   ];
 }
