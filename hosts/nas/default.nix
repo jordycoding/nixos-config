@@ -70,6 +70,9 @@
   homelab.samba = true;
   homelab.plex = true;
   homelab.dnsmasq = true;
+  homelab.caddy = true;
+  homelab.cockpit = true;
+  homelab.bazarr = true;
 
   systemd.tmpfiles.rules = [
     "d /mnt/Media/Series 0770 root media - -"

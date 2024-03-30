@@ -12,6 +12,9 @@ with lib;
     jellyfin = mkEnableOption "Enable Jellyfin";
     plex = mkEnableOption "Enable plex";
     dnsmasq = mkEnableOption "Enable Dnsmasq";
+    caddy = mkEnableOption "Enable Caddy";
+    cockpit = mkEnableOption "Enable Cockpit";
+    bazarr = mkEnableOption "Enable Bazarr";
   };
 
   imports = [
@@ -24,5 +27,8 @@ with lib;
     ./jellyfin.nix
     ./plex.nix
     ./dnsmasq.nix
+    ./caddy.nix
+    ./cockpit.nix
+    ./bazarr.nix
   ];
 }
