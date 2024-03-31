@@ -1,4 +1,4 @@
-{ config, outputs, pkgs, lib, ... }:
+{ config, inputs, outputs, pkgs, lib, ... }:
 
 {
   imports = [
@@ -16,6 +16,7 @@
 
   environment.systemPackages = with pkgs; [
     intel-gpu-tools
+    inputs.nixguard.packages.x86_64-linux.default
   ];
 
   environment.shellAliases = {

@@ -28,6 +28,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hyprland.url = "github:hyprwm/Hyprland";
+    nixguard.url = "github:jordycoding/nixguard";
     ags.url = "github:Aylur/ags";
     agenix.url = "github:ryantm/agenix";
     lanzaboote = {
