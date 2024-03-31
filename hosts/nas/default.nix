@@ -7,6 +7,19 @@
     ../../modules/server
     ./hardware-configuration.nix
   ];
+  age.secrets.wgPrivkey = {
+    file = ../../secrets/wgPrivkey.age;
+    mode = "770";
+    owner = "systemd-network";
+    group = "systemd-network";
+  };
+  networking.useNetworkd = true;
+  systemd.network.enable = true;
+  services.resolved = {
+    extraConfig = ''
+      DNSStubListener=no
+    '';
+  };
 
   nixpkgs = {
     overlays = [
@@ -17,6 +30,7 @@
   environment.systemPackages = with pkgs; [
     intel-gpu-tools
     inputs.nixguard.packages.x86_64-linux.default
+    wireguard-tools
   ];
 
   environment.shellAliases = {
@@ -41,6 +55,7 @@
   };
 
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.timeout = 0;
   boot.loader.grub = {
     enable = true;
     zfsSupport = true;

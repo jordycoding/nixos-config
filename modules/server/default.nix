@@ -30,5 +30,6 @@ with lib;
     ./caddy.nix
     ./cockpit.nix
     ./bazarr.nix
+    ./vpn.nix
   ];
 }
