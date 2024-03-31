@@ -29,6 +29,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hyprland.url = "github:hyprwm/Hyprland";
     ags.url = "github:Aylur/ags";
+    agenix.url = "github:ryantm/agenix";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.3.0";
 
@@ -49,11 +50,11 @@
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
   outputs = { self, nixpkgs, nixpkgs-stable, hyprland, lanzaboote, home-manager, pipewire-screenaudio, ... }@inputs:
-    let 
-    inherit (self) outputs;
+    let
+      inherit (self) outputs;
     in
     {
-      overlays = import ./overlays.nix {inherit inputs;};
+      overlays = import ./overlays.nix { inherit inputs; };
       nixosConfigurations = {
         # By default, NixOS will try to refer the nixosConfiguration with
         # its hostname, so the system named `nixos-test` will use this one.
@@ -117,6 +118,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/nas
+            agenix.nixosModules.default
           ];
         };
       };
