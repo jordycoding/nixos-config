@@ -49,7 +49,7 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, nixpkgs-stable, hyprland, lanzaboote, home-manager, pipewire-screenaudio, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, hyprland, agenix, lanzaboote, home-manager, pipewire-screenaudio, ... }@inputs:
     let
       inherit (self) outputs;
     in
