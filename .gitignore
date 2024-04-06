@@ -131,3 +131,4 @@ dist
 
 # Ignore compiled css
 bar.css
+flake.lock
