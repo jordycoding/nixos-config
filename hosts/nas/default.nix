@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/core/corecli.nix
+    ../../modules/upgrade-diff.nix
     ../../modules/system.nix
     ../../modules/server
     ./hardware-configuration.nix
@@ -19,6 +20,18 @@
     extraConfig = ''
       DNSStubListener=no
     '';
+  };
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--print-build-logs"
+    ];
+    dates = "04:30";
+    randomizedDelaySec = "45min";
   };
 
   nixpkgs = {

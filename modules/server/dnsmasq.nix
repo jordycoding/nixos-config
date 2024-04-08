@@ -5,7 +5,6 @@ lib.mkIf (config.homelab.dnsmasq)
   services.dnsmasq = {
     enable = true;
     package = pkgs.unstable.dnsmasq;
-    resolveLocalQueries = true;
     settings = {
       listen-address = [ "::1" "127.0.0.1" "192.168.1.74" ];
       interface = "enp3s0";

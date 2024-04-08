@@ -132,3 +132,5 @@ dist
 # Ignore compiled css
 bar.css
 flake.lock
+client-*.toml
+config.toml
