@@ -51,6 +51,9 @@ lib.mkIf (config.homelab.samba)
         "valid users" = "@media";
         "read only" = "no";
       };
+      homes = {
+        browseable = "yes";
+      };
     };
   };
 
