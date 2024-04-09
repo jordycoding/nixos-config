@@ -53,6 +53,7 @@ lib.mkIf (config.homelab.samba)
       };
       homes = {
         browseable = "yes";
+        "read only" = "no";
       };
     };
   };
