@@ -5,4 +5,9 @@
       config.allowUnfree = true;
     };
   };
+  samba = final: prev: {
+    samba = prev.samba.override {
+      enableMDNS = true;
+    };
+  };
 }
