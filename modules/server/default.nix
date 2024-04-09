@@ -15,6 +15,7 @@ with lib;
     caddy = mkEnableOption "Enable Caddy";
     cockpit = mkEnableOption "Enable Cockpit";
     bazarr = mkEnableOption "Enable Bazarr";
+    avahi = mkEnableOption "Enable avahi";
   };
 
   imports = [
@@ -31,5 +32,6 @@ with lib;
     ./cockpit.nix
     ./bazarr.nix
     ./vpn.nix
+    ./avahi.nix
   ];
 }

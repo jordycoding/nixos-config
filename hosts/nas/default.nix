@@ -102,6 +102,7 @@
   homelab.caddy = true;
   homelab.cockpit = true;
   homelab.bazarr = true;
+  homelab.avahi = true;
 
   systemd.tmpfiles.rules = [
     "d /mnt/Media/Series 0770 root media - -"
