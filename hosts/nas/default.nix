@@ -16,11 +16,13 @@
   };
   networking.useNetworkd = true;
   systemd.network.enable = true;
+
   services.resolved = {
     extraConfig = ''
       DNSStubListener=no
     '';
   };
+  services.zfs.autoScrub.enable = true;
 
   system.autoUpgrade = {
     enable = true;
