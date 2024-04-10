@@ -40,7 +40,7 @@ in
     };
 
     ".config/alacritty/catppuccin-mocha.toml" = {
-      source = "${alacrittycatppuccin}";
+      source = "${generated.alacrittycatppuccin.src}";
     };
 
     ".config/btop" = {
@@ -75,7 +75,7 @@ in
     };
 
     ".config/kitty/themes" = {
-      source = "${geneated.kittycatppuccin}/themes";
+      source = "${generated.kittycatppuccin.src}/themes";
       recursive = true;
     };
   };

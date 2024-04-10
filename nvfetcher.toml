@@ -9,3 +9,7 @@ fetch.github = "jordycoding/Dotfiles-Xps"
 [kittycatppuccin]
 src.git = "https://github.com/catppuccin/kitty.git"
 fetch.github = "catppuccin/kitty"
+
+[alacrittycatppuccin]
+src.git = "https://github.com/catppuccin/alacritty.git"
+fetch.github = "catppuccin/alacritty"

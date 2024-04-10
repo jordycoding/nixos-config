@@ -1,4 +1,24 @@
 {
+    "alacrittycatppuccin": {
+        "cargoLocks": null,
+        "date": "2024-04-09",
+        "extract": null,
+        "name": "alacrittycatppuccin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "catppuccin",
+            "repo": "alacritty",
+            "rev": "94800165c13998b600a9da9d29c330de9f28618e",
+            "sha256": "sha256-Pi1Hicv3wPALGgqurdTzXEzJNx7vVh+8B9tlqhRpR2Y=",
+            "type": "github"
+        },
+        "version": "94800165c13998b600a9da9d29c330de9f28618e"
+    },
     "dotfiles": {
         "cargoLocks": null,
         "date": "2024-03-09",
@@ -18,6 +38,26 @@
             "type": "github"
         },
         "version": "74d70eba06c19bf8ae9c956c35cb108092cce86c"
+    },
+    "kittycatppuccin": {
+        "cargoLocks": null,
+        "date": "2024-01-10",
+        "extract": null,
+        "name": "kittycatppuccin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "catppuccin",
+            "repo": "kitty",
+            "rev": "d7d61716a83cd135344cbb353af9d197c5d7cec1",
+            "sha256": "sha256-mRFa+40fuJCUrR1o4zMi7AlgjRtFmii4fNsQyD8hIjM=",
+            "type": "github"
+        },
+        "version": "d7d61716a83cd135344cbb353af9d197c5d7cec1"
     },
     "neovim": {
         "cargoLocks": null,
