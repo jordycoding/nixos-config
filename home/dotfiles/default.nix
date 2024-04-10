@@ -40,7 +40,7 @@ let
   };
   alacrittycatppuccin = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/catppuccin/alacritty/main/catppuccin-mocha.toml";
-    sha256 = "061yalrzpqivr67k2f8hsqixr77srgd8y47xvhp5vg0sjmh5lrcy";
+    sha256 = "sha256-/N3rwIZ0SJBiE7TiBs4pEjhzM1f2hr26WXM3ifUzzOY=";
   };
   dotdir = if config.dotfiles.isLaptop then laptopDotfiles else dotfiles;
 in

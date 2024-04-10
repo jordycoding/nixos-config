@@ -23,6 +23,7 @@
   # nixpkgs.config.cudaSupport = true;
 
   boot.initrd.verbose = false;
+  boot.initrd.systemd.enable = true;
   boot.consoleLogLevel = 0;
   boot.kernelParams = [ "quiet" "udev.log_level=0" ];
 
@@ -74,7 +75,7 @@
   systemd.services.NetworkManager-wait-online.enable = false;
   systemd.services.sabnzbd.wantedBy = lib.mkForce [ ]; # Disable service by default, reduces boot time
 
-  environment.systemPackages = with pkgs; [ mesa-demos easyeffects ];
+  environment.systemPackages = with pkgs; [ mesa-demos easyeffects tpm2-tss];
 
   services.xserver.videoDrivers = [ "nvidia" ];
 

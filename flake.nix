@@ -77,9 +77,9 @@
             # old configuration file can still take effect.
             # Note: configuration.nix itself is also a Nix Module,
             # Lanzaboote stuff(secure boot)
-            lanzaboote.nixosModules.lanzaboote
+             lanzaboote.nixosModules.lanzaboote
 
-            ./modules/core/lanzaboote.nix
+             ./modules/core/lanzaboote.nix
             #-----------
 
             ./hosts/xpsoled

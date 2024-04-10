@@ -14,15 +14,23 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b9eddc74-e609-4860-aadd-f026ab4e8146";
+    { device = "/dev/disk/by-uuid/097652a2-566a-425e-b867-7660372d6a96";
       fsType = "btrfs";
       options = [ "subvol=@nixos" ];
     };
 
+  boot.initrd.luks.devices."nixos".device = "/dev/disk/by-uuid/93132f27-9c27-4c41-85dc-07d70c64214d";
+
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/b9eddc74-e609-4860-aadd-f026ab4e8146";
+    { device = "/dev/disk/by-uuid/097652a2-566a-425e-b867-7660372d6a96";
       fsType = "btrfs";
       options = [ "subvol=@home" ];
+    };
+
+  fileSystems."/var/log" =
+    { device = "/dev/disk/by-uuid/097652a2-566a-425e-b867-7660372d6a96";
+      fsType = "btrfs";
+      options = [ "subvol=@var_log" ];
     };
 
   fileSystems."/boot" =
@@ -40,6 +48,5 @@
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
