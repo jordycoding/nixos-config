@@ -13,22 +13,6 @@
   time.timeZone = "Europe/Amsterdam";
 
   security.rtkit.enable = true;
-  security.pki.certificates = [
-    "-----BEGIN CERTIFICATE-----
-MIICBzCCAaygAwIBAgIUXmj14sDxC/5atKG6ew4Zv4j+5dcwCgYIKoZIzj0EAwIw
-ejELMAkGA1UEBhMCTkwxEjAQBgNVBAgMCUZyaWVzbGFuZDESMBAGA1UEBwwJSGFy
-bGluZ2VuMQ8wDQYDVQQKDAZBbGtlbWExEjAQBgNVBAMMCWFsa2VtYS5jbzEeMBwG
-CSqGSIb3DQEJARYPam9yZHlAYWxrZW1hLmNvMB4XDTIyMTAyMTEzNTAzNVoXDTIz
-MTAyMTEzNTAzNVowejELMAkGA1UEBhMCTkwxEjAQBgNVBAgMCUZyaWVzbGFuZDES
-MBAGA1UEBwwJSGFybGluZ2VuMQ8wDQYDVQQKDAZBbGtlbWExEjAQBgNVBAMMCWFs
-a2VtYS5jbzEeMBwGCSqGSIb3DQEJARYPam9yZHlAYWxrZW1hLmNvMFkwEwYHKoZI
-zj0CAQYIKoZIzj0DAQcDQgAEYTIN+uWbsUoT8Or8z6kdF44pVyq1u1WRuw+zRLV3
-06rU6OvzuSY9HJ7sxm5p7tMuVKKVoFSNFET0rslEYBVwHaMQMA4wDAYDVR0TBAUw
-AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
-/ePfJArhn7oCIQDS6qX2U94OLyqamDWqD5c0KPIRUqIXUaDxqCs2mZdzkg==
------END CERTIFICATE-----
-"
-  ];
 
   services.pipewire = {
     enable = true;
@@ -59,7 +43,6 @@ AwEB/zAKBggqhkjOPQQDAgNJADBGAiEAnDaCpDb8fSIRgZO4EUhoyvLeiOlL4F3D
   };
   # home-manager.users.jordy = import ./home.nix;
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
   services.flatpak.enable = true;
 
   virtualisation = {
