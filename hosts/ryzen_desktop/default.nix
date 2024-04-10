@@ -27,5 +27,7 @@
   systemd.services.NetworkManager-wait-online.enable = false;
   networking.interfaces.enp34s0.wakeOnLan.enable = true;
   # networking.networkmanager.insertNameservers = [ "192.168.1.21" ];
+
+  core.enableUI = true;
   services.fstrim.enable = true;
 }

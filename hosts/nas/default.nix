@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/core/corecli.nix
+    ../../modules/core
     ../../modules/upgrade-diff.nix
     ../../modules/system.nix
     ../../modules/server
@@ -106,6 +106,7 @@
   homelab.cockpit = true;
   homelab.bazarr = true;
   homelab.avahi = true;
+  core.enableUI = true;
 
   systemd.tmpfiles.rules = [
     "d /mnt/Media/Series 0770 root media - -"

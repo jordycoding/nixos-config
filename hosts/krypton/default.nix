@@ -18,6 +18,7 @@
   users.users.jordy.extraGroups = [ "wheel" "libvirtd" "input" "wireshark" "video" ];
 
   shell.gnome = true;
+  core.enableUI = true;
 
   virtualisation.docker.enableNvidia = true;
   # nixpkgs.config.cudaSupport = true;
@@ -75,7 +76,7 @@
   systemd.services.NetworkManager-wait-online.enable = false;
   systemd.services.sabnzbd.wantedBy = lib.mkForce [ ]; # Disable service by default, reduces boot time
 
-  environment.systemPackages = with pkgs; [ mesa-demos easyeffects tpm2-tss];
+  environment.systemPackages = with pkgs; [ mesa-demos easyeffects tpm2-tss ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
