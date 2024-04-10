@@ -59,12 +59,6 @@
     efi = {
       canTouchEfiVariables = true;
     };
-    # grub = {
-    #   efiSupport = true;
-    #   device = "nodev";
-    #   useOSProber = true;
-    #   gfxmodeEfi = "1920x1080";
-    # };
     grub = {
       enable = false;
     };
