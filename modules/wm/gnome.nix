@@ -25,6 +25,7 @@ lib.mkIf (config.shell.gnome)
     fragments
     adw-gtk3
     mission-center
+    gnome-firmware
   ];
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;

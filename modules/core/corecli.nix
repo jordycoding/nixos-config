@@ -28,5 +28,6 @@
     # openai-whisper
     parted
     multipath-tools
+    ncdu
   ];
 }
