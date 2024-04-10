@@ -1,0 +1,11 @@
+[neovim]
+src.git = "https://github.com/jordycoding/neovim-lua.git"
+fetch.github = "jordycoding/neovim-lua"
+
+[dotfiles]
+src.git = "https://github.com/jordycoding/Dotfiles-Xps.git"
+fetch.github = "jordycoding/Dotfiles-Xps"
+
+[kittycatppuccin]
+src.git = "https://github.com/catppuccin/kitty.git"
+fetch.github = "catppuccin/kitty"

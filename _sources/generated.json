@@ -1,0 +1,42 @@
+{
+    "dotfiles": {
+        "cargoLocks": null,
+        "date": "2024-03-09",
+        "extract": null,
+        "name": "dotfiles",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jordycoding",
+            "repo": "Dotfiles-Xps",
+            "rev": "74d70eba06c19bf8ae9c956c35cb108092cce86c",
+            "sha256": "sha256-4TUqSHTstDnTzu6PhFPWebnY8vWxhSM2tUNE4/xMUqo=",
+            "type": "github"
+        },
+        "version": "74d70eba06c19bf8ae9c956c35cb108092cce86c"
+    },
+    "neovim": {
+        "cargoLocks": null,
+        "date": "2024-04-08",
+        "extract": null,
+        "name": "neovim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jordycoding",
+            "repo": "neovim-lua",
+            "rev": "c80fd6f0c0bfbc54a00e7f2f937c3276f8c83f6d",
+            "sha256": "sha256-snMU9U1MSvpTVanO+HtyVJLr5YexBF7SuFPY1ZObQ6M=",
+            "type": "github"
+        },
+        "version": "c80fd6f0c0bfbc54a00e7f2f937c3276f8c83f6d"
+    }
+}

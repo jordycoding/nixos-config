@@ -25,9 +25,9 @@
     libimobiledevice
     efibootmgr
     ollama
-    # openai-whisper
     parted
     multipath-tools
     ncdu
+    nvfetcher
   ];
 }

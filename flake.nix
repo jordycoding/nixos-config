@@ -77,12 +77,12 @@
             # old configuration file can still take effect.
             # Note: configuration.nix itself is also a Nix Module,
             # Lanzaboote stuff(secure boot)
-             lanzaboote.nixosModules.lanzaboote
+            lanzaboote.nixosModules.lanzaboote
 
-             ./modules/core/lanzaboote.nix
+            ./modules/core/lanzaboote.nix
             #-----------
 
-            ./hosts/xpsoled
+            ./hosts/krypton
             home-manager.nixosModules.home-manager
             {
               home-manager.sharedModules = [
@@ -107,7 +107,7 @@
               #   hyprland.homeManagerModules.default
               # ];
               home-manager.useGlobalPkgs = true;
-              home-manager.extraSpecialArgs = { inherit inputs hyprland; }; # allows access to flake inputs in hm modules
+              home-manager.extraSpecialArgs = { inherit inputs hyprland outputs; }; # allows access to flake inputs in hm modules
               home-manager.useUserPackages = true;
               home-manager.users.jordy = import ./home;
             }
