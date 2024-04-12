@@ -39,14 +39,14 @@
   };
   neovim = {
     pname = "neovim";
-    version = "c80fd6f0c0bfbc54a00e7f2f937c3276f8c83f6d";
+    version = "cf5e6c734e2b376399c58d9ef1df763c1276d9d2";
     src = fetchFromGitHub {
       owner = "jordycoding";
       repo = "neovim-lua";
-      rev = "c80fd6f0c0bfbc54a00e7f2f937c3276f8c83f6d";
+      rev = "cf5e6c734e2b376399c58d9ef1df763c1276d9d2";
       fetchSubmodules = false;
-      sha256 = "sha256-snMU9U1MSvpTVanO+HtyVJLr5YexBF7SuFPY1ZObQ6M=";
+      sha256 = "sha256-l8oRTg82hRK4QDe7yag/ScSdWJhHsdll8z0A0O+LIWA=";
     };
-    date = "2024-04-08";
+    date = "2024-04-12";
   };
 }

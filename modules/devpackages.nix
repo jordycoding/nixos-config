@@ -14,7 +14,6 @@ with lib;
       ruby
       gnumake
       coursier
-      metals
       circt
       verilog
       wireshark
@@ -23,7 +22,6 @@ with lib;
       python3
       python3Packages.pygments
       python3Packages.black
-      efm-langserver
       vscode
       neovim
       git
@@ -43,6 +41,8 @@ with lib;
       cachix
       bison
       gnum4
+      go
+      gotools
     ]
     ++ (
       optionals (config.languageservers.enable) [
@@ -61,6 +61,7 @@ with lib;
         kotlin-language-server
         jdt-language-server
         nixd
+        gopls
       ]
     );
   };

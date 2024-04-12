@@ -23,5 +23,11 @@
     "org/gnome/shell" = {
       "favorite-apps" = [ "firefox.desktop" "discord.desktop" "tidal-hifi.desktop" "1password.desktop" "kitty.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Geary.desktop" "org.gnome.Calendar.desktop" "org.gnome.Settings.desktop" ];
     };
+    "org/gnome/desktop/wm/keybindings" = {
+      "switch-to-workspace-1" = [ "<Super>1" ];
+      "switch-to-workspace-2" = [ "<Super>2" ];
+      "switch-to-workspace-3" = [ "<Super>3" ];
+      "switch-to-workspace-4" = [ "<Super>4" ];
+    };
   };
 }
