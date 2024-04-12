@@ -29,10 +29,11 @@
   security.doas.extraRules = [
     { groups = [ "wheel" ]; keepEnv = true; persist = true; }
   ];
+  programs.zsh.enable = true;
+  environment.pathsToLink = [ "/share/zsh" ];
 
   # Needed for network printing
   # services.printing.listenAddresses = [ "*:631" ]; # Not 100% sure this is needed and you might want to restrict to the local network
-  programs.zsh.enable = true;
 
   users.users.jordy = {
     isNormalUser = true;

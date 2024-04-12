@@ -72,7 +72,14 @@
   networking.hostName = "Krypton";
   networking.networkmanager.enable = true;
   networking.wireguard.enable = true;
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    settings = {
+      General = {
+        Experimental = true;
+      };
+    };
+    enable = true;
+  };
   systemd.services.NetworkManager-wait-online.enable = false;
   systemd.services.sabnzbd.wantedBy = lib.mkForce [ ]; # Disable service by default, reduces boot time
 
