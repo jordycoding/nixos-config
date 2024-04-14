@@ -19,6 +19,7 @@ with lib;
     cockpit = mkEnableOption "Enable Cockpit";
     bazarr = mkEnableOption "Enable Bazarr";
     avahi = mkEnableOption "Enable avahi";
+    dyndns = mkEnableOption "Enable ddclient for dynamicdns";
   };
 
   imports = [
@@ -36,5 +37,6 @@ with lib;
     ./bazarr.nix
     ./vpn.nix
     ./avahi.nix
+    ./dyndns.nix
   ];
 }

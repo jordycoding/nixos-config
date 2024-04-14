@@ -5,4 +5,5 @@ let
 in
 {
   "wgPrivkey.age".publicKeys = [ system1 ];
+  "ddPassword.age".publicKeys = [ system1 ];
 }

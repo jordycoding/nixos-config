@@ -14,6 +14,9 @@
     owner = "systemd-network";
     group = "systemd-network";
   };
+  age.secrets.ddPassword = {
+    file = ../../secrets/ddPassword.age;
+  };
   networking.useNetworkd = true;
   systemd.network.enable = true;
 
@@ -109,6 +112,7 @@
   homelab.cockpit = true;
   homelab.bazarr = true;
   homelab.avahi = true;
+  homelab.dyndns = true;
   core.enableUI = false;
 
   systemd.tmpfiles.rules = [
