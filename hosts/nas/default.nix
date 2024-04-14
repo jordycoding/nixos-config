@@ -113,6 +113,7 @@
   homelab.bazarr = true;
   homelab.avahi = true;
   homelab.dyndns = true;
+  homelab.gitea = true;
   core.enableUI = false;
 
   systemd.tmpfiles.rules = [

@@ -20,6 +20,7 @@ with lib;
     bazarr = mkEnableOption "Enable Bazarr";
     avahi = mkEnableOption "Enable avahi";
     dyndns = mkEnableOption "Enable ddclient for dynamicdns";
+    gitea = mkEnableOption "Enable gitea";
   };
 
   imports = [
@@ -38,5 +39,6 @@ with lib;
     ./vpn.nix
     ./avahi.nix
     ./dyndns.nix
+    ./gitea.nix
   ];
 }

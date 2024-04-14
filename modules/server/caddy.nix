@@ -41,6 +41,13 @@ lib.mkIf (config.homelab.caddy)
           '';
         };
       })
+      (lib.mkIf (config.homelab.gitea) {
+        "https://gitea.alkema.co" = {
+          extraConfig = ''
+            reverse_proxy http://127.0.0.1:3000
+          '';
+        };
+      })
     ];
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];
