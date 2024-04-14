@@ -13,3 +13,7 @@ fetch.github = "catppuccin/kitty"
 [alacrittycatppuccin]
 src.git = "https://github.com/catppuccin/alacritty.git"
 fetch.github = "catppuccin/alacritty"
+
+[dnsblacklist]
+src.manual = "2024.0414.0101.52"
+fetch.url = "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/dnsmasq/pro.plus.txt"

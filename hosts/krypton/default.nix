@@ -19,6 +19,7 @@
 
   shell.gnome = true;
   core.enableUI = true;
+  services.flatpak.enable = true;
 
   virtualisation.docker.enableNvidia = true;
   # nixpkgs.config.cudaSupport = true;

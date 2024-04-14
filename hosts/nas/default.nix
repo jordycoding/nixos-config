@@ -101,12 +101,15 @@
   homelab.sabnzbd = true;
   homelab.samba = true;
   homelab.plex = true;
-  homelab.dnsmasq = true;
+  homelab.dnsmasq = {
+    enable = true;
+    blacklist = true;
+  };
   homelab.caddy = true;
   homelab.cockpit = true;
   homelab.bazarr = true;
   homelab.avahi = true;
-  core.enableUI = true;
+  core.enableUI = false;
 
   systemd.tmpfiles.rules = [
     "d /mnt/Media/Series 0770 root media - -"

@@ -15,6 +15,7 @@
   users.users.jordy.extraGroups = [ "wheel" "libvirtd" "input" "wireshark" "video" ];
 
   shell.gnome = true;
+  services.flatpak.enable = true;
 
   languageservers.enable = true;
   home-manager.users.jordy.dotfiles.isLaptop = true;

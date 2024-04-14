@@ -43,8 +43,6 @@
     shell = pkgs.zsh;
   };
   # home-manager.users.jordy = import ./home.nix;
-  xdg.portal.enable = true;
-  services.flatpak.enable = true;
 
   virtualisation = {
     docker = {

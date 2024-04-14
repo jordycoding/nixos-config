@@ -19,6 +19,21 @@
         },
         "version": "94800165c13998b600a9da9d29c330de9f28618e"
     },
+    "dnsblacklist": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "dnsblacklist",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-bfSLTpC2s7HmNAKb9J/pUBLfSqq5D8xIU/nha5YuJNA=",
+            "type": "url",
+            "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/dnsmasq/pro.plus.txt"
+        },
+        "version": "2024.0414.0101.52"
+    },
     "dotfiles": {
         "cargoLocks": null,
         "date": "2024-03-09",

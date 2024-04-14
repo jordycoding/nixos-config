@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
 
-lib.mkIf (config.homelab.dnsmasq)
+with lib;
+let
+  generated = pkgs.callPackage ../../_sources/generated.nix { };
+in
+lib.mkIf (config.homelab.dnsmasq.enable)
 {
   services.dnsmasq = {
     enable = true;
@@ -17,6 +21,7 @@ lib.mkIf (config.homelab.dnsmasq)
         ++ lib.optionals (config.homelab.caddy && config.homelab.sabnzbd) [ "/sab.home.arpa/192.168.1.74" ]
         ++ lib.optionals (config.homelab.caddy && config.homelab.bazarr) [ "/bazarr.home.arpa/192.168.1.74" ];
     };
+    extraConfig = lib.mkIf (config.homelab.dnsmasq.blacklist) (builtins.readFile generated.dnsblacklist.src);
   };
   networking.firewall.allowedTCPPorts = [ 53 ];
   networking.firewall.allowedUDPPorts = [ 53 ];

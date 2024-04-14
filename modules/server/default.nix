@@ -11,7 +11,10 @@ with lib;
     recyclarr = mkEnableOption "Enable Recyclarr";
     jellyfin = mkEnableOption "Enable Jellyfin";
     plex = mkEnableOption "Enable plex";
-    dnsmasq = mkEnableOption "Enable Dnsmasq";
+    dnsmasq = {
+      enable = mkEnableOption "Enable dnsmasq";
+      blacklist = mkEnableOption "Enable blacklist";
+    };
     caddy = mkEnableOption "Enable Caddy";
     cockpit = mkEnableOption "Enable Cockpit";
     bazarr = mkEnableOption "Enable Bazarr";
