@@ -19,6 +19,12 @@
   };
   networking.useNetworkd = true;
   systemd.network.enable = true;
+  services.openssh.settings.PasswordAuthentication = false;
+  users.users.jordy = {
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH4s3aJHRoD5U8cTu1+NrvA1LTSDpAOqcTTF0p2L6UGF"
+    ];
+  };
 
   services.resolved = {
     extraConfig = ''

@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
@@ -14,37 +15,49 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "nix/root";
+    {
+      device = "nix/root";
       fsType = "zfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/7522-A7AF";
+    {
+      device = "/dev/disk/by-uuid/7522-A7AF";
       fsType = "vfat";
     };
 
   fileSystems."/mnt/Media/Anime" =
-    { device = "media/Anime";
+    {
+      device = "media/Anime";
       fsType = "zfs";
     };
 
   fileSystems."/mnt/Media/Movies" =
-    { device = "media/Movies";
+    {
+      device = "media/Movies";
       fsType = "zfs";
     };
 
   fileSystems."/mnt/Media/Series" =
-    { device = "media/Series";
+    {
+      device = "media/Series";
       fsType = "zfs";
     };
 
   fileSystems."/mnt/Ssd/Downloads" =
-    { device = "ssd/Downloads";
+    {
+      device = "ssd/Downloads";
       fsType = "zfs";
     };
 
+  fileSystems."/mnt/Ssd/Data" = {
+    device = "ssd/Data";
+    fsType = "zfs";
+  };
+
   fileSystems."/home" =
-    { device = "ssd/Homes";
+    {
+      device = "ssd/Homes";
       fsType = "zfs";
     };
 
