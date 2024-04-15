@@ -13,7 +13,6 @@ lib.mkIf (config.homelab.syncthing)
     group = "syncthing";
     dataDir = "/mnt/Ssd/Data/Syncthing";
     openDefaultPorts = true;
-    guiAddress = "syncthing.alkema.co";
   };
 
   systemd.tmpfiles.rules = [

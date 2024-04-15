@@ -51,7 +51,9 @@ lib.mkIf (config.homelab.caddy)
       (lib.mkIf (config.homelab.syncthing) {
         "https://syncthing.alkema.co" = {
           extraConfig = ''
-            reverse_proxy http://127.0.0.1:8384
+            reverse_proxy http://localhost:8384 {
+                header_up Host {upstream_hostport}
+            }
           '';
         };
       })
