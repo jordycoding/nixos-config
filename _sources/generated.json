@@ -32,7 +32,7 @@
             "type": "url",
             "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/dnsmasq/pro.plus.txt"
         },
-        "version": "2024.0414.0101.52"
+        "version": "2024.0415.0058.48"
     },
     "dotfiles": {
         "cargoLocks": null,

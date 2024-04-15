@@ -15,7 +15,7 @@
   };
   dnsblacklist = {
     pname = "dnsblacklist";
-    version = "2024.0414.0101.52";
+    version = "2024.0415.0058.48";
     src = fetchurl {
       url = "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/dnsmasq/pro.plus.txt";
       sha256 = "sha256-bfSLTpC2s7HmNAKb9J/pUBLfSqq5D8xIU/nha5YuJNA=";
