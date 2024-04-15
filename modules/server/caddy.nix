@@ -48,6 +48,13 @@ lib.mkIf (config.homelab.caddy)
           '';
         };
       })
+      (lib.mkIf (config.homelab.syncthing) {
+        "https://syncthing.alkema.co" = {
+          extraConfig = ''
+            reverse_proxy http://127.0.0.1:8384
+          '';
+        };
+      })
     ];
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];

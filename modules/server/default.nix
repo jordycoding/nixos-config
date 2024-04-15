@@ -21,6 +21,7 @@ with lib;
     avahi = mkEnableOption "Enable avahi";
     dyndns = mkEnableOption "Enable ddclient for dynamicdns";
     gitea = mkEnableOption "Enable gitea";
+    syncthing = mkEnableOption "Enable syncthing";
   };
 
   imports = [
@@ -40,5 +41,6 @@ with lib;
     ./avahi.nix
     ./dyndns.nix
     ./gitea.nix
+    ./syncthing.nix
   ];
 }

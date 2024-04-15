@@ -16,4 +16,4 @@ fetch.github = "catppuccin/alacritty"
 
 [dnsblacklist]
 src.manual = "2024.0415.0058.48"
-fetch.url = "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/dnsmasq/pro.plus.txt"
+fetch.url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/dnsmasq/pro.plus.txt"

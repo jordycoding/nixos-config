@@ -120,6 +120,7 @@
   homelab.avahi = true;
   homelab.dyndns = true;
   homelab.gitea = true;
+  homelab.syncthing = true;
   core.enableUI = false;
 
   systemd.tmpfiles.rules = [
