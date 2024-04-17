@@ -15,7 +15,7 @@
   };
   dnsblacklist = {
     pname = "dnsblacklist";
-    version = "2024.0415.0058.48";
+    version = "2024.0417.0102.50";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/dnsmasq/pro.plus.txt";
       sha256 = "sha256-IJeEdkccgNO307ORj3y0KZTHjG77pYI9+PXUMI5Uxg0=";
@@ -47,13 +47,13 @@
   };
   neovim = {
     pname = "neovim";
-    version = "578dab361a35cc2174dfa7bf12b00af964e6d32d";
+    version = "7e9d2a6165db7bb4c6ba7e6dd563941cf9a7999a";
     src = fetchFromGitHub {
       owner = "jordycoding";
       repo = "neovim-lua";
-      rev = "578dab361a35cc2174dfa7bf12b00af964e6d32d";
+      rev = "7e9d2a6165db7bb4c6ba7e6dd563941cf9a7999a";
       fetchSubmodules = false;
-      sha256 = "sha256-/g5qxpdK8ejA8d5qIMCZjfCBq7MQjMp5i540xe0FXKE=";
+      sha256 = "sha256-x3PP1YFRlEnUmq8ZBE1W6oomPDoDZ/YmQDSycT+UyRI=";
     };
     date = "2024-04-17";
   };

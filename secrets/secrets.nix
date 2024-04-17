@@ -6,4 +6,6 @@ in
 {
   "wgPrivkey.age".publicKeys = [ system1 ];
   "ddPassword.age".publicKeys = [ system1 ];
+  "sonarrApiKey.age".publicKeys = [ system1 ];
+  "radarrApiKey.age".publicKeys = [ system1 ];
 }

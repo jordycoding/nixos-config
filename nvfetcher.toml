@@ -15,5 +15,5 @@ src.git = "https://github.com/catppuccin/alacritty.git"
 fetch.github = "catppuccin/alacritty"
 
 [dnsblacklist]
-src.manual = "2024.0415.0058.48"
+src.manual = "2024.0417.0102.50"
 fetch.url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/dnsmasq/pro.plus.txt"

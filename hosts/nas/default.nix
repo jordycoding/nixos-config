@@ -17,6 +17,7 @@
   age.secrets.ddPassword = {
     file = ../../secrets/ddPassword.age;
   };
+
   networking.useNetworkd = true;
   systemd.network.enable = true;
   services.openssh.settings.PasswordAuthentication = false;
@@ -49,6 +50,7 @@
     overlays = [
       outputs.overlays.unstable-packages
       outputs.overlays.samba
+      outputs.overlays.jellyfin-ffmpeg-overlay
     ];
   };
 
@@ -67,7 +69,6 @@
     extraPackages = with pkgs; [
       intel-media-driver
       intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
-      (pkgs.callPackage ../../pkgs/onevpl-intel-gpu.nix { })
     ];
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
@@ -115,12 +116,13 @@
     blacklist = true;
   };
   homelab.caddy = true;
-  homelab.cockpit = true;
   homelab.bazarr = true;
   homelab.avahi = true;
   homelab.dyndns = true;
   homelab.gitea = true;
   homelab.syncthing = true;
+  homelab.grafana = true;
+  homelab.jellyfin = true;
   core.enableUI = false;
 
   systemd.tmpfiles.rules = [

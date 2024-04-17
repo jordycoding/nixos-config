@@ -4,25 +4,24 @@ lib.mkIf (config.homelab.jellyfin)
 {
   services.jellyfin = {
     enable = true;
-    package = pkgs.jellyfin;
+    package = pkgs.unstable.jellyfin;
     openFirewall = true;
+  };
+  environment.variables = {
+    NEOReadDebugKeys = "1";
+    OverrideGpuAddressSpace = "48";
+  };
+
+  systemd.services."jellyfin".environment = {
+    NEOReadDebugKeys = "1";
+    OverrideGpuAddressSpace = "48";
   };
 
   users.users.jellyfin = {
     extraGroups = [ "media" ];
   };
 
-  nixpkgs.config.packageOverrides = prev: {
-    jellyfin-ffmpeg = prev.jellyfin-ffmpeg.overrideAttrs (old: rec {
-      configureFlags =
-        # Remove deprecated Intel Media SDK support
-        (builtins.filter (e: e != "--enable-libmfx") old.configureFlags)
-        # Add Intel VPL support
-        ++ [ "--enable-libvpl" ];
-      buildInputs = old.buildInputs ++ [
-        # VPL dispatcher
-        pkgs.unstable.libvpl
-      ];
-    });
-  };
+  hardware.opengl.extraPackages = with pkgs; [
+    unstable.onevpl-intel-gpu
+  ];
 }

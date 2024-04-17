@@ -22,6 +22,7 @@ with lib;
     dyndns = mkEnableOption "Enable ddclient for dynamicdns";
     gitea = mkEnableOption "Enable gitea";
     syncthing = mkEnableOption "Enable syncthing";
+    grafana = mkEnableOption "Enable grafana";
   };
 
   imports = [
@@ -42,5 +43,7 @@ with lib;
     ./dyndns.nix
     ./gitea.nix
     ./syncthing.nix
+    ./grafana.nix
+    ./prometheus-scrapes.nix
   ];
 }

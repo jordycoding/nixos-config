@@ -41,6 +41,20 @@ lib.mkIf (config.homelab.caddy)
           '';
         };
       })
+      (lib.mkIf (config.homelab.grafana) {
+        "http://grafana.home.arpa" = {
+          extraConfig = ''
+            reverse_proxy http://127.0.0.1:2342
+          '';
+        };
+      })
+      (lib.mkIf (config.homelab.grafana) {
+        "http://prometheus.home.arpa" = {
+          extraConfig = ''
+            reverse_proxy http://127.0.0.1:9090
+          '';
+        };
+      })
       (lib.mkIf (config.homelab.gitea) {
         "https://gitea.alkema.co" = {
           extraConfig = ''
