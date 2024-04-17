@@ -28,9 +28,9 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-IJeEdkccgNO307ORj3y0KZTHjG77pYI9+PXUMI5Uxg0=",
+            "sha256": "sha256-URg0ye2IUzq8dLgJiHRG6rCvDvtBZPQ5VuNK1OPsSgY=",
             "type": "url",
-            "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/dnsmasq/pro.plus.txt"
+            "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/7c587c2/dnsmasq/pro.plus.txt"
         },
         "version": "2024.0417.0102.50"
     },

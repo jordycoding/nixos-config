@@ -17,8 +17,8 @@
     pname = "dnsblacklist";
     version = "2024.0417.0102.50";
     src = fetchurl {
-      url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/dnsmasq/pro.plus.txt";
-      sha256 = "sha256-IJeEdkccgNO307ORj3y0KZTHjG77pYI9+PXUMI5Uxg0=";
+      url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/7c587c2/dnsmasq/pro.plus.txt";
+      sha256 = "sha256-URg0ye2IUzq8dLgJiHRG6rCvDvtBZPQ5VuNK1OPsSgY=";
     };
   };
   dotfiles = {
