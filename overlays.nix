@@ -7,9 +7,16 @@
       };
     };
   };
+  jellyfin-web-overlay = final: prev: {
+    jellyfin-web = prev.jellyfin-web.overrideAttrs (old: {
+      postInstal = ''
+        sed -i -e "s+</body>+<script plugin=\"Jellyscrub\" version=\"1.0.0.0\" src=\"/Trickplay/ClientScript\"></script></body>+" $out/share/jellyfin-web/index.html
+      '';
+    });
+  };
   unstable-packages = final: _prev: {
     unstable = import inputs.nixpkgs {
-      overlays = [ jellyfin-ffmpeg-overlay ];
+      overlays = [ jellyfin-ffmpeg-overlay jellyfin-web-overlay ];
       system = "x86_64-linux";
       config.allowUnfree = true;
     };
