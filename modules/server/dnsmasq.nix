@@ -10,7 +10,7 @@ lib.mkIf (config.homelab.dnsmasq.enable)
     enable = true;
     package = pkgs.unstable.dnsmasq;
     settings = {
-      listen-address = [ "::1" "127.0.0.1" "192.168.1.74" ];
+      listen-address = [ "::1" "127.0.0.1" "192.168.1.74" "2620:fe::fe" "2620:fe::9" ];
       interface = "enp3s0";
       domain = "tungsten.lan";
       server = [ "9.9.9.9" "149.112.112.112" ];
