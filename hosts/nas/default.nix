@@ -50,7 +50,8 @@
     overlays = [
       outputs.overlays.unstable-packages
       outputs.overlays.samba
-      # outputs.overlays.jellyfin-ffmpeg-overlay
+      outputs.overlays.jellyfin-ffmpeg-overlay
+      outputs.overlays.jellyfin-web-overlay
     ];
   };
 
