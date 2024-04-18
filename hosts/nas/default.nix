@@ -50,7 +50,7 @@
     overlays = [
       outputs.overlays.unstable-packages
       outputs.overlays.samba
-      outputs.overlays.jellyfin-ffmpeg-overlay
+      # outputs.overlays.jellyfin-ffmpeg-overlay
     ];
   };
 
@@ -121,7 +121,7 @@
   homelab.dyndns = true;
   homelab.gitea = true;
   homelab.syncthing = true;
-  homelab.grafana = true;
+  # homelab.grafana = true;
   homelab.jellyfin = true;
   core.enableUI = false;
 

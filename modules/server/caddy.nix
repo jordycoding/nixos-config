@@ -71,6 +71,13 @@ lib.mkIf (config.homelab.caddy)
           '';
         };
       })
+      (lib.mkIf (config.homelab.jellyfin) {
+        "https://jellyfin.alkema.co" = {
+          extraConfig = ''
+            reverse_proxy http://127.0.0.1:8096
+          '';
+        };
+      })
     ];
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];

@@ -13,8 +13,14 @@ lib.mkIf (config.homelab.gitea)
     enable = true;
     package = pkgs.unstable.gitea;
     lfs.enable = true;
-    settings.server = {
-      DOMAIN = "gitea.alkema.co";
+    settings = {
+      server = {
+        DOMAIN = "gitea.alkema.co";
+        ROOT_URL = "https://gitea.alkema.co";
+      };
+      service = {
+        DISABLE_REGISTRATION = true;
+      };
     };
   };
 }
