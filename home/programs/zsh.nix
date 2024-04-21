@@ -5,6 +5,7 @@
     enable = true;
     autocd = true;
     autosuggestion.enable = true;
+    enableCompletion = true;
 
     shellAliases = {
       update = "(cd /etc/nixos; doas nix flake update) && doas nixos-rebuild switch --upgrade --flake /etc/nixos";
@@ -119,6 +120,5 @@
        pfetch
       fi
     '';
-    enableCompletion = true;
   };
 }
