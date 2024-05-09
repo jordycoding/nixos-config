@@ -15,7 +15,7 @@ lib.mkIf (config.shell.gnome)
     wmctrl
     foliate
     celluloid
-    blackbox-terminal
+    # blackbox-terminal
     gjs
     cambalache
     gnome-network-displays

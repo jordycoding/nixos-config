@@ -18,6 +18,7 @@ lib.mkIf (config.core.enableUI)
     webcord
     alacritty
     kitty
+    obsidian
   ];
   programs._1password.enable = true;
   programs._1password-gui = {

@@ -18,7 +18,7 @@ with lib;
       verilog
       wireshark
       nodejs_latest
-      corepack_21
+      corepack_latest
       python3
       python3Packages.pygments
       python3Packages.black
