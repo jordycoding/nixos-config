@@ -111,7 +111,7 @@
       eval "$(direnv hook zsh)"
       source ~/.p10k.zsh
       # Checks if tmux is available
-      if [ -x $(command -v tmux) ]; then
+      if { [ -x $(command -v tmux) ] && [ -n "$TMUX" ]; } then
         # Only runs pfetch when current pane is the only pane in the windows
         if [[ $(tmux list-panes &> /dev/null | wc -l) = "1" ]]; then
           pfetch
