@@ -35,26 +35,34 @@
   };
   kittycatppuccin = {
     pname = "kittycatppuccin";
-    version = "d7d61716a83cd135344cbb353af9d197c5d7cec1";
+    version = "1f99e6682d84fe4d8e3177d3add8d0591607a2ac";
     src = fetchFromGitHub {
       owner = "catppuccin";
       repo = "kitty";
-      rev = "d7d61716a83cd135344cbb353af9d197c5d7cec1";
+      rev = "1f99e6682d84fe4d8e3177d3add8d0591607a2ac";
       fetchSubmodules = false;
-      sha256 = "sha256-mRFa+40fuJCUrR1o4zMi7AlgjRtFmii4fNsQyD8hIjM=";
+      sha256 = "sha256-Y51wmGRYDjxbgO/g66+aBA+uOVrQpv2rQIjxbuzm0uk=";
     };
-    date = "2024-01-10";
+    date = "2024-06-01";
   };
   neovim = {
     pname = "neovim";
-    version = "0ae36389427b1912cc1164f75ed221987a200c0a";
+    version = "afda50e8fe0962534db3673845de34bf4ef15305";
     src = fetchFromGitHub {
       owner = "jordycoding";
       repo = "neovim-lua";
-      rev = "0ae36389427b1912cc1164f75ed221987a200c0a";
+      rev = "afda50e8fe0962534db3673845de34bf4ef15305";
       fetchSubmodules = false;
-      sha256 = "sha256-5VX5lrqbgS8TfMCLw3gAkJDqVMsKo1kTupvWfeEedGk=";
+      sha256 = "sha256-2EgHo/Jl3xbnz07tjV5/hKr2o4Jx61iVpF10dX2i5nc=";
     };
-    date = "2024-05-09";
+    date = "2024-05-28";
+  };
+  unboundblacklist = {
+    pname = "unboundblacklist";
+    version = "2024.0511.1425.57";
+    src = fetchurl {
+      url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/c0941e4/unbound/pro.plus.blacklist.conf";
+      sha256 = "sha256-fIl2jYVGTMKtMTwAa3h1QZLfJjLnH5C/7LDdUZnQ+1c=";
+    };
   };
 }
