@@ -84,6 +84,10 @@
     ];
 
     initExtra = ''
+      if [[ -r "\$\{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-\$\{(%):-%n}.zsh" ]]; then
+        source "\$\{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-\$\{(%):-%n}.zsh"
+      fi
+
       setopt hist_ignore_all_dups
       setopt hist_reduce_blanks
       setopt inc_append_history
