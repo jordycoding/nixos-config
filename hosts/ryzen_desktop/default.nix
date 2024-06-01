@@ -31,6 +31,7 @@
   # networking.networkmanager.insertNameservers = [ "192.168.1.21" ];
 
   hardware.pulseaudio.enable = false;
+  hardware.i2c.enable = true;
   services.pipewire = {
     enable = true;
     audio.enable = true;
@@ -47,6 +48,11 @@
         };
       };
     };
+  };
+
+  hardware.logitech.wireless = {
+    enable = true;
+    enableGraphical = true;
   };
 
   hardware.opengl = {

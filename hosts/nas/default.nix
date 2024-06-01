@@ -111,10 +111,6 @@
   homelab.sabnzbd = true;
   homelab.samba = true;
   homelab.plex = true;
-  homelab.dnsmasq = {
-    enable = true;
-    blacklist = true;
-  };
   homelab.caddy = true;
   homelab.bazarr = true;
   homelab.avahi = true;
@@ -124,6 +120,15 @@
   # homelab.grafana = true;
   homelab.jellyfin = true;
   homelab.openrgb = true;
+  homelab.unbound = {
+    enable = true;
+    blacklist = true;
+  };
+  # homelab.dnsmasq = {
+  #   enable = true;
+  #   blacklist = true;
+  # };
+
   core.enableUI = false;
 
   systemd.tmpfiles.rules = [

@@ -28,6 +28,8 @@
       "switch-to-workspace-2" = [ "<Super>2" ];
       "switch-to-workspace-3" = [ "<Super>3" ];
       "switch-to-workspace-4" = [ "<Super>4" ];
+      "move-to-workspace-left" = [ "" ];
+      "move-to-workspace-right" = [ "" ];
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
       "hot-keys" = false;

@@ -31,5 +31,9 @@
     nvfetcher
     qemu
     smartmontools
+    ddcutil
+  ];
+  services.udev.packages = with pkgs; [
+    ddcutil
   ];
 }
