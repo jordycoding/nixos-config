@@ -41,6 +41,15 @@
       driver = pkgs.libfprint-2-tod1-goodix;
     };
   };
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  hardware.pulseaudio.enable = false;
   services.printing.enable = true;
   services.printing.drivers = [
     # pkgs.epson-escpr

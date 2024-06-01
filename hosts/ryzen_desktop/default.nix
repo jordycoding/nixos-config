@@ -30,6 +30,25 @@
   networking.interfaces.enp34s0.wakeOnLan.enable = true;
   # networking.networkmanager.insertNameservers = [ "192.168.1.21" ];
 
+  hardware.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+    pulse.enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+    extraConfig.pipewire = {
+      "10-clock-rate" = {
+        "context.properties" = {
+          "default.clock.rate" = 384000;
+          default.clock.allowed-rates = [ 44100 48000 96000 192000 384000 ];
+        };
+      };
+    };
+  };
+
   hardware.opengl = {
     enable = true;
     driSupport32Bit = true;
