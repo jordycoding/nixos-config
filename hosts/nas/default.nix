@@ -123,6 +123,7 @@
   homelab.syncthing = true;
   # homelab.grafana = true;
   homelab.jellyfin = true;
+  homelab.openrgb = true;
   core.enableUI = false;
 
   systemd.tmpfiles.rules = [

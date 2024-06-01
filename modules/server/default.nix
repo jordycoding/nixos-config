@@ -27,6 +27,7 @@ with lib;
     gitea = mkEnableOption "Enable gitea";
     syncthing = mkEnableOption "Enable syncthing";
     grafana = mkEnableOption "Enable grafana";
+    openrgb = mkEnableOption "Enable OpenRGB";
   };
 
   imports = [
@@ -50,5 +51,6 @@ with lib;
     ./grafana.nix
     ./prometheus-scrapes.nix
     ./unbound.nix
+    ./openrgb.nix
   ];
 }
