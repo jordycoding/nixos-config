@@ -15,6 +15,10 @@ with lib;
       enable = mkEnableOption "Enable dnsmasq";
       blacklist = mkEnableOption "Enable blacklist";
     };
+    unbound = {
+      enable = mkEnableOption "Enable unbound";
+      blacklist = mkEnableOption "Enable adblock blacklist";
+    };
     caddy = mkEnableOption "Enable Caddy";
     cockpit = mkEnableOption "Enable Cockpit";
     bazarr = mkEnableOption "Enable Bazarr";
@@ -45,5 +49,6 @@ with lib;
     ./syncthing.nix
     ./grafana.nix
     ./prometheus-scrapes.nix
+    ./unbound.nix
   ];
 }

@@ -40,6 +40,7 @@
     flags = [
       "--update-input"
       "nixpkgs"
+      "nixpkgs-stable"
       "--print-build-logs"
     ];
     dates = "04:30";

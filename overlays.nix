@@ -10,7 +10,6 @@
   jellyfin-web-overlay = final: prev: {
     jellyfin-web = prev.jellyfin-web.overrideAttrs {
       postInstall = ''
-        sed -i -e "s+</body>+<script plugin=\"Jellyscrub\" version=\"1.0.0.0\" src=\"/Trickplay/ClientScript\"></script></body>+" $out/share/jellyfin-web/index.html
       '';
     };
   };

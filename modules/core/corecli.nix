@@ -29,5 +29,6 @@
     multipath-tools
     ncdu
     nvfetcher
+    qemu
   ];
 }

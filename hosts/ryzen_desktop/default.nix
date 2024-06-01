@@ -12,7 +12,7 @@
     ./hardware-configuration.nix
   ];
 
-  users.users.jordy.extraGroups = [ "wheel" "libvirtd" "input" "wireshark" "video" ];
+  users.users.jordy.extraGroups = [ "wheel" "libvirtd" "input" "wireshark" "video" "kvm" ];
 
   shell.gnome = true;
   services.flatpak.enable = true;

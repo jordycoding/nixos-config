@@ -33,7 +33,7 @@ with lib;
       gcc
       glade
       android-studio
-      androidStudioPackages.beta
+      androidStudioPackages.canary
       dotnet-sdk_8
       php82
       php82Packages.composer
@@ -62,6 +62,7 @@ with lib;
         jdt-language-server
         nixd
         gopls
+        ltex-ls
       ]
     );
   };
