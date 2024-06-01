@@ -43,6 +43,8 @@ with lib;
       gnum4
       go
       gotools
+      elixir
+      elixir-ls
     ]
     ++ (
       optionals (config.languageservers.enable) [
