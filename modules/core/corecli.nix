@@ -29,10 +29,7 @@
     multipath-tools
     ncdu
     nvfetcher
-<<<<<<< Updated upstream
     qemu
-=======
     smartmontools
->>>>>>> Stashed changes
   ];
 }
