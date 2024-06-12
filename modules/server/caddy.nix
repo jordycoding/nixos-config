@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }:
 
+
 lib.mkIf (config.homelab.caddy)
 {
   services.caddy = {

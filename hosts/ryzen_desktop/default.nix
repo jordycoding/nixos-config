@@ -50,6 +50,13 @@
     };
   };
 
+  services.syncthing = {
+    enable = true;
+    user = "jordy";
+    dataDir = "/home/jordy/syncthing";
+    configDir = "/home/jordy/.config/syncthing";
+  };
+
   hardware.logitech.wireless = {
     enable = true;
     enableGraphical = true;

@@ -130,6 +130,7 @@
       enable = true;
       blacklist = true;
     };
+    homelab.ollama = true;
     # homelab.dnsmasq = {
     #   enable = true;
     #   blacklist = true;

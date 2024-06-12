@@ -28,6 +28,7 @@ with lib;
     syncthing = mkEnableOption "Enable syncthing";
     grafana = mkEnableOption "Enable grafana";
     openrgb = mkEnableOption "Enable OpenRGB";
+    ollama = mkEnableOption "Enable Ollama";
   };
 
   imports = [
@@ -52,5 +53,6 @@ with lib;
     ./prometheus-scrapes.nix
     ./unbound.nix
     ./openrgb.nix
+    ./ollama.nix
   ];
 }
