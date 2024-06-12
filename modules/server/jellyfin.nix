@@ -22,6 +22,6 @@ lib.mkIf (config.homelab.jellyfin)
   };
 
   hardware.opengl.extraPackages = with pkgs; [
-    unstable.onevpl-intel-gpu
+    unstable.vpl-gpu-rt
   ];
 }
