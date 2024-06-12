@@ -29,6 +29,11 @@ with lib;
     grafana = mkEnableOption "Enable grafana";
     openrgb = mkEnableOption "Enable OpenRGB";
     ollama = mkEnableOption "Enable Ollama";
+    keycloak = mkEnableOption "Enable Keycloak";
+  };
+
+  config = {
+    services.postgresql.enable = true;
   };
 
   imports = [
@@ -54,5 +59,6 @@ with lib;
     ./unbound.nix
     ./openrgb.nix
     ./ollama.nix
+    ./keycloak.nix
   ];
 }

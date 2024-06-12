@@ -79,6 +79,13 @@ lib.mkIf (config.homelab.caddy)
           '';
         };
       })
+      (lib.mkIf (config.homelab.keycloak) {
+        "https://keycloak.alkema.co" = {
+          extraConfig = ''
+            reverse_proxy http://127.0.0.1:${toString config.services.keycloak.settings.http-port}
+          '';
+        };
+      })
     ];
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];

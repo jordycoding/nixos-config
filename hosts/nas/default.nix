@@ -23,6 +23,11 @@
     age.secrets.ddPassword = {
       file = ../../secrets/ddPassword.age;
     };
+    age.secrets.keycloakDbPassword = {
+      file = ../../secrets/keycloakDbPassword.age;
+      owner = "keycloak";
+      group = "keycloak";
+    };
 
     networking.useNetworkd = true;
     systemd.network.enable = true;
@@ -132,6 +137,7 @@
       blacklist = true;
     };
     homelab.ollama = true;
+    homelab.keycloak = true;
     # homelab.dnsmasq = {
     #   enable = true;
     #   blacklist = true;

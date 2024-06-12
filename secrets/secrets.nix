@@ -8,4 +8,5 @@ in
   "ddPassword.age".publicKeys = [ system1 ];
   "sonarrApiKey.age".publicKeys = [ system1 ];
   "radarrApiKey.age".publicKeys = [ system1 ];
+  "keycloakDbPassword.age".publicKeys = [ system1 ];
 }
