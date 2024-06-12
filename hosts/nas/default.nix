@@ -46,6 +46,7 @@
       flags = [
         "--update-input"
         "nixpkgs"
+        "--update-input"
         "nixpkgs-stable"
         "--print-build-logs"
       ];
