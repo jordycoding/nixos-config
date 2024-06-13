@@ -30,6 +30,7 @@ with lib;
     openrgb = mkEnableOption "Enable OpenRGB";
     ollama = mkEnableOption "Enable Ollama";
     keycloak = mkEnableOption "Enable Keycloak";
+    ldap = mkEnableOption "Enable LDAP";
   };
 
   config = {
@@ -60,5 +61,6 @@ with lib;
     ./openrgb.nix
     ./ollama.nix
     ./keycloak.nix
+    ./ldap.nix
   ];
 }

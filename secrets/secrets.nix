@@ -9,4 +9,5 @@ in
   "sonarrApiKey.age".publicKeys = [ system1 ];
   "radarrApiKey.age".publicKeys = [ system1 ];
   "keycloakDbPassword.age".publicKeys = [ system1 ];
+  "ldapRootPass.age".publicKeys = [ system1 ];
 }
