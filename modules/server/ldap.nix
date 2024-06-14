@@ -10,6 +10,7 @@ lib.mkIf (config.homelab.ldap)
 
   age.secrets.ldapRootPass = {
     file = ../../secrets/ldapRootPass.age;
+    path = "/etc/secrets/ldapRootPass";
     owner = "ldap";
     group = "root";
     mode = "770";
@@ -40,19 +41,14 @@ lib.mkIf (config.homelab.ldap)
 
           /* your admin account, do not use writeText on a production system */
           olcRootDN = "cn=admin,dc=alkema,dc=co";
-          olcRootPW.path = "/run/agenix/ldapRootPass";
+          /* Keep in mind for some reason this bitch also hashes newlines, so don't include those */
+          olcRootPW.path = "/etc/secrets/ldapRootPass";
 
           olcAccess = [
-            /* custom access rules for userPassword attributes */
-            ''{0}to attrs=userPassword
-                by self write
-                by anonymous auth
-                by * none''
+            "{0}to attr=userPassword by anonymous auth"
+            "{1}to * by * none break"
+          ]; # read break for readable
 
-            /* allow read on anything else */
-            ''{1}to *
-                by * read''
-          ];
         };
       };
     };

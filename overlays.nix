@@ -10,6 +10,7 @@
   jellyfin-web-overlay = final: prev: {
     jellyfin-web = prev.jellyfin-web.overrideAttrs {
       postInstall = ''
+        sed -i -e "s+</head>+<script src=\"configurationpage?name=skip-intro-button.js\"></script></head>+" $out/share/jellyfin-web/index.html
       '';
     };
   };
