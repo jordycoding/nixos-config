@@ -45,12 +45,19 @@ lib.mkIf (config.homelab.ldap)
           olcRootPW.path = "/etc/secrets/ldapRootPass";
 
           olcAccess = [
-            "{0}to attr=userPassword by anonymous auth"
-            "{1}to * by * none break"
-          ]; # read break for readable
+            ''{0}to attrs=userPassword
+            by self write
+            by anonymous auth
+            by * none''
 
+            /* allow read on anything else */
+            ''{1}to *
+                by * read''
+          ];
         };
       };
     };
   };
+  networking.firewall.allowedTCPPorts = [ 389 ];
+  networking.firewall.allowedUDPPorts = [ 389 ];
 }
