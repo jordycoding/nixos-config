@@ -31,6 +31,8 @@ with lib;
     ollama = mkEnableOption "Enable Ollama";
     keycloak = mkEnableOption "Enable Keycloak";
     ldap = mkEnableOption "Enable LDAP";
+    freshrss = mkEnableOption "Enable FreshRSS";
+    miniflux = mkEnableOption "Enable MiniFlux";
   };
 
   config = {
@@ -62,5 +64,7 @@ with lib;
     ./ollama.nix
     ./keycloak.nix
     ./ldap.nix
+    ./freshrss.nix
+    ./miniflux.nix
   ];
 }

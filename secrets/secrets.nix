@@ -10,4 +10,5 @@ in
   "radarrApiKey.age".publicKeys = [ system1 ];
   "keycloakDbPassword.age".publicKeys = [ system1 ];
   "ldapRootPass.age".publicKeys = [ system1 ];
+  "mfOauth.age".publicKeys = [ system1 ];
 }

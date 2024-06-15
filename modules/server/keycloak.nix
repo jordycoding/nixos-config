@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
 
+let
+  keywind = builtins.path { path = ../../keywind.jar; name = "keywind.jar"; };
+in
 lib.mkIf (config.homelab.keycloak)
 {
   services.keycloak = {
@@ -18,5 +21,8 @@ lib.mkIf (config.homelab.keycloak)
       proxy = "edge";
       http-enabled = true;
     };
+    plugins = [
+      keywind
+    ];
   };
 }

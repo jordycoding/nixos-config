@@ -139,6 +139,7 @@
     homelab.ollama = true;
     homelab.keycloak = true;
     homelab.ldap = true;
+    homelab.miniflux = true;
     # homelab.dnsmasq = {
     #   enable = true;
     #   blacklist = true;

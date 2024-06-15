@@ -86,6 +86,34 @@ lib.mkIf (config.homelab.caddy)
           '';
         };
       })
+      (lib.mkIf (config.homelab.freshrss) {
+        "https://freshrss.alkema.co" = {
+          extraConfig = ''
+            root * "${config.services.freshrss.package}/p"
+             @php path_regexp ^.+?\.php(/.*)?$
+             @split path_regexp ^(.+\.php)(/.*)$
+             handle @php {
+                 php_fastcgi ${config.services.phpfpm.pools."freshrss".socket}
+             }
+            
+            handle / {
+                try_files {path} {path}/index.php index.php
+                file_server {
+                    index index.php index.html index.htm
+                }
+            }
+          '';
+        };
+      })
+      (lib.mkIf (config.homelab.miniflux) {
+        "https://miniflux.alkema.co" = {
+          extraConfig = ''
+            reverse_proxy http://127.0.0.1:6969 {
+                header_up Host {upstream_hostport}
+            }
+          '';
+        };
+      })
     ];
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];
