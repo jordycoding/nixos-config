@@ -24,6 +24,7 @@
   ];
   programs.zsh.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
+  i18n.defaultLocale = "en_IE.UTF-8";
 
   # Needed for network printing
   # services.printing.listenAddresses = [ "*:631" ]; # Not 100% sure this is needed and you might want to restrict to the local network

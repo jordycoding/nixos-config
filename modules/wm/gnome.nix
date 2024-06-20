@@ -26,6 +26,7 @@ lib.mkIf (config.shell.gnome)
     adw-gtk3
     mission-center
     gnome-firmware
+    fractal
   ];
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
