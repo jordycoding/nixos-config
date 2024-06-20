@@ -106,6 +106,7 @@
     boot.kernelParams = [ "i915.enable_guc=3" ];
 
     networking.hostName = "Tungsten";
+    networking.domain = "alkmema.co";
     services.fstrim.enable = true;
 
     networking.firewall = {
