@@ -33,6 +33,16 @@ with lib;
     ldap = mkEnableOption "Enable LDAP";
     freshrss = mkEnableOption "Enable FreshRSS";
     miniflux = mkEnableOption "Enable MiniFlux";
+    matrix = {
+      enable = mkEnableOption "Enable Matrix Synapse server";
+      createDb = mkEnableOption "Create Postgres database for Matrix";
+      dbPasswordFile = mkOption {
+        type = nullOr path;
+        default = null;
+        example = "/run/secrets/matrixDbPass";
+        description = "File containing matrix database password";
+      };
+    };
   };
 
   config = {
