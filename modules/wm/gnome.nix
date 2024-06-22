@@ -27,6 +27,7 @@ lib.mkIf (config.shell.gnome)
     mission-center
     gnome-firmware
     fractal
+    newsflash
   ];
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;

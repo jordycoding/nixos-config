@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  services.usbmuxd.enable = true;
   environment.systemPackages = with pkgs; [
     docker-compose
     home-manager
@@ -32,6 +33,8 @@
     qemu
     smartmontools
     ddcutil
+    idevicerestore
+    libimobiledevice
   ];
   services.udev.packages = with pkgs; [
     ddcutil
