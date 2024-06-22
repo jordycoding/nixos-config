@@ -18,6 +18,10 @@ in
     "alkema.co" = {
       extraConfig = ''
         handle /.well-known/matrix/server {
+            ${mkWellKnown serverConfig}
+        }
+
+        handle /.well-known/matrix/client {
             ${mkWellKnown clientConfig}
         }
       '';
