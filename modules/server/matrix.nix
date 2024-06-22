@@ -77,18 +77,18 @@ in
       set -o errexit -o pipefail -o nounset -o errtrace
       shopt -s inherit_errexit
 
-      create_role="\$(mktemp)"
+      create_role="$(mktemp)"
       trap 'rm -f "$create_role"' EXIT
 
       # Read the password from the credentials directory and
       # escape any single quotes by adding additional single
       # quotes after them, following the rules laid out here:
       # https://www.postgresql.org/docs/current/sql-syntax-lexical.html#SQL-SYNTAX-CONSTANTS
-      db_password="\$(<"\$CREDENTIALS_DIRECTORY/db_password")"
+      db_password="$(<"\$CREDENTIALS_DIRECTORY/db_password")"
       db_password="''${db_password//\'/\'\'}"
 
-      echo "CREATE ROLE matrix-synapse WITH LOGIN PASSWORD '$db_password' CREATEDB" > "\$create_role"
-      psql -tAc "SELECT 1 FROM pg_roles WHERE rolename='matrix-synapse'" | grep -q 1 || psql -tA --file="\$create_role"
+      echo "CREATE ROLE matrix-synapse WITH LOGIN PASSWORD '$db_password' CREATEDB" > "$create_role"
+      psql -tAc "SELECT 1 FROM pg_roles WHERE rolename='matrix-synapse'" | grep -q 1 || psql -tA --file="$create_role"
       psql -tAc "SELECT 1 FROM pg_database WHERE datname = 'matrix-synapse'" | grep -q 1 || psql -tAc 'CREATE DATABASE "matrix-synapse" OWNER "matrix-synapse"'
     '';
   };

@@ -35,6 +35,7 @@
     ddcutil
     idevicerestore
     libimobiledevice
+    pwgen
   ];
   services.udev.packages = with pkgs; [
     ddcutil
