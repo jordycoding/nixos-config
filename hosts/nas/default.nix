@@ -144,6 +144,11 @@
     #   enable = true;
     #   blacklist = true;
     # };
+    homelab.matrix = {
+      enable = true;
+      createDb = true;
+      dbPasswordFile = "/run/agenix/matrixDbPass";
+    };
 
     core.enableUI = false;
 

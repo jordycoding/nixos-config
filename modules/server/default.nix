@@ -37,7 +37,7 @@ with lib;
       enable = mkEnableOption "Enable Matrix Synapse server";
       createDb = mkEnableOption "Create Postgres database for Matrix";
       dbPasswordFile = mkOption {
-        type = nullOr path;
+        type = types.nullOr types.path;
         default = null;
         example = "/run/secrets/matrixDbPass";
         description = "File containing matrix database password";
@@ -76,5 +76,6 @@ with lib;
     ./ldap.nix
     ./freshrss.nix
     ./miniflux.nix
+    ./matrix.nix
   ];
 }

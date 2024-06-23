@@ -11,4 +11,6 @@ in
   "keycloakDbPassword.age".publicKeys = [ system1 ];
   "ldapRootPass.age".publicKeys = [ system1 ];
   "mfOauth.age".publicKeys = [ system1 ];
+  "matrixDbPass.age".publicKeys = [ system1 ];
+  "matrixSettings.age".publicKeys = [ system1 ];
 }

@@ -9,6 +9,6 @@ lib.mkIf (config.homelab.dyndns)
     server = "dynamicdns.park-your-domain.com";
     username = "alkema.co";
     passwordFile = "/run/agenix/ddPassword";
-    domains = [ "*" ];
+    domains = [ "*" "@" ];
   };
 }

@@ -1,6 +1,6 @@
-{ config, pkgs, lib }:
-
+{ config, pkgs, lib, ... }:
 with lib;
+
 let
   fqdn = "matrix.alkema.co";
   baseUrl = "https://${fqdn}";
@@ -8,9 +8,9 @@ let
   serverConfig."m.server" = "${fqdn}:443";
   mkWellKnown = data: ''
     header {
-      Access-Control-Allow-Origin "*"
-      respond `${builtins.toJSON data}`
+      Access-Control-Allow-Origin *
     }
+    respond `${builtins.toJSON data}`
   '';
 in
 {
@@ -34,18 +34,24 @@ in
             }
         }
         
-        handle /_matrix {
-            reverse_proxy http://[::1]:8008
-        }
-
-        handle /_synapse/client {
-            reverse_proxy http://[::1]:8008
-        }
+        reverse_proxy /_matrix/* http://[::1]:8008
+        reverse_proxy /_synapse/client/* http://[::1]:8008
       '';
     };
   };
 
-  services.matrix-synapse = mkIf confib.homelab.matrix.enable {
+  age.secrets.matrixDbPass = {
+    file = ../../secrets/matrixDbPass.age;
+    owner = "matrix-synapse";
+    group = "matrix-synapse";
+  };
+  age.secrets.matrixSettings = {
+    file = ../../secrets/matrixSettings.age;
+    owner = "matrix-synapse";
+    group = "matrix-synapse";
+  };
+
+  services.matrix-synapse = mkIf config.homelab.matrix.enable {
     enable = true;
     settings.server_name = "alkema.co";
     settings.public_baseurl = baseUrl;
@@ -53,7 +59,7 @@ in
     settings.listeners = [
       {
         port = 8008;
-        bind_address = [ "::1" ];
+        bind_addresses = [ "::1" ];
         type = "http";
         tls = false;
         x_forwarded = true;
@@ -63,6 +69,7 @@ in
         }];
       }
     ];
+    extraConfigFiles = [ "/run/agenix/matrixSettings" ];
   };
 
   systemd.services.matrixPostgreSQLInit = mkIf config.homelab.matrix.createDb {
@@ -73,8 +80,8 @@ in
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
-      user = "postgres";
-      group = "postgres";
+      User = "postgres";
+      Group = "postgres";
       LoadCredential = [ "db_password:${config.homelab.matrix.dbPasswordFile}" ];
     };
     script = ''
@@ -88,12 +95,12 @@ in
       # escape any single quotes by adding additional single
       # quotes after them, following the rules laid out here:
       # https://www.postgresql.org/docs/current/sql-syntax-lexical.html#SQL-SYNTAX-CONSTANTS
-      db_password="$(<"\$CREDENTIALS_DIRECTORY/db_password")"
+      db_password="$(<"$CREDENTIALS_DIRECTORY/db_password")"
       db_password="''${db_password//\'/\'\'}"
 
-      echo "CREATE ROLE matrix-synapse WITH LOGIN PASSWORD '$db_password' CREATEDB" > "$create_role"
-      psql -tAc "SELECT 1 FROM pg_roles WHERE rolename='matrix-synapse'" | grep -q 1 || psql -tA --file="$create_role"
-      psql -tAc "SELECT 1 FROM pg_database WHERE datname = 'matrix-synapse'" | grep -q 1 || psql -tAc 'CREATE DATABASE "matrix-synapse" OWNER "matrix-synapse"'
+      echo "CREATE ROLE \"matrix-synapse\" WITH LOGIN PASSWORD '$db_password' CREATEDB" > "$create_role"
+      psql -tAc "SELECT 1 FROM pg_roles WHERE rolname='matrix-synapse'" | grep -q 1 || psql -tA --file="$create_role"
+      psql -tAc "SELECT 1 FROM pg_database WHERE datname = 'matrix-synapse'" | grep -q 1 || psql -tAc 'CREATE DATABASE "matrix-synapse" OWNER "matrix-synapse" TEMPLATE template0 LC_COLLATE = "C" LC_CTYPE = "C"'
     '';
   };
 }

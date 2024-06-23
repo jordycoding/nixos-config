@@ -19,6 +19,7 @@ lib.mkIf (config.core.enableUI)
     alacritty
     kitty
     obsidian
+    element-desktop
   ];
   programs._1password.enable = true;
   programs._1password-gui = {
