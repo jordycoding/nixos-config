@@ -31,29 +31,42 @@ lib.mkIf (config.homelab.ldap)
           "${pkgs.openldap}/etc/schema/inetorgperson.ldif"
         ];
 
-        "olcDatabase={1}mdb".attrs = {
-          objectClass = [ "olcDatabaseConfig" "olcMdbConfig" ];
+        "olcDatabase={1}mdb" = {
+          attrs = {
+            objectClass = [ "olcDatabaseConfig" "olcMdbConfig" ];
 
-          olcDatabase = "{1}mdb";
-          olcDbDirectory = "/var/lib/openldap/data";
+            olcDatabase = "{1}mdb";
+            olcDbDirectory = "/var/lib/openldap/data";
 
-          olcSuffix = "dc=alkema,dc=co";
+            olcSuffix = "dc=alkema,dc=co";
 
-          /* your admin account, do not use writeText on a production system */
-          olcRootDN = "cn=admin,dc=alkema,dc=co";
-          /* Keep in mind for some reason this bitch also hashes newlines, so don't include those */
-          olcRootPW.path = "/etc/secrets/ldapRootPass";
+            /* your admin account, do not use writeText on a production system */
+            olcRootDN = "cn=admin,dc=alkema,dc=co";
+            /* Keep in mind for some reason this bitch also hashes newlines, so don't include those */
+            olcRootPW.path = "/etc/secrets/ldapRootPass";
 
-          olcAccess = [
-            ''{0}to attrs=userPassword
+            olcAccess = [
+              ''{0}to attrs=userPassword
             by self write
             by anonymous auth
             by * none''
 
-            /* allow read on anything else */
-            ''{1}to *
+              /* allow read on anything else */
+              ''{1}to *
                 by * read''
-          ];
+            ];
+          };
+          children = {
+            "olcOverlay={3}memberof".attrs = {
+              objectClass = [ "olcOverlayConfig" "olcMemberOf" "top" ];
+              olcOverlay = "{3}memberof";
+              olcMemberOfRefInt = "TRUE";
+              olcMemberOfDangling = "ignore";
+              olcMemberOfGroupOC = "groupOfNames";
+              olcMemberOfMemberAD = "member";
+              olcMemberOfMemberOfAD = "memberOf";
+            };
+          };
         };
       };
     };
