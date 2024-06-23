@@ -20,6 +20,8 @@ lib.mkIf (config.core.enableUI)
     kitty
     obsidian
     element-desktop
+    cinny-desktop
+    floorp
   ];
   programs._1password.enable = true;
   programs._1password-gui = {
