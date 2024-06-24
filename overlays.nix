@@ -26,4 +26,7 @@
       enableMDNS = true;
     };
   };
+  kdematerialyou = final: prev: {
+    kde-material-you-colors = prev.callPackage ./pkgs/kde-material-you/derivation.nix;
+  };
 }

@@ -134,4 +134,11 @@
     ACTION=="add", ENV{PRODUCT}=="bda/2172/100", RUN+="${pkgs.bash}/bin/bash -c \"${pkgs.coreutils}/bin/ln -s /dev/null /run/systemd/transient/fprintd.service; ${pkgs.systemd}/bin/systemctl daemon-reload\""
     ACTION=="remove", ENV{PRODUCT}=="bda/2172/100", RUN+="${pkgs.bash}/bin/bash -c \"${pkgs.coreutils}/bin/rm -f /run/systemd/transient/fprintd.service; ${pkgs.systemd}/bin/systemctl daemon-reload\""
   '';
+
+  specialisation = {
+    plasma.configuration = {
+      shell.gnome = lib.mkForce false;
+      shell.kde = true;
+    };
+  };
 }

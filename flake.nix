@@ -38,6 +38,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pipewire-screenaudio.url = "github:IceDBorn/pipewire-screenaudio";
+    matugen.url = "github:/InioX/Matugen";
   };
 
   # `outputs` are all the build result of the flake.
@@ -71,7 +72,7 @@
         "Krypton" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
-          specialArgs = { inherit inputs; }; # this is the important part
+          specialArgs = { inherit inputs outputs; }; # this is the important part
           modules = [
             # Import the configuration.nix here, so that the
             # old configuration file can still take effect.

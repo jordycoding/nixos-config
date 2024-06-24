@@ -23,5 +23,6 @@
     pavucontrol
     xdg-utils
     direnv
+    papirus-folders
   ];
 }

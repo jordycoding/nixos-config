@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 lib.mkIf (config.shell.gnome)
 {
@@ -28,6 +28,7 @@ lib.mkIf (config.shell.gnome)
     gnome-firmware
     fractal
     newsflash
+    inputs.matugen.packages.${system}.default
   ];
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
