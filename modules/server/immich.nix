@@ -24,7 +24,8 @@ in
       "d /mnt/Ssd/Immich 0770 jordy root - -"
       "d /mnt/Ssd/Immich/photos 0770 jordy root - -"
       "d /mnt/Ssd/Immich/appdata 0770 jordy root - -"
-      "d /mnt/Ssd/Immich/pgsql 0770 jordy root - -"
+      "d /mnt/Ssd/Immich/appdata/pgsql 0770 jordy root - -"
+      "d /mnt/Ssd/Immich/appdata/model-cache 0770 jordy root - -"
     ];
 
     virtualisation.oci-containers.containers = {
