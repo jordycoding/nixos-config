@@ -29,6 +29,9 @@ lib.mkIf (config.shell.gnome)
     fractal
     newsflash
     inputs.matugen.packages.${system}.default
+    glib
+    switcheroo
+    dynamic-wallpaper
   ];
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
