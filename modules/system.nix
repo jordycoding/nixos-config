@@ -39,13 +39,11 @@
   # home-manager.users.jordy = import ./home.nix;
 
   virtualisation = {
-    docker = {
+    containers.enable = true;
+    podman = {
       enable = true;
-      enableOnBoot = false;
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
     };
     libvirtd = {
       enable = true;

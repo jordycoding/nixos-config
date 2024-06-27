@@ -77,5 +77,6 @@ with lib;
     ./freshrss.nix
     ./miniflux.nix
     ./matrix.nix
+    ./immich.nix
   ];
 }
