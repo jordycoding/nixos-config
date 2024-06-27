@@ -114,6 +114,13 @@ lib.mkIf (config.homelab.caddy)
           '';
         };
       })
+      (lib.mkIf (config.homelab.immich.enable) {
+        "https://immich.alkema.co" = {
+          extraConfig = ''
+            reverse_proxy http://127.0.0.1:2283
+          '';
+        };
+      })
     ];
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];

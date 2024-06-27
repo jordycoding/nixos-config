@@ -28,6 +28,12 @@
       owner = "keycloak";
       group = "keycloak";
     };
+    age.secrets.immichEnv = {
+      file = ../../secrets/immichEnv.age;
+    };
+    age.secrets.pgEnv = {
+      file = ../../secrets/pgEnv.age;
+    };
 
     networking.useNetworkd = true;
     systemd.network.enable = true;
@@ -129,7 +135,6 @@
     homelab.dyndns = true;
     homelab.gitea = true;
     homelab.syncthing = true;
-    # homelab.grafana = true;
     homelab.jellyfin = true;
     homelab.openrgb = true;
     homelab.unbound = {
@@ -140,6 +145,11 @@
     homelab.keycloak = true;
     homelab.ldap = true;
     homelab.miniflux = true;
+    homelab.immich = {
+      enable = true;
+      immichEnvFile = "/run/agenix/immichEnv";
+      pgEnvFile = "/run/agenix/pgEnv";
+    };
     # homelab.dnsmasq = {
     #   enable = true;
     #   blacklist = true;

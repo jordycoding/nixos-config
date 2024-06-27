@@ -13,4 +13,6 @@ in
   "mfOauth.age".publicKeys = [ system1 ];
   "matrixDbPass.age".publicKeys = [ system1 ];
   "matrixSettings.age".publicKeys = [ system1 ];
+  "immichEnv.age".publicKeys = [ system1 ];
+  "pgEnv.age".publicKeys = [ system1 ];
 }
