@@ -32,6 +32,7 @@ lib.mkIf (config.shell.gnome)
     glib
     switcheroo
     dynamic-wallpaper
+    delfin
   ];
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
