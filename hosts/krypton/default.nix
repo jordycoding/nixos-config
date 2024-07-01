@@ -93,7 +93,7 @@
   systemd.services.NetworkManager-wait-online.enable = false;
   systemd.services.sabnzbd.wantedBy = lib.mkForce [ ]; # Disable service by default, reduces boot time
 
-  environment.systemPackages = with pkgs; [ mesa-demos easyeffects tpm2-tss wineWowPackages.stable wineWowPackages.waylandFull cudatoolkit ];
+  environment.systemPackages = with pkgs; [ mesa-demos deepfilternet easyeffects tpm2-tss wineWowPackages.stable wineWowPackages.waylandFull cudatoolkit ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
 

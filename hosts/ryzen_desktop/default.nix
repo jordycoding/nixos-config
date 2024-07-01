@@ -69,4 +69,11 @@
 
   core.enableUI = true;
   services.fstrim.enable = true;
+
+  specialisation = {
+    plasma.configuration = {
+      shell.gnome = lib.mkForce false;
+      shell.kde = true;
+    };
+  };
 }

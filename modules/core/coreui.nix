@@ -21,7 +21,9 @@ lib.mkIf (config.core.enableUI)
     obsidian
     element-desktop
     cinny-desktop
-    floorp
+    librewolf
+    deepfilternet
+    easyeffects
   ];
   programs._1password.enable = true;
   programs._1password-gui = {

@@ -8,5 +8,6 @@
     ./zoxide.nix
     ./zsh.nix
     ./ssh.nix
+    ./fish.nix
   ];
 }

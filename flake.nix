@@ -99,7 +99,7 @@
 
         "Argon" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/ryzen_desktop
             home-manager.nixosModules.home-manager
