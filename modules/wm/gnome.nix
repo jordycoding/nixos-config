@@ -7,10 +7,10 @@ lib.mkIf (config.shell.gnome)
   services.xserver.desktopManager.gnome.enable = true;
   environment.systemPackages = with pkgs; [
     tilix
-    gnome.gnome-tweaks
-    gnome.geary
+    gnome-tweaks
+    geary
     gnome.gnome-boxes
-    gnome.dconf-editor
+    dconf-editor
     ulauncher
     wmctrl
     foliate

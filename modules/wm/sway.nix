@@ -19,7 +19,7 @@ lib.mkIf (config.shell.sway)
       xfce.thunar
       stow
       wl-clipboard
-      gnome.zenity
+      zenity
       pavucontrol
       xdg-utils
       xdg-user-dirs

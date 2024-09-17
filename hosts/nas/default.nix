@@ -141,7 +141,7 @@
       enable = true;
       blacklist = true;
     };
-    homelab.ollama = true;
+    # homelab.ollama = true;
     homelab.keycloak = true;
     homelab.ldap = true;
     homelab.miniflux = true;
@@ -170,6 +170,7 @@
       "d /mnt/Ssd/Downloads/Sab/incomplete 0770 root download - -"
       "d /mnt/Ssd/Downloads/Sab/complete 0770 root download - -"
     ];
+    services.fail2ban.enable = true;
 
     networking.hostId = "034146c2";
     system.stateVersion = "23.11";

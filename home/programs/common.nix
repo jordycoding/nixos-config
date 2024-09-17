@@ -7,7 +7,7 @@
     neovim
     rofi
     sway
-    thefuck
+    # thefuck
     alacritty
     mako
     swayidle

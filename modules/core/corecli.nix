@@ -5,7 +5,6 @@
     docker-compose
     home-manager
     tmux
-    neofetch
     pfetch
     bat
     wget

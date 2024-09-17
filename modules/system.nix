@@ -15,7 +15,6 @@
   security.rtkit.enable = true;
 
   services.openssh.enable = true;
-  services.fail2ban.enable = true;
 
   security.sudo.enable = false;
   security.doas.enable = true;

@@ -1,22 +1,22 @@
 { pkgs, ... }:
 {
-    programs.firejail = {
+  programs.firejail = {
     enable = true;
     wrappedBinaries = {
-        zoom = {
+      zoom = {
         executable = "${pkgs.zoom-us}/bin/zoom";
         profile = "${pkgs.firejail}/etc/firejail/zoom.profile";
         extraArgs = [
-         "--private"
+          "--private"
         ];
-        };
-        zoom-us = {
+      };
+      zoom-us = {
         executable = "${pkgs.zoom-us}/bin/zoom-us";
         profile = "${pkgs.firejail}/etc/firejail/zoom.profile";
         extraArgs = [
-         "--private"
+          "--private"
         ];
-        };
+      };
     };
-    };
+  };
 }
