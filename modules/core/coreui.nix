@@ -4,7 +4,6 @@ lib.mkIf (config.core.enableUI)
 {
   environment.systemPackages = with pkgs; [
     libreoffice-fresh
-    thunderbird
     protonmail-bridge
     protonvpn-gui
     piper
@@ -20,7 +19,7 @@ lib.mkIf (config.core.enableUI)
     kitty
     obsidian
     element-desktop
-    cinny-desktop
+    # cinny-desktop
     librewolf
     deepfilternet
     easyeffects
