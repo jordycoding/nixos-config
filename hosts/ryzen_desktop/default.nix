@@ -67,6 +67,15 @@
     enable = true;
   };
 
+  hardware.opengl.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+  ];
+
+  environment.systemPackages = with pkgs; [
+    clinfo
+    openai-whisper
+  ];
+
   core.enableUI = true;
   services.fstrim.enable = true;
 

@@ -43,6 +43,7 @@ with lib;
         description = "File containing matrix database password";
       };
     };
+    calibre = mkEnableOption "Enable Calibre-web";
   };
 
   config = {
@@ -78,5 +79,6 @@ with lib;
     ./miniflux.nix
     ./matrix.nix
     ./immich.nix
+    ./calibre.nix
   ];
 }

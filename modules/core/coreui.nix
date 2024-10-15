@@ -4,6 +4,7 @@ lib.mkIf (config.core.enableUI)
 {
   environment.systemPackages = with pkgs; [
     libreoffice-fresh
+    onlyoffice-bin
     protonmail-bridge
     protonvpn-gui
     piper

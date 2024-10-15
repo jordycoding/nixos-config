@@ -121,6 +121,15 @@ lib.mkIf (config.homelab.caddy)
           '';
         };
       })
+      (lib.mkIf (config.homelab.calibre) {
+        "https://calibre.alkema.co" = {
+          extraConfig = ''
+            reverse_proxy localhost:8083 {
+                 header_up X-Scheme https
+            }
+          '';
+        };
+      })
     ];
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];

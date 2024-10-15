@@ -159,6 +159,7 @@
       createDb = true;
       dbPasswordFile = "/run/agenix/matrixDbPass";
     };
+    homelab.calibre = true;
 
     core.enableUI = false;
 
