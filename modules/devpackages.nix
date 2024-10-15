@@ -27,6 +27,7 @@ with lib;
       git
       jetbrains.idea-ultimate
       jetbrains.datagrip
+      jetbrains.dataspell
       jdk
       maven
       rustup
