@@ -4,7 +4,12 @@ with lib;
 let
   fqdn = "matrix.alkema.co";
   baseUrl = "https://${fqdn}";
-  clientConfig."m.homeserver".base_url = baseUrl;
+  clientConfig = {
+    "m.homeserver".base_url = baseUrl;
+  }
+  // (if config.homelab.matrix.slidingSync then {
+    "org.matrix.msc3575.proxy".url = "https://syncv3.alkema.co";
+  } else { });
   serverConfig."m.server" = "${fqdn}:443";
   mkWellKnown = data: ''
     header {
@@ -38,6 +43,11 @@ in
         reverse_proxy /_synapse/client/* http://[::1]:8008
       '';
     };
+    "https://syncv3.alkema.co" = mkIf config.homelab.matrix.slidingSync {
+      extraConfig = ''
+        reverse_proxy http://[::1]:8009
+      '';
+    };
   };
 
   age.secrets.matrixDbPass = {
@@ -49,6 +59,9 @@ in
     file = ../../secrets/matrixSettings.age;
     owner = "matrix-synapse";
     group = "matrix-synapse";
+  };
+  age.secrets.slidingSyncSecret = {
+    file = ../../secrets/slidingSyncSecret.age;
   };
 
   services.matrix-synapse = mkIf config.homelab.matrix.enable {
@@ -70,6 +83,14 @@ in
       }
     ];
     extraConfigFiles = [ "/run/agenix/matrixSettings" ];
+  };
+
+  services.matrix-sliding-sync = mkIf config.homelab.matrix.slidingSync {
+    enable = true;
+    settings = {
+      SYNCV3_SERVER = "https://matrix.alkema.co";
+    };
+    environmentFile = "/run/agenix/slidingSyncSecret";
   };
 
   systemd.services.matrixPostgreSQLInit = mkIf config.homelab.matrix.createDb {
