@@ -47,10 +47,16 @@ lib.mkIf (config.homelab.grafana)
         user = "exportarr";
         group = "exportarr";
         apiKeyFile = "/run/agenix/sonarr";
+        url = "http://127.0.0.1:8989";
       };
       exportarr-radarr = {
         enable = true;
+        package = pkgs.unstable.exportarr;
         apiKeyFile = "/run/agenix/radarrApiKey";
+        user = "exportarr";
+        group = "exportarr";
+        url = "http://127.0.0.1:7878";
+        port = 9709;
       };
     };
   };

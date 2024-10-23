@@ -161,6 +161,7 @@
       slidingSync = true;
     };
     homelab.calibre = true;
+    homelab.grafana = true;
 
     core.enableUI = false;
 
