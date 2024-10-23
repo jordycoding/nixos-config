@@ -62,7 +62,7 @@
         "--print-build-logs"
       ];
       dates = "04:30";
-      randomizedDelaySec = "45min";
+      allowReboot = true;
     };
 
     nixpkgs = {
