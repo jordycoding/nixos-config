@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 with pkgs;
 let
-  vpnconfig = builtins.fromTOML (builtins.readFile ../../config.toml);
+  vpnconfig = builtins.fromTOML (builtins.readFile ../../../config.toml);
 in
 {
   networking.firewall.allowedUDPPorts = [ 51820 ];

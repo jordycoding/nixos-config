@@ -2,7 +2,7 @@
 
 with lib;
 let
-  generated = pkgs.callPackage ../../_sources/generated.nix { };
+  generated = pkgs.callPackage ../../../_sources/generated.nix { };
 in
 {
   options.homelab.dnsmasq = {
