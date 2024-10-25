@@ -16,4 +16,5 @@ in
   "immichEnv.age".publicKeys = [ system1 ];
   "pgEnv.age".publicKeys = [ system1 ];
   "slidingSyncSecret.age".publicKeys = [ system1 ];
+  "sabApiKey.age".publicKeys = [ system1 ];
 }

@@ -12,6 +12,7 @@ lib.mkIf (config.homelab.grafana)
             "127.0.0.1:${toString config.services.prometheus.exporters.zfs.port}"
             "127.0.0.1:${toString config.services.prometheus.exporters.exportarr-sonarr.port}"
             "127.0.0.1:${toString config.services.prometheus.exporters.exportarr-radarr.port}"
+            "127.0.0.1:${toString config.services.prometheus.exporters.sabnzbd.port}"
           ];
         }];
       }

@@ -20,6 +20,7 @@ lib.mkIf (config.homelab.grafana)
     group = "exportarr";
     mode = "770";
   };
+  age.secrets.sabApiKey.file = ../../secrets/sabApiKey.age;
 
   services.grafana = {
     enable = true;
@@ -57,6 +58,15 @@ lib.mkIf (config.homelab.grafana)
         group = "exportarr";
         url = "http://127.0.0.1:7878";
         port = 9709;
+      };
+      sabnzbd = {
+        enable = true;
+        servers = [
+          {
+            baseUrl = "http://localhost:8080";
+            apiKeyFile = "/run/agenix/sabApiKey";
+          }
+        ];
       };
     };
   };
