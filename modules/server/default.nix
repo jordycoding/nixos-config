@@ -7,18 +7,7 @@ with lib;
     samba = mkEnableOption "Enable Samba shares";
     jellyfin = mkEnableOption "Enable Jellyfin";
     plex = mkEnableOption "Enable plex";
-    dnsmasq = {
-      enable = mkEnableOption "Enable dnsmasq";
-      blacklist = mkEnableOption "Enable blacklist";
-    };
-    unbound = {
-      enable = mkEnableOption "Enable unbound";
-      blacklist = mkEnableOption "Enable adblock blacklist";
-    };
-    caddy = mkEnableOption "Enable Caddy";
     cockpit = mkEnableOption "Enable Cockpit";
-    avahi = mkEnableOption "Enable avahi";
-    dyndns = mkEnableOption "Enable ddclient for dynamicdns";
     gitea = mkEnableOption "Enable gitea";
     syncthing = mkEnableOption "Enable syncthing";
     grafana = mkEnableOption "Enable grafana";
@@ -26,7 +15,6 @@ with lib;
     ollama = mkEnableOption "Enable Ollama";
     keycloak = mkEnableOption "Enable Keycloak";
     ldap = mkEnableOption "Enable LDAP";
-    freshrss = mkEnableOption "Enable FreshRSS";
     miniflux = mkEnableOption "Enable MiniFlux";
     matrix = {
       enable = mkEnableOption "Enable Matrix Synapse server";
@@ -51,17 +39,11 @@ with lib;
     ./samba.nix
     ./jellyfin.nix
     ./plex.nix
-    ./dnsmasq.nix
-    ./caddy.nix
     ./cockpit.nix
-    ./vpn.nix
-    ./avahi.nix
-    ./dyndns.nix
     ./gitea.nix
     ./syncthing.nix
     ./grafana.nix
     ./prometheus-scrapes.nix
-    ./unbound.nix
     ./openrgb.nix
     ./ollama.nix
     ./keycloak.nix
@@ -71,5 +53,6 @@ with lib;
     ./immich.nix
     ./calibre.nix
     ./servarr
+    ./networking
   ];
 }
