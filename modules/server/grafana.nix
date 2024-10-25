@@ -68,7 +68,11 @@ lib.mkIf (config.homelab.grafana)
           }
         ];
       };
+      smartctl.enable = true;
     };
   };
   networking.firewall.allowedTCPPorts = [ 2342 9090 ];
+  services.udev.extraRules = ''
+    SUBSYSTEM=="nvme", KERNEL=="nvme[0-9]*", GROUP="disk"
+  '';
 }
