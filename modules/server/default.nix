@@ -66,10 +66,10 @@ with lib;
     ./ollama.nix
     ./keycloak.nix
     ./ldap.nix
-    ./freshrss.nix
     ./miniflux.nix
     ./matrix.nix
     ./immich.nix
     ./calibre.nix
+    ./servarr
   ];
 }
