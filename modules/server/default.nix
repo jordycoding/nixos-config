@@ -17,7 +17,6 @@ with lib;
     };
     caddy = mkEnableOption "Enable Caddy";
     cockpit = mkEnableOption "Enable Cockpit";
-    bazarr = mkEnableOption "Enable Bazarr";
     avahi = mkEnableOption "Enable avahi";
     dyndns = mkEnableOption "Enable ddclient for dynamicdns";
     gitea = mkEnableOption "Enable gitea";
@@ -49,14 +48,12 @@ with lib;
 
   imports = [
     ./sabnzbd.nix
-    ./radarr.nix
     ./samba.nix
     ./jellyfin.nix
     ./plex.nix
     ./dnsmasq.nix
     ./caddy.nix
     ./cockpit.nix
-    ./bazarr.nix
     ./vpn.nix
     ./avahi.nix
     ./dyndns.nix
