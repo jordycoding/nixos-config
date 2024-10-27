@@ -57,9 +57,14 @@
 
   fileSystems."/home" =
     {
-      device = "ssd/Homes";
+      device = "vault/Homes";
       fsType = "zfs";
     };
+
+  fileSystems."/mnt/Vault/Data" = {
+    device = "vault/Data";
+    fsType = "zfs";
+  };
 
   swapDevices = [ ];
 

@@ -11,11 +11,11 @@ lib.mkIf (config.homelab.syncthing)
     package = pkgs.unstable.syncthing;
     user = "syncthing";
     group = "syncthing";
-    dataDir = "/mnt/Ssd/Data/Syncthing";
+    dataDir = "/mnt/Vault/Data/Syncthing";
     openDefaultPorts = true;
   };
 
   systemd.tmpfiles.rules = [
-    "d /mnt/Ssd/Data/Syncthing 0770 syncthing syncthing - -"
+    "d /mnt/Vault/Data/Syncthing 0770 syncthing syncthing - -"
   ];
 }
