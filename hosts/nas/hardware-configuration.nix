@@ -50,11 +50,6 @@
       fsType = "zfs";
     };
 
-  fileSystems."/mnt/Ssd/Data" = {
-    device = "ssd/Data";
-    fsType = "zfs";
-  };
-
   fileSystems."/home" =
     {
       device = "vault/Homes";
