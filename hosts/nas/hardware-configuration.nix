@@ -30,35 +30,41 @@
     {
       device = "media/Anime";
       fsType = "zfs";
+      neededForBoot = true;
     };
 
   fileSystems."/mnt/Media/Movies" =
     {
       device = "media/Movies";
       fsType = "zfs";
+      neededForBoot = true;
     };
 
   fileSystems."/mnt/Media/Series" =
     {
       device = "media/Series";
       fsType = "zfs";
+      neededForBoot = true;
     };
 
   fileSystems."/mnt/Ssd/Downloads" =
     {
       device = "ssd/Downloads";
       fsType = "zfs";
+      neededForBoot = true;
     };
 
   fileSystems."/home" =
     {
       device = "vault/Homes";
       fsType = "zfs";
+      neededForBoot = true;
     };
 
   fileSystems."/mnt/Vault/Data" = {
     device = "vault/Data";
     fsType = "zfs";
+    neededForBoot = true;
   };
 
   swapDevices = [ ];
