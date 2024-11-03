@@ -52,6 +52,7 @@ with lib;
     ./matrix.nix
     ./immich.nix
     ./calibre.nix
+    ./unmanic.nix
     ./servarr
     ./networking
   ];
