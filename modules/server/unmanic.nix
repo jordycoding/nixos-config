@@ -21,7 +21,7 @@ with lib;
       ports = [ "0.0.0.0:8888:8888" ];
       environment = {
         PUID = "979";
-        PGID = "971";
+        PGID = "996";
       };
       volumes = [
         "/mnt/Vault/Data/Unmanic/config:/config"
@@ -30,6 +30,7 @@ with lib;
         "/mnt/Media/Movies:/movies"
         "/mnt/Media/Anime:/anime"
       ];
+      extraOptions = [ "--device=/dev/dri" ];
     };
     networking.firewall.allowedTCPPorts = [ 8888 ];
   };
