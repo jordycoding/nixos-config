@@ -162,6 +162,7 @@
     };
     homelab.calibre = true;
     homelab.grafana = true;
+    homelab.unmanic = true;
 
     core.enableUI = false;
 

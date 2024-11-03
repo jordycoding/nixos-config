@@ -3,8 +3,11 @@ with lib;
 {
   options.homelab.unmanic = mkEnableOption "Enable Unmanic";
   config = mkIf (config.homelab.unmanic) {
+    users.groups.unmanic = { };
     users.users.unmanic = {
+      group = "unmanic";
       extraGroups = [ "media" ];
+      isSystemUser = true;
     };
 
     systemd.tmpfiles.rules = [
@@ -17,8 +20,8 @@ with lib;
       image = "josh5/unmanic";
       ports = [ "0.0.0.0:8888:8888" ];
       environment = {
-        PUID = "${config.users.users.unmanic.uid}";
-        PGID = "${config.users.groups.media.gid}";
+        PUID = "979";
+        PGID = "971";
       };
       volumes = [
         "/mnt/Vault/Data/Unmanic/config:/config"
