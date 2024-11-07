@@ -35,6 +35,7 @@
     idevicerestore
     libimobiledevice
     pwgen
+    ffmpeg
   ];
   services.udev.packages = with pkgs; [
     ddcutil
