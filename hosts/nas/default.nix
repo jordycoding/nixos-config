@@ -163,6 +163,7 @@
     homelab.calibre = true;
     homelab.grafana = true;
     homelab.unmanic = true;
+    homelab.titleCardMaker = true;
 
     core.enableUI = false;
 

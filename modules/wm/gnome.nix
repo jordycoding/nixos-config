@@ -33,6 +33,7 @@ lib.mkIf (config.shell.gnome)
     switcheroo
     dynamic-wallpaper
     delfin
+    pika-backup
   ];
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;

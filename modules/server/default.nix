@@ -55,5 +55,6 @@ with lib;
     ./unmanic.nix
     ./servarr
     ./networking
+    ./titlecardmaker.nix
   ];
 }
