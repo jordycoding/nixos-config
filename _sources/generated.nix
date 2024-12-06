@@ -3,15 +3,15 @@
 {
   alacrittycatppuccin = {
     pname = "alacrittycatppuccin";
-    version = "94800165c13998b600a9da9d29c330de9f28618e";
+    version = "f6cb5a5c2b404cdaceaff193b9c52317f62c62f7";
     src = fetchFromGitHub {
       owner = "catppuccin";
       repo = "alacritty";
-      rev = "94800165c13998b600a9da9d29c330de9f28618e";
+      rev = "f6cb5a5c2b404cdaceaff193b9c52317f62c62f7";
       fetchSubmodules = false;
-      sha256 = "sha256-Pi1Hicv3wPALGgqurdTzXEzJNx7vVh+8B9tlqhRpR2Y=";
+      sha256 = "sha256-H8bouVCS46h0DgQ+oYY8JitahQDj0V9p2cOoD4cQX+Q=";
     };
-    date = "2024-04-09";
+    date = "2024-10-28";
   };
   dnsblacklist = {
     pname = "dnsblacklist";
@@ -35,27 +35,27 @@
   };
   kittycatppuccin = {
     pname = "kittycatppuccin";
-    version = "1f99e6682d84fe4d8e3177d3add8d0591607a2ac";
+    version = "b14e8385c827f2d41660b71c7fec1e92bdcf2676";
     src = fetchFromGitHub {
       owner = "catppuccin";
       repo = "kitty";
-      rev = "1f99e6682d84fe4d8e3177d3add8d0591607a2ac";
+      rev = "b14e8385c827f2d41660b71c7fec1e92bdcf2676";
       fetchSubmodules = false;
-      sha256 = "sha256-Y51wmGRYDjxbgO/g66+aBA+uOVrQpv2rQIjxbuzm0uk=";
+      sha256 = "sha256-59ON7CzVgfZUo7F81qQZQ1r6kpcjR3OPvTl99gzDP8E=";
     };
-    date = "2024-06-01";
+    date = "2024-11-10";
   };
   neovim = {
     pname = "neovim";
-    version = "afda50e8fe0962534db3673845de34bf4ef15305";
+    version = "f357f319cb9972c5f5c20624c7d1e6130e1d7246";
     src = fetchFromGitHub {
       owner = "jordycoding";
       repo = "neovim-lua";
-      rev = "afda50e8fe0962534db3673845de34bf4ef15305";
+      rev = "f357f319cb9972c5f5c20624c7d1e6130e1d7246";
       fetchSubmodules = false;
-      sha256 = "sha256-2EgHo/Jl3xbnz07tjV5/hKr2o4Jx61iVpF10dX2i5nc=";
+      sha256 = "sha256-4lsCxdFMbDdiL98uEx3RyjTOfPHHNet6I4COi8ePcj0=";
     };
-    date = "2024-05-28";
+    date = "2024-12-06";
   };
   unboundblacklist = {
     pname = "unboundblacklist";
