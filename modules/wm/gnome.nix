@@ -9,7 +9,7 @@ lib.mkIf (config.shell.gnome)
     tilix
     gnome-tweaks
     geary
-    gnome.gnome-boxes
+    gnome-boxes
     dconf-editor
     ulauncher
     wmctrl

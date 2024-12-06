@@ -27,7 +27,4 @@ lib.mkIf (config.shell.sway)
       xdg-desktop-portal-wlr
     ];
   };
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
 }

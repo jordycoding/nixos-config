@@ -37,7 +37,10 @@ lib.mkIf (config.core.enableUI)
     corefonts
     jetbrains-mono
     noto-fonts-emoji
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" "Meslo" "Ubuntu" "NerdFontsSymbolsOnly" ]; })
+    ibm-plex
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.ubuntu
+    nerd-fonts.symbols-only
   ];
   services.ratbagd.enable = true;
 }

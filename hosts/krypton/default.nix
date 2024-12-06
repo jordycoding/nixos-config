@@ -118,6 +118,7 @@
       nvidiaBusId = "PCI:1:0:0";
     };
     open = true;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
   # services.switcherooControl.enable = true;
   hardware.graphics = {

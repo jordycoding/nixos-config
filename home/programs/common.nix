@@ -19,7 +19,7 @@
     playerctl
     pulseaudio
     wl-clipboard
-    gnome.zenity
+    zenity
     pavucontrol
     xdg-utils
     direnv
