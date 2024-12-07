@@ -18,7 +18,7 @@ lib.mkIf (config.homelab.keycloak)
     settings = {
       hostname = "keycloak.alkema.co";
       http-port = 38080;
-      proxy = "edge";
+      proxy-headers = "forwarded|xforwarded";
       http-enabled = true;
     };
     plugins = [
