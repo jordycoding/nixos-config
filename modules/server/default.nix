@@ -25,7 +25,6 @@ with lib;
         example = "/run/secrets/matrixDbPass";
         description = "File containing matrix database password";
       };
-      slidingSync = mkEnableOption "Enable Sliding Sync";
     };
     calibre = mkEnableOption "Enable Calibre-web";
   };

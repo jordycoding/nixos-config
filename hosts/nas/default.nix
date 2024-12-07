@@ -69,6 +69,7 @@
       overlays = [
         outputs.overlays.unstable-packages
         outputs.overlays.samba
+        outputs.overlays.ffmpeg-vpl-overlay
       ];
     };
 
@@ -158,7 +159,6 @@
       enable = true;
       createDb = true;
       dbPasswordFile = "/run/agenix/matrixDbPass";
-      slidingSync = true;
     };
     homelab.calibre = true;
     homelab.grafana = true;
