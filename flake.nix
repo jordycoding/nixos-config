@@ -119,6 +119,13 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
+            {
+              nixpkgs.config = {
+                permittedInsecurePackages = [
+                  "aspnetcore-runtime-6.0.36"
+                ];
+              };
+            }
             ./hosts/nas
             agenix.nixosModules.default
             {

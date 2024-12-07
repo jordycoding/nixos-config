@@ -9,6 +9,13 @@
       };
     };
   };
+
+  ffmpeg-vpl-overlay = final: prev: {
+    ffmpeg = prev.ffmpeg.override {
+      withVpl = true;
+    };
+  };
+
   jellyfin-web-overlay = final: prev: {
     jellyfin-web = prev.jellyfin-web.overrideAttrs {
       postInstall = ''
@@ -18,9 +25,11 @@
   };
   unstable-packages = final: _prev: {
     unstable = import inputs.nixpkgs {
-      overlays = [ jellyfin-ffmpeg-overlay jellyfin-web-overlay ];
+      # overlays = [ jellyfin-ffmpeg-overlay jellyfin-web-overlay ];
       system = "x86_64-linux";
-      config.allowUnfree = true;
+      config = {
+        allowUnfree = true;
+      };
     };
   };
   samba = final: prev: {

@@ -1,6 +1,5 @@
 { config, inputs, outputs, pkgs, lib, ... }:
 
-
 let
   zfsCompatibleKernelPackages = lib.filterAttrs
     (
@@ -16,6 +15,7 @@ let
     )
   );
 in
+lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
 {
   imports = [
     ../../modules/core

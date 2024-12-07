@@ -7,6 +7,6 @@
     ./dnsmasq.nix
     ./dyndns.nix
     ./unbound.nix
-    ./vpn.nix
+    # ./vpn.nix
   ];
 }

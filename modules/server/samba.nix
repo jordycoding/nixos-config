@@ -8,22 +8,22 @@ lib.mkIf (config.homelab.samba)
     securityType = "user";
     openFirewall = true;
     settings = {
-      workgroup = "WORKGROUP";
-      "server string" = "tungsten";
-      "netbios name" = "tungsten";
-      "security" = "user";
-      #use sendfile = yes
-      #max protocol = smb2
-      # note: localhost is the ipv6 localhost ::1
-      "hosts allow" = [ "192.168.1." "127.0.0.1" "localhost" ];
-      "hosts deny" = [ "0.0.0.0/0" ];
-      "guest account" = "nobody";
-      "map to guest" = "bad user";
-    };
-    shares = {
-      series = {
-        path = "/mnt/Media/Series";
-        browseable = "yes";
+      global = {
+        "workgroup" = "WORKGROUP";
+        "server string" = "tungsten";
+        "netbios name" = "tungsten";
+        "security" = "user";
+        #use sendfile = yes
+        #max protocol = smb2
+        # note: localhost is the ipv6 localhost ::1
+        "hosts allow" = [ "192.168.1." "127.0.0.1" "localhost" ];
+        "hosts deny" = [ "0.0.0.0/0" ];
+        "guest account" = "nobody";
+        "map to guest" = "bad user";
+      };
+      "series" = {
+        "path" = "/mnt/Media/Series";
+        "browseable" = "yes";
         "guest ok" = "no";
         "create mask" = "0774";
         "directory mask" = "0770";
@@ -31,9 +31,9 @@ lib.mkIf (config.homelab.samba)
         "valid users" = "@media";
         "read only" = "no";
       };
-      movies = {
-        path = "/mnt/Media/Movies";
-        browseable = "yes";
+      "movies" = {
+        "path" = "/mnt/Media/Movies";
+        "browseable" = "yes";
         "guest ok" = "no";
         "create mask" = "0774";
         "directory mask" = "0770";
@@ -41,9 +41,9 @@ lib.mkIf (config.homelab.samba)
         "valid users" = "@media";
         "read only" = "no";
       };
-      anime = {
-        path = "/mnt/Media/Anime";
-        browseable = "yes";
+      "anime" = {
+        "path" = "/mnt/Media/Anime";
+        "browseable" = "yes";
         "guest ok" = "no";
         "create mask" = "0774";
         "directory mask" = "0770";
@@ -51,8 +51,8 @@ lib.mkIf (config.homelab.samba)
         "valid users" = "@media";
         "read only" = "no";
       };
-      homes = {
-        browseable = "yes";
+      "homes" = {
+        "browseable" = "yes";
         "read only" = "no";
       };
     };

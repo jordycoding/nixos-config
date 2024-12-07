@@ -20,8 +20,4 @@ lib.mkIf (config.homelab.jellyfin)
   users.users.jellyfin = {
     extraGroups = [ "media" ];
   };
-
-  hardware.opengl.extraPackages = with pkgs; [
-    unstable.vpl-gpu-rt
-  ];
 }
