@@ -7,19 +7,19 @@ lib.mkIf (config.homelab.samba)
     enable = true;
     securityType = "user";
     openFirewall = true;
-    extraConfig = ''
-      workgroup = WORKGROUP
-      server string = tungsten
-      netbios name = tungsten
-      security = user 
+    settings = {
+      workgroup = "WORKGROUP";
+      "server string" = "tungsten";
+      "netbios name" = "tungsten";
+      "security" = "user";
       #use sendfile = yes
       #max protocol = smb2
       # note: localhost is the ipv6 localhost ::1
-      hosts allow = 192.168.1. 127.0.0.1 localhost
-      hosts deny = 0.0.0.0/0
-      guest account = nobody
-      map to guest = bad user
-    '';
+      "hosts allow" = [ "192.168.1." "127.0.0.1" "localhost" ];
+      "hosts deny" = [ "0.0.0.0/0" ];
+      "guest account" = "nobody";
+      "map to guest" = "bad user";
+    };
     shares = {
       series = {
         path = "/mnt/Media/Series";
