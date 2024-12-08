@@ -47,7 +47,13 @@ in
       })
       (mkIf config.homelab.unbound.blacklist {
         settings = {
-          include = "${generated.unboundblacklist.src}";
+          server = {
+            "module-config" = "\"respip validator iterator\"";
+          };
+          rpz = {
+            name = "hagezi.main.pro.plus";
+            url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/pro.plus.txt";
+          };
         };
       })
     ];

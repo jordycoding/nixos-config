@@ -47,22 +47,22 @@
   };
   neovim = {
     pname = "neovim";
-    version = "f357f319cb9972c5f5c20624c7d1e6130e1d7246";
+    version = "6342d131c8609b073f3532453ceea3f16d723a38";
     src = fetchFromGitHub {
       owner = "jordycoding";
       repo = "neovim-lua";
-      rev = "f357f319cb9972c5f5c20624c7d1e6130e1d7246";
+      rev = "6342d131c8609b073f3532453ceea3f16d723a38";
       fetchSubmodules = false;
-      sha256 = "sha256-4lsCxdFMbDdiL98uEx3RyjTOfPHHNet6I4COi8ePcj0=";
+      sha256 = "sha256-eHtgtVfToMqPzfsIvnWWNjKqBQ+pQfVgeHctDeCDy0E=";
     };
-    date = "2024-12-06";
+    date = "2024-12-08";
   };
   unboundblacklist = {
     pname = "unboundblacklist";
-    version = "2024.0511.1425.57";
+    version = "2024.1207.1408.09";
     src = fetchurl {
-      url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/c0941e4/unbound/pro.plus.blacklist.conf";
-      sha256 = "sha256-fIl2jYVGTMKtMTwAa3h1QZLfJjLnH5C/7LDdUZnQ+1c=";
+      url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/689f848/rpz/pro.plus.txt";
+      sha256 = "sha256-BPa0pDteSzxcR5MrPobQho1nRFX81iG+7NMFDy7bEPo=";
     };
   };
 }
