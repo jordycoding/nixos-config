@@ -28,7 +28,7 @@ lib.mkIf (config.shell.gnome)
     gnome-firmware
     fractal
     newsflash
-    inputs.matugen.packages.${system}.default
+    matugen
     glib
     switcheroo
     dynamic-wallpaper

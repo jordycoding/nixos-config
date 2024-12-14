@@ -38,7 +38,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pipewire-screenaudio.url = "github:IceDBorn/pipewire-screenaudio";
-    matugen.url = "github:/InioX/Matugen";
   };
 
   # `outputs` are all the build result of the flake.
