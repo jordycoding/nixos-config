@@ -5,6 +5,9 @@ let
   generated = pkgs.callPackage ../../_sources/generated.nix { };
 in
 {
+  imports = [
+    ./gtk.nix
+  ];
   home.file = {
     ".p10k.zsh" = {
       source = "${generated.dotfiles.src}/p10k/.p10k.zsh";
