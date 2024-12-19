@@ -46,6 +46,7 @@ with lib;
       gotools
       elixir
       elixir-ls
+      lazygit
     ]
     ++ (
       optionals (config.languageservers.enable) [
