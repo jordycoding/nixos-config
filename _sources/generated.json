@@ -88,11 +88,11 @@
             "name": null,
             "owner": "jordycoding",
             "repo": "neovim-lua",
-            "rev": "6a97b777b659c8606cbed1867d757ae16e7a8ed6",
-            "sha256": "sha256-/cqwZeTojrrFO43UGr624lm4//go2Vpn9/cHoeGVInc=",
+            "rev": "99019150957eac04e71d40e05f1342c9469e315b",
+            "sha256": "sha256-yPXCLU4CKb3LtDmX2QXL611tmCU9OHwCapbPDyhDofw=",
             "type": "github"
         },
-        "version": "6a97b777b659c8606cbed1867d757ae16e7a8ed6"
+        "version": "99019150957eac04e71d40e05f1342c9469e315b"
     },
     "unboundblacklist": {
         "cargoLocks": null,
