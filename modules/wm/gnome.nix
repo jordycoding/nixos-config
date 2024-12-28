@@ -6,7 +6,6 @@ lib.mkIf (config.shell.gnome)
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   environment.systemPackages = with pkgs; [
-    tilix
     gnome-tweaks
     geary
     gnome-boxes
