@@ -76,7 +76,7 @@
     },
     "neovim": {
         "cargoLocks": null,
-        "date": "2024-12-28",
+        "date": "2025-01-27",
         "extract": null,
         "name": "neovim",
         "passthru": null,
@@ -88,11 +88,11 @@
             "name": null,
             "owner": "jordycoding",
             "repo": "neovim-lua",
-            "rev": "b0e53d1138079fb58f73c1b6bc0dc17698f6184b",
-            "sha256": "sha256-qrAw6gVBA1AfUAxdZIYWrCpavx2cbbG1mf3sdu1EpV8=",
+            "rev": "4ddd6f52dae011e1aef417384f760bbe74c3fdaf",
+            "sha256": "sha256-IRtLdfvwc0qi5pHRARFtDU/f9HZcIKhHOWiViWZaffE=",
             "type": "github"
         },
-        "version": "b0e53d1138079fb58f73c1b6bc0dc17698f6184b"
+        "version": "4ddd6f52dae011e1aef417384f760bbe74c3fdaf"
     },
     "unboundblacklist": {
         "cargoLocks": null,

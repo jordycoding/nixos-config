@@ -67,22 +67,10 @@
     enable = true;
   };
 
-  hardware.opengl.extraPackages = with pkgs; [
-    rocmPackages.clr.icd
-  ];
-
   environment.systemPackages = with pkgs; [
     clinfo
-    openai-whisper
   ];
 
   core.enableUI = true;
   services.fstrim.enable = true;
-
-  specialisation = {
-    plasma.configuration = {
-      shell.gnome = lib.mkForce false;
-      shell.kde = true;
-    };
-  };
 }

@@ -5,8 +5,7 @@
 
 {
   imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
@@ -15,30 +14,15 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/d97eb495-50b9-4f27-addd-17354a6df101";
+    { device = "/dev/disk/by-uuid/77ced99b-a580-4533-8711-c4ef1241ade9";
       fsType = "btrfs";
-      options = [ "subvol=@nixos" ];
+      options = [ "compress=zstd" "noatime" ];
     };
 
   fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/C203-7CC4";
+    { device = "/dev/disk/by-uuid/2E28-EDB8";
       fsType = "vfat";
-    };
-
-  fileSystems."/home" =
-    {
-      device = "/dev/disk/by-uuid/d97eb495-50b9-4f27-addd-17354a6df101";
-      fsType = "btrfs";
-      options = [ "subvol=@home" ];
-    };
-
-  fileSystems."/var/log" =
-    {
-      device = "/dev/disk/by-uuid/d97eb495-50b9-4f27-addd-17354a6df101";
-      fsType = "btrfs";
-      options = [ "subvol=@log" ];
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices = [ ];
