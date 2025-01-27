@@ -15,6 +15,7 @@
             "repo": "alacritty",
             "rev": "f6cb5a5c2b404cdaceaff193b9c52317f62c62f7",
             "sha256": "sha256-H8bouVCS46h0DgQ+oYY8JitahQDj0V9p2cOoD4cQX+Q=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "f6cb5a5c2b404cdaceaff193b9c52317f62c62f7"
@@ -50,6 +51,7 @@
             "repo": "Dotfiles-Xps",
             "rev": "74d70eba06c19bf8ae9c956c35cb108092cce86c",
             "sha256": "sha256-4TUqSHTstDnTzu6PhFPWebnY8vWxhSM2tUNE4/xMUqo=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "74d70eba06c19bf8ae9c956c35cb108092cce86c"
@@ -70,6 +72,7 @@
             "repo": "kitty",
             "rev": "b14e8385c827f2d41660b71c7fec1e92bdcf2676",
             "sha256": "sha256-59ON7CzVgfZUo7F81qQZQ1r6kpcjR3OPvTl99gzDP8E=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "b14e8385c827f2d41660b71c7fec1e92bdcf2676"
@@ -88,11 +91,12 @@
             "name": null,
             "owner": "jordycoding",
             "repo": "neovim-lua",
-            "rev": "4ddd6f52dae011e1aef417384f760bbe74c3fdaf",
-            "sha256": "sha256-IRtLdfvwc0qi5pHRARFtDU/f9HZcIKhHOWiViWZaffE=",
+            "rev": "a5b4129f81bbad62e730694984d106838a75ef73",
+            "sha256": "sha256-im6BjlQrUBREw9fxL6I0neOdPWGTiwwB+kn4ufcCefI=",
+            "sparseCheckout": [],
             "type": "github"
         },
-        "version": "4ddd6f52dae011e1aef417384f760bbe74c3fdaf"
+        "version": "a5b4129f81bbad62e730694984d106838a75ef73"
     },
     "unboundblacklist": {
         "cargoLocks": null,
