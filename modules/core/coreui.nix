@@ -24,6 +24,7 @@ lib.mkIf (config.core.enableUI)
     librewolf
     deepfilternet
     easyeffects
+    ghostty
   ];
   programs._1password.enable = true;
   programs._1password-gui = {
