@@ -46,6 +46,7 @@ with lib;
       elixir
       elixir-ls
       lazygit
+      bun
     ]
     ++ (
       optionals (config.languageservers.enable) [

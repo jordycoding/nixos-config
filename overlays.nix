@@ -46,4 +46,9 @@
   kdematerialyou = final: prev: {
     kde-material-you-colors = prev.callPackage ./pkgs/kde-material-you/derivation.nix;
   };
+  lldb_19-symlink = final: prev: {
+    lldb = prev.lldb.overrideAttrs {
+      dontCheckForBrokenSymlinks = true;
+    };
+  };
 }

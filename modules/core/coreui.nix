@@ -25,6 +25,7 @@ lib.mkIf (config.core.enableUI)
     deepfilternet
     easyeffects
     ghostty
+    jellyfin-media-player
   ];
   programs._1password.enable = true;
   programs._1password-gui = {

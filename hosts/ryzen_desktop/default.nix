@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, outputs, pkgs, lib, ... }:
 
 {
   imports = [
@@ -16,6 +16,9 @@
 
   shell.gnome = true;
   services.flatpak.enable = true;
+  nixpkgs.overlays = [
+    outputs.overlays.lldb_19-symlink
+  ];
 
   languageservers.enable = true;
   home-manager.users.jordy.dotfiles.isLaptop = true;
@@ -65,6 +68,7 @@
   hardware.graphics = {
     enable32Bit = true;
     enable = true;
+    extraPackages = with pkgs; [ libvdpau-va-gl ];
   };
 
   environment.systemPackages = with pkgs; [
