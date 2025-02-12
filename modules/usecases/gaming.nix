@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs ; [
     steam
     lutris
-    ryujinx
+    ryubing
   ];
   hardware.xpadneo.enable = true;
 }

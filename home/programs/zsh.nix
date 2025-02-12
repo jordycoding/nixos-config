@@ -111,7 +111,7 @@
       export GEM_HOME="$HOME/gems"
       export PATH=~/.local/share/coursier/bin:~/.dotnet/tools:~/.npm-packages/bin:~/.config/composer/vendor/bin:$HOME/gems/bin:$PATH
 
-      # eval $(thefuck --alias)
+      eval $(thefuck --alias)
       eval "$(direnv hook zsh)"
       source ~/.p10k.zsh
       # Checks if tmux is available
