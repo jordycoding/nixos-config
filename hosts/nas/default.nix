@@ -104,6 +104,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
       extraPackages = with pkgs; [
         intel-media-driver
         intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
+        vpl-gpu-rt
       ];
     };
     environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };

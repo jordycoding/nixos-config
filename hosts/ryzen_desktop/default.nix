@@ -16,10 +16,6 @@
 
   shell.gnome = true;
   services.flatpak.enable = true;
-  nixpkgs.overlays = [
-    outputs.overlays.lldb_19-symlink
-  ];
-
   languageservers.enable = true;
   home-manager.users.jordy.dotfiles.isLaptop = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
