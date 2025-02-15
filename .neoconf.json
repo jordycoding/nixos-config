@@ -1,0 +1,31 @@
+{
+    "lspconfig": {
+        "nixd": {
+            "nixpkgs": {
+                // For flake.
+                "expr": "import (builtins.getFlake \"/home/jordy/code/nixos-config/master\").inputs.nixpkgs { }   "
+                // This expression will be interpreted as "nixpkgs" toplevel
+                // Nixd provides package, lib completion/information from it.
+                ///
+                // Resource Usage: Entries are lazily evaluated, entire nixpkgs takes 200~300MB for just "names".
+                ///                Package documentation, versions, are evaluated by-need.
+                // "expr": "import <nixpkgs> { }"
+            },
+            // Tell the language server your desired option set, for completion
+            // This is lazily evaluated.
+            "options": { // Map of eval information
+                // If this is omitted, default search path (<nixpkgs>) will be used.
+                "nixos": { // This name "nixos" could be arbitrary.
+                    // The expression to eval, interpret it as option declarations.
+                    "expr": "(builtins.getFlake \"/home/jordy/code/nixos-config/master\").nixosConfigurations.Krypton.options"
+                }
+            },
+            // Control the diagnostic system
+            "diagnostic": {
+                "suppress": [
+                    "sema-extra-with"
+                ]
+            }
+        }
+    }
+}
