@@ -39,6 +39,7 @@
     };
     pipewire-screenaudio.url = "github:IceDBorn/pipewire-screenaudio";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   # `outputs` are all the build result of the flake.

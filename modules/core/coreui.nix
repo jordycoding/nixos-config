@@ -26,6 +26,7 @@ lib.mkIf (config.core.enableUI)
     easyeffects
     ghostty
     jellyfin-media-player
+    inputs.zen-browser.packages."${system}".default
   ];
   programs._1password.enable = true;
   programs._1password-gui = {
@@ -45,4 +46,12 @@ lib.mkIf (config.core.enableUI)
     nerd-fonts.symbols-only
   ];
   services.ratbagd.enable = true;
+  environment.etc = {
+    "1password/custom_allowed_browsers" = {
+      text = ''
+        .zen-wrapped
+      '';
+      mode = "0755";
+    };
+  };
 }
