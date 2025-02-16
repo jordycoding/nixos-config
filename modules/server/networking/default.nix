@@ -9,5 +9,6 @@
     ./unbound.nix
     # ./vpn.nix
     ./powerdns.nix
+    ./pixiecore.nix
   ];
 }

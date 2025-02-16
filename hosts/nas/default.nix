@@ -166,6 +166,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
       immichEnvFile = "/run/agenix/immichEnv";
       pgEnvFile = "/run/agenix/pgEnv";
     };
+    homelab.pixiecore = true;
     # homelab.dnsmasq = {
     #   enable = true;
     #   blacklist = true;

@@ -69,5 +69,7 @@ with lib;
         ltex-ls
       ]
     );
+
+    programs.zsh.sessionVariables.DOTNET_ROOT = pkgs.dotnet-sdk_8.outPath;
   };
 }
