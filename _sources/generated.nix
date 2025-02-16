@@ -47,22 +47,26 @@
   };
   neovim = {
     pname = "neovim";
-    version = "7834c114d8f27af845a7dbe31a17c503ad3abce5";
+    version = "43304c0fd28ef586c809d0f95688397d0bf23fd5";
     src = fetchFromGitHub {
       owner = "jordycoding";
       repo = "neovim-lua";
-      rev = "7834c114d8f27af845a7dbe31a17c503ad3abce5";
+      rev = "43304c0fd28ef586c809d0f95688397d0bf23fd5";
       fetchSubmodules = false;
-      sha256 = "sha256-5yZ5eEFQofPXM6u3DhNIm7Co/bGxKYVaBnUeRBSJxjE=";
+      sha256 = "sha256-SgTJoX+b2JXAVs8eiZRKpFm9C2K6R3W+17nmb0fVi/4=";
     };
-    date = "2025-02-09";
+    date = "2025-02-12";
   };
-  unboundblacklist = {
-    pname = "unboundblacklist";
-    version = "2024.1207.1408.09";
-    src = fetchurl {
-      url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/689f848/rpz/pro.plus.txt";
-      sha256 = "sha256-BPa0pDteSzxcR5MrPobQho1nRFX81iG+7NMFDy7bEPo=";
+  rpzblacklist = {
+    pname = "rpzblacklist";
+    version = "313fefe99f1f8d49e373ed48adb5d0aef8a1e7ea";
+    src = fetchFromGitHub {
+      owner = "hagezi";
+      repo = "dns-blocklists";
+      rev = "313fefe99f1f8d49e373ed48adb5d0aef8a1e7ea";
+      fetchSubmodules = false;
+      sha256 = "sha256-UIhrPuHpla4PLnahpe7Pj/s/ifsHUDI63bx+RyPIC+g=";
     };
+    date = "2025-02-15";
   };
 }

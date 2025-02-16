@@ -18,6 +18,6 @@ fetch.github = "catppuccin/alacritty"
 src.manual = "2024.0417.0102.50"
 fetch.url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/7c587c2/dnsmasq/pro.plus.txt"
 
-[unboundblacklist]
-src.manual = "2024.1207.1408.09"
-fetch.url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/689f848/rpz/pro.plus.txt"
+[rpzblacklist]
+src.git = "https://github.com/hagezi/dns-blocklists.git"
+fetch.github = "hagezi/dns-blocklists"

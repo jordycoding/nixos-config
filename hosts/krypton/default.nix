@@ -49,7 +49,7 @@
     pulse.enable = true;
   };
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   services.printing.enable = true;
   services.printing.drivers = [
     # pkgs.epson-escpr

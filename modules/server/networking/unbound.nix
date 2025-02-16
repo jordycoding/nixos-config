@@ -16,7 +16,7 @@ in
         package = pkgs.unstable.unbound;
         settings = {
           server = {
-            interface = [ "::1" "127.0.0.1" "192.168.1.74" ];
+            interface = [ "192.168.1.74" ];
             access-control = "192.168.1.0/24 allow";
             local-data = [
               "\"tungsten.home.arpa A 192.168.1.74\""

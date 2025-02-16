@@ -69,6 +69,7 @@
 
   environment.systemPackages = with pkgs; [
     clinfo
+    wineWowPackages.stable
   ];
 
   core.enableUI = true;

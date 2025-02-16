@@ -8,5 +8,6 @@
     ./dyndns.nix
     ./unbound.nix
     # ./vpn.nix
+    ./powerdns.nix
   ];
 }

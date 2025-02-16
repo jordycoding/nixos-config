@@ -1,0 +1,37 @@
+{ config, lib, ... }:
+
+with lib;
+{
+  options.homelab.powerdns = {
+    enable = mkEnableOption "Enable PowerDNS";
+  };
+  config = mkIf config.homelab.powerdns.enable {
+    services.powerdns = {
+      enable = true;
+      extraConfig = ''
+        launch=gpsql
+        gpsql-host=/var/run/postgresql
+        gpsql-dbname=pdns
+        gpsql-user=pdns
+        resolver=[::1]:5300
+      '';
+    };
+    services.pdns-recursor = {
+      enable = true;
+      settings = {
+        local-port = 5300;
+      };
+    };
+    services.postgresql = {
+      ensureDatabases = [ "pdns" ];
+      ensureUsers = [
+        {
+          name = "pdns";
+          ensureDBOwnership = true;
+        }
+      ];
+    };
+    networking.firewall.allowedTCPPorts = [ 53 ];
+    networking.firewall.allowedUDPPorts = [ 53 ];
+  };
+}

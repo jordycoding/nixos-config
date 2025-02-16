@@ -135,3 +135,4 @@ flake.lock
 client-*.toml
 client-*.conf
 config.toml
+neoconf.json

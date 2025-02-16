@@ -93,6 +93,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
       intel-gpu-tools
       inputs.nixguard.packages.x86_64-linux.default
       wireguard-tools
+      ghostty
     ];
 
     environment.shellAliases = {
@@ -155,10 +156,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
     homelab.syncthing = true;
     homelab.jellyfin = true;
     homelab.openrgb = true;
-    homelab.unbound = {
-      enable = true;
-      blacklist = true;
-    };
+    homelab.powerdns.enable = true;
     # homelab.ollama = true;
     homelab.keycloak = true;
     homelab.ldap = true;
