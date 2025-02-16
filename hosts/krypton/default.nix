@@ -18,7 +18,24 @@
   users.users.jordy.extraGroups = [ "wheel" "libvirtd" "input" "wireshark" "video" ];
 
   shell.gnome = true;
-  core.enableUI = true;
+  var = {
+    enableUI = true;
+    dev = {
+      node = true;
+      python = true;
+      tools = true;
+      jetbrains = true;
+      java = true;
+      android = true;
+      dotnet = true;
+      php = true;
+      go = true;
+      nix = true;
+      latex = true;
+      lua = true;
+      rust = true;
+    };
+  };
   services.flatpak.enable = true;
 
   virtualisation.docker.enableNvidia = true;
@@ -31,7 +48,6 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" ];
-  languageservers.enable = true;
   services.fwupd.enable = true;
   services.fprintd = {
     enable = true;
@@ -99,6 +115,7 @@
     wineWowPackages.stable
     wineWowPackages.waylandFull
     cudatoolkit
+    vscode
   ];
 
   services.xserver.videoDrivers = [ "nvidia" ];

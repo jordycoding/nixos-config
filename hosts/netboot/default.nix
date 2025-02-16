@@ -3,6 +3,8 @@
 {
   imports = [
     (modulesPath + "/installer/netboot/netboot-base.nix")
+    ../../modules/wm
+    ../../modules/devpackages.nix
   ];
   config = {
     services.openssh = {
@@ -43,5 +45,14 @@
     ];
 
     programs.git.enable = true;
+
+    var.dev = {
+      tools = true;
+      nix = true;
+    };
+
+    systemd.tmpfiles.rules = [
+      "f /home/nixos/.config/gnome-initial-setup-done 0711 nixos - - yes"
+    ];
   };
 }

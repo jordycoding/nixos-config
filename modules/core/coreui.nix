@@ -1,6 +1,6 @@
 { config, pkgs, inputs, lib, ... }:
 
-lib.mkIf (config.core.enableUI)
+lib.mkIf (config.var.enableUI)
 {
   environment.systemPackages = with pkgs; [
     libreoffice-fresh

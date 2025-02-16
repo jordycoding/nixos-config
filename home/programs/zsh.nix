@@ -1,5 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, osConfig, lib, ... }:
 
+with lib;
 {
   programs.zsh = {
     enable = true;
@@ -41,9 +42,14 @@
       path = "${config.xdg.dataHome}/zsh/history";
     };
 
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
+    sessionVariables = mkMerge [
+      {
+        EDITOR = "nvim";
+      }
+      (mkIf osConfig.var.dev.dotnet {
+        DOTNET_ROOT = pkgs.dotnet-sdk_8.outPath;
+      })
+    ];
 
     plugins = [
       {

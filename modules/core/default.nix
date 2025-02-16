@@ -2,7 +2,7 @@
 with lib;
 
 {
-  options.core = {
+  options.var = {
     enableUI = mkEnableOption "Enable UI Packages";
   };
   imports = [

@@ -121,6 +121,27 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/netboot
+            home-manager.nixosModules.home-manager
+            {
+              # home-manager.sharedModules = [
+              #   hyprland.homeManagerModules.default
+              # ];
+              home-manager.useGlobalPkgs = true;
+              home-manager.extraSpecialArgs = { inherit inputs hyprland outputs; }; # allows access to flake inputs in hm modules
+              home-manager.useUserPackages = true;
+              home-manager.users.nixos = {
+                imports = [ ./home ];
+                config = {
+                  home = {
+                    username = nixpkgs.lib.mkForce "nixos";
+                    homeDirectory = nixpkgs.lib.mkForce "/home/nixos";
+                  };
+                  programs.fish.enable = nixpkgs.lib.mkForce false;
+                  programs.git.enable = nixpkgs.lib.mkForce false;
+                  programs.ssh.enable = nixpkgs.lib.mkForce false;
+                };
+              };
+            }
           ];
         };
 

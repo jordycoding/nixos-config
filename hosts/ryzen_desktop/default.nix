@@ -16,7 +16,6 @@
 
   shell.gnome = true;
   services.flatpak.enable = true;
-  languageservers.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.initrd.kernelModules = [ "amdgpu" ];
   # Use the systemd-boot EFI boot loader.
@@ -69,8 +68,26 @@
   environment.systemPackages = with pkgs; [
     clinfo
     wineWowPackages.stable
+    vscode
   ];
 
-  core.enableUI = true;
+  var = {
+    enableUI = true;
+    dev = {
+      node = true;
+      python = true;
+      tools = true;
+      jetbrains = true;
+      java = true;
+      android = true;
+      dotnet = true;
+      php = true;
+      go = true;
+      nix = true;
+      latex = true;
+      lua = true;
+      rust = true;
+    };
+  };
   services.fstrim.enable = true;
 }
