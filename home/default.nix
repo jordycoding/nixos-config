@@ -9,10 +9,6 @@ with lib;
     ./shell
   ];
 
-  options.dotfiles = {
-    isLaptop = mkEnableOption "Use laptop dotfiles";
-  };
-
   config = {
     home = {
       username = "jordy";

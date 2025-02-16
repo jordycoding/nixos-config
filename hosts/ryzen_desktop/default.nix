@@ -17,7 +17,6 @@
   shell.gnome = true;
   services.flatpak.enable = true;
   languageservers.enable = true;
-  home-manager.users.jordy.dotfiles.isLaptop = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.initrd.kernelModules = [ "amdgpu" ];
   # Use the systemd-boot EFI boot loader.
