@@ -49,10 +49,7 @@
     var.dev = {
       tools = true;
       nix = true;
+      node = true;
     };
-
-    systemd.tmpfiles.rules = [
-      "f /home/nixos/.config/gnome-initial-setup-done 0711 nixos - - yes"
-    ];
   };
 }
