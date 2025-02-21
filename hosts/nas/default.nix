@@ -180,6 +180,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
     homelab.grafana = true;
     homelab.unmanic = true;
     homelab.titleCardMaker = true;
+    homelab.headscale = true;
 
     var.enableUI = false;
 

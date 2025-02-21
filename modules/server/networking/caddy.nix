@@ -112,6 +112,13 @@ with lib;
             '';
           };
         })
+        (lib.mkIf (config.homelab.headscale) {
+          "${toString config.services.headscale.settings.server_url}" = {
+            extraConfig = ''
+              reverse_proxy http://127.0.0.1:${toString config.services.headscale.port}
+            '';
+          };
+        })
       ];
     };
     networking.firewall.allowedTCPPorts = [ 80 443 ];

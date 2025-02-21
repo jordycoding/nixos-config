@@ -10,5 +10,6 @@
     # ./vpn.nix
     ./powerdns.nix
     ./pixiecore.nix
+    ./headscale.nix
   ];
 }
