@@ -36,6 +36,7 @@
     libimobiledevice
     pwgen
     ffmpeg
+    tea
   ];
   services.udev.packages = with pkgs; [
     ddcutil

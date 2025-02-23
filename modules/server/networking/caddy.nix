@@ -115,6 +115,19 @@ with lib;
         (lib.mkIf (config.homelab.headscale) {
           "${toString config.services.headscale.settings.server_url}" = {
             extraConfig = ''
+              @options {
+                method OPTIONS
+              }
+
+              header {
+                Access-Control-Allow-Origin "http://localhost:5173"
+                Access-Control-Allow-Methods "GET, POST, OPTIONS"
+                Access-Control-Allow-Credentials "true"
+                Access-Control-Allow-Headers "Content-Type, Authorization"
+              }
+
+              respond @options 204
+
               reverse_proxy http://127.0.0.1:${toString config.services.headscale.port}
             '';
           };
