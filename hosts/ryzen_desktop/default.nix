@@ -71,6 +71,11 @@
     vscode
   ];
 
+  systemd.tmpfiles.rules = [
+    "d /mnt/games 0770 root gaming - -"
+    "d /mnt/games_sata 0770 root gaming - -"
+  ];
+
   var = {
     enableUI = true;
     dev = {
