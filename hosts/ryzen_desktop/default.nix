@@ -27,6 +27,9 @@
   networking.interfaces.enp34s0.wakeOnLan.enable = true;
   # networking.networkmanager.insertNameservers = [ "192.168.1.21" ];
 
+  virtualisation.incus.enable = true;
+  networking.nftables.enable = true;
+
   hardware.pulseaudio.enable = false;
   hardware.i2c.enable = true;
   services.pipewire = {

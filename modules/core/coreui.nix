@@ -27,6 +27,7 @@ lib.mkIf (config.var.enableUI)
     ghostty
     jellyfin-media-player
     inputs.zen-browser.packages."${system}".default
+    gparted
   ];
   programs._1password.enable = true;
   programs._1password-gui = {

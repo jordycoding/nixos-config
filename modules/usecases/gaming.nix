@@ -4,6 +4,7 @@
     steam
     lutris
     ryubing
+    bottles
   ];
   hardware.xpadneo.enable = true;
   # For btrfs file sharing
