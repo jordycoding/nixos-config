@@ -44,12 +44,6 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
       owner = "keycloak";
       group = "keycloak";
     };
-    age.secrets.immichEnv = {
-      file = ../../secrets/immichEnv.age;
-    };
-    age.secrets.pgEnv = {
-      file = ../../secrets/pgEnv.age;
-    };
 
     networking.useNetworkd = true;
     systemd.network.enable = true;
@@ -162,11 +156,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
     homelab.keycloak = true;
     homelab.ldap = true;
     homelab.miniflux = true;
-    homelab.immich = {
-      enable = true;
-      immichEnvFile = "/run/agenix/immichEnv";
-      pgEnvFile = "/run/agenix/pgEnv";
-    };
+    homelab.immich = true;
     homelab.pixiecore = true;
     # homelab.dnsmasq = {
     #   enable = true;
