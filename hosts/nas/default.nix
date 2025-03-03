@@ -110,7 +110,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
     };
     environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
-    users.users.jordy.extraGroups = [ "wheel" "libvirtd" "video" "media" "download" "render" ];
+    users.users.jordy.extraGroups = [ "wheel" "libvirtd" "video" "media" "download" "render" "pubwrite" ];
 
     users.users.testuser = {
       isNormalUser = true;
@@ -140,6 +140,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
 
     users.groups.media = { };
     users.groups.download = { };
+    users.groups.pubwrite = { };
 
     homelab.sonarr = true;
     homelab.radarr = true;
@@ -191,6 +192,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
       "d /mnt/Ssd/Downloads/Sab 0770 root download - -"
       "d /mnt/Ssd/Downloads/Sab/incomplete 0770 root download - -"
       "d /mnt/Ssd/Downloads/Sab/complete 0770 root download - -"
+      "d /mnt/Vault/Data/Software 0775 root pubwrite - -"
     ];
     services.fail2ban.enable = true;
 

@@ -51,6 +51,15 @@ lib.mkIf (config.homelab.samba)
         "valid users" = "@media";
         "read only" = "no";
       };
+      "software" = {
+        "path" = "/mnt/Vault/Data/Software";
+        "browseable" = "yes";
+        "guest ok" = "yes";
+        "create mask" = "0775";
+        "directory mask" = "0775";
+        "read only" = "yes";
+        "write list" = "@pubwrite";
+      };
       "homes" = {
         "browseable" = "yes";
         "read only" = "no";
