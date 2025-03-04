@@ -55,5 +55,6 @@ with lib;
     ./servarr
     ./networking
     ./titlecardmaker.nix
+    ./incus.nix
   ];
 }
