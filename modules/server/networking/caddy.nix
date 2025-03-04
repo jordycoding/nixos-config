@@ -96,10 +96,10 @@ with lib;
             '';
           };
         })
-        (lib.mkIf (config.homelab.immich.enable) {
+        (lib.mkIf (config.homelab.immich) {
           "https://immich.alkema.co" = {
             extraConfig = ''
-              reverse_proxy http://127.0.0.1:2283
+              reverse_proxy http://[::1]:${toString config.services.immich.port}
             '';
           };
         })

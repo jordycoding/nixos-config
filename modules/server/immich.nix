@@ -11,7 +11,7 @@ in
 {
   options.homelab.immich = mkEnableOption "Enable Immich";
 
-  config = mkIf (config.homelab.immich.enable) {
+  config = mkIf (config.homelab.immich) {
     systemd.tmpfiles.rules = [
       "d /mnt/Vault/Data/Immich 0770 immich immich - -"
     ];
@@ -19,7 +19,7 @@ in
     services.immich = {
       enable = true;
       package = pkgs.unstable.immich;
-      mediaLocation = "/mnt/vault/Data/Immich";
+      mediaLocation = "/mnt/Vault/Data/Immich";
     };
   };
 }
