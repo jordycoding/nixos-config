@@ -7,7 +7,10 @@ with lib;
     virtualisation.incus = {
       enable = true;
       ui.enable = true;
+      package = pkgs.unstable.incus;
     };
     networking.firewall.allowedTCPPorts = [ 8443 ];
+    # Incus needs this for some reason
+    networking.nftables.enable = true;
   };
 }

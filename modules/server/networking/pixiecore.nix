@@ -14,6 +14,7 @@ in
       initrd = "${netboot.netbootRamdisk}/initrd";
       cmdLine = "init=${netboot.toplevel}/init loglevel=4";
       port = 3030;
+      dhcpNoBind = true;
     };
   };
 }
