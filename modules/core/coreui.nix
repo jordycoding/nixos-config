@@ -21,13 +21,13 @@ lib.mkIf (config.var.enableUI)
     obsidian
     element-desktop
     # cinny-desktop
-    librewolf
     deepfilternet
     easyeffects
     ghostty
     jellyfin-media-player
     inputs.zen-browser.packages."${system}".default
     gparted
+    virt-viewer
   ];
   programs._1password.enable = true;
   programs._1password-gui = {

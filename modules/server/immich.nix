@@ -1,13 +1,6 @@
 { config, pkgs, lib, ... }:
 with lib;
 
-let
-  immichVersion = "release";
-  immichRoot = "/mnt/Ssd/Immich";
-  immichPhotos = "${immichRoot}/photos";
-  immichAppdataRoot = "${immichRoot}/appdata";
-  postgresRoot = "${immichAppdataRoot}/pgsql";
-in
 {
   options.homelab.immich = mkEnableOption "Enable Immich";
 

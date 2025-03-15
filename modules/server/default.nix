@@ -56,5 +56,6 @@ with lib;
     ./networking
     ./titlecardmaker.nix
     ./incus.nix
+    ./glance.nix
   ];
 }

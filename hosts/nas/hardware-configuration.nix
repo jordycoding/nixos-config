@@ -47,13 +47,6 @@
       neededForBoot = true;
     };
 
-  fileSystems."/mnt/Ssd/Downloads" =
-    {
-      device = "ssd/Downloads";
-      fsType = "zfs";
-      neededForBoot = true;
-    };
-
   fileSystems."/home" =
     {
       device = "vault/Homes";
@@ -66,6 +59,20 @@
     fsType = "zfs";
     neededForBoot = true;
   };
+
+  fileSystems."/mnt/Ssd/Downloads" =
+    {
+      device = "/dev/disk/by-uuid/7e884851-6fb1-4d97-82eb-fdb1037e0c83";
+      fsType = "btrfs";
+      options = [ "subvol=Downloads" ];
+    };
+
+  fileSystems."/mnt/Ssd/Incus" =
+    {
+      device = "/dev/disk/by-uuid/7e884851-6fb1-4d97-82eb-fdb1037e0c83";
+      fsType = "btrfs";
+      options = [ "subvol=Incus" ];
+    };
 
   swapDevices = [ ];
 

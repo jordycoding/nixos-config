@@ -46,5 +46,6 @@ with lib;
         '';
       };
     };
+    networking.interfaces.tailscale0.useDHCP = false;
   };
 }

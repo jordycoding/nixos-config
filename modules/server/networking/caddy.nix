@@ -132,6 +132,13 @@ with lib;
             '';
           };
         })
+        (lib.mkIf (config.homelab.glance) {
+          "https://glance.alkema.co" = {
+            extraConfig = ''
+              reverse_proxy http://127.0.0.1:${toString config.services.glance.settings.server.port}
+            '';
+          };
+        })
       ];
     };
     networking.firewall.allowedTCPPorts = [ 80 443 ];

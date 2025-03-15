@@ -55,9 +55,10 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
     };
 
     services.resolved = {
-      extraConfig = ''
-        DNSStubListener=no
-      '';
+      enable = true;
+      # extraConfig = ''
+      #   DNSStubListener=no
+      # '';
     };
     services.zfs.autoScrub.enable = true;
 
@@ -173,6 +174,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
     homelab.titleCardMaker = true;
     homelab.headscale = true;
     homelab.incus = true;
+    homelab.glance = true;
 
     var.enableUI = false;
 
