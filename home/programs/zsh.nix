@@ -130,4 +130,5 @@ with lib;
       fi
     '';
   };
+  programs.thefuck.enable = true;
 }
