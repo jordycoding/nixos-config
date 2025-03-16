@@ -41,6 +41,7 @@ in
         neovim
         lazygit
         clang
+        luajitPackages.luarocks
       ];
     })
 

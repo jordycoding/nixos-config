@@ -28,6 +28,7 @@ lib.mkIf (config.var.enableUI)
     inputs.zen-browser.packages."${system}".default
     gparted
     virt-viewer
+    inputs.wezterm.packages.${pkgs.system}.default
   ];
   programs._1password.enable = true;
   programs._1password-gui = {
@@ -45,6 +46,7 @@ lib.mkIf (config.var.enableUI)
     nerd-fonts.jetbrains-mono
     nerd-fonts.ubuntu
     nerd-fonts.symbols-only
+    monaspace
   ];
   services.ratbagd.enable = true;
   environment.etc = {

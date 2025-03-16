@@ -37,6 +37,7 @@
     pwgen
     ffmpeg
     tea
+    unzip
   ];
   services.udev.packages = with pkgs; [
     ddcutil
