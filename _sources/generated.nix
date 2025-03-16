@@ -47,26 +47,26 @@
   };
   neovim = {
     pname = "neovim";
-    version = "fb6a5ae9ad56eeca6e115a9e47d6c361d525b081";
+    version = "963f3cdbfbfea81ba641ee9e0f7dcafe7487e44e";
     src = fetchFromGitHub {
       owner = "jordycoding";
       repo = "neovim-lua";
-      rev = "fb6a5ae9ad56eeca6e115a9e47d6c361d525b081";
+      rev = "963f3cdbfbfea81ba641ee9e0f7dcafe7487e44e";
       fetchSubmodules = false;
-      sha256 = "sha256-5Fyn77nPVEL/7Gp2zm75aaucm+Sjw44Z44oLv1M/olw=";
+      sha256 = "sha256-IaV7a2FZuiMs4y2u/BxhZ8tgBpBFZ8zqUvMi/OVp+sw=";
     };
     date = "2025-03-16";
   };
   rpzblacklist = {
     pname = "rpzblacklist";
-    version = "9c809179fe6a1933cad0c8e2239bfcbcc3be464b";
+    version = "08d43168cd599589dff8c557b44f724e4b25725b";
     src = fetchFromGitHub {
       owner = "hagezi";
       repo = "dns-blocklists";
-      rev = "9c809179fe6a1933cad0c8e2239bfcbcc3be464b";
+      rev = "08d43168cd599589dff8c557b44f724e4b25725b";
       fetchSubmodules = false;
-      sha256 = "sha256-+P+vJ5QoiLI/bnZxRfSQ3TvK1SILe0tO7yr/iePkjR4=";
+      sha256 = "sha256-sqPyPynSUkXnC/O2oECjtUbftOAp8shORO4W25wj+Ps=";
     };
-    date = "2025-03-15";
+    date = "2025-03-16";
   };
 }

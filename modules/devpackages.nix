@@ -42,6 +42,8 @@ in
         lazygit
         clang
         luajitPackages.luarocks
+        emacs
+        neovide
       ];
     })
 
