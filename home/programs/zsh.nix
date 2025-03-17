@@ -15,6 +15,7 @@ with lib;
       vim = "nvim";
       vi = "nvim";
       v = "nvim";
+      nv = "neovide";
       gs = "git status";
       ga = "git add";
       gc = "git commit -m";

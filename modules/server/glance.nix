@@ -65,6 +65,55 @@ with lib;
                       "UC68TLK0mAEzUyHx5x5k-S1Q"
                     ];
                   }
+                  {
+                    type = "group";
+                    widgets = [
+                      {
+                        type = "rss";
+                        title = "c/Linux";
+                        limit = 20;
+                        collapse-after = 5;
+                        cache = "12h";
+                        feeds = [
+                          {
+                            url = "https://lemmy.ml/feeds/c/linux.xml?sort=Hot";
+                            title = "lemmy.ml";
+                          }
+                        ];
+                      }
+                      {
+                        type = "rss";
+                        title = "c/Android";
+                        limit = 20;
+                        collapse-after = 5;
+                        cache = "12h";
+                        feeds = [
+                          {
+                            url = "https://lemdro.id/feeds/c/android.xml?sort=Hot";
+                            title = "lemdro.id";
+                          }
+                        ];
+                      }
+                      {
+                        type = "rss";
+                        title = "c/Technology";
+                        limit = 20;
+                        collapse-after = 5;
+                        cache = "12h";
+                        feeds = [
+                          {
+                            url = "https://beehaw.org/feeds/c/technology.xml?sort=Hot";
+                            title = "beehaw.org";
+                          }
+                        ];
+                      }
+                    ];
+                  }
+                ];
+              }
+              {
+                size = "small";
+                widgets = [
                 ];
               }
             ];

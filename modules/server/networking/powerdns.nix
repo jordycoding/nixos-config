@@ -59,7 +59,7 @@ in
       # };
       settings = {
         refresh-on-ttl-perc = 10;
-        local-address = [ "192.168.1.74:53" "127.0.0.1:53" "tungsten.tailnet.alkema.co:53" ];
+        local-address = [ "192.168.1.74:53" "127.0.0.1:53" ];
         # disable-packetcache = "yes";
       };
       luaConfig = ''

@@ -10,11 +10,13 @@
     ../../modules/usecases/downloading.nix
     ../../modules/wm
     ./hardware-configuration.nix
+    ../../modules/plymouth.nix
   ];
 
   users.users.jordy.extraGroups = [ "wheel" "libvirtd" "input" "wireshark" "video" "kvm" "incus-admin" ];
 
   shell.gnome = true;
+  shell.niri = true;
   services.flatpak.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.initrd.kernelModules = [ "amdgpu" ];

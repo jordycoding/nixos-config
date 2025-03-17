@@ -79,7 +79,7 @@
     },
     "neovim": {
         "cargoLocks": null,
-        "date": "2025-03-16",
+        "date": "2025-03-17",
         "extract": null,
         "name": "neovim",
         "passthru": null,
@@ -91,16 +91,16 @@
             "name": null,
             "owner": "jordycoding",
             "repo": "neovim-lua",
-            "rev": "ce2b892818cae9a5107e7b87e9cd7e46e3726bd0",
-            "sha256": "sha256-rlSFV6jyV43OxS8wZRNirhZsxB2nGq9g2E3KP4IuBoE=",
+            "rev": "f8ab6a880785e42bd6ead706011d196e5b9c14ce",
+            "sha256": "sha256-/8ck/49HnNk+jRBJ8LY2B76W0aQZhJEmyBUN2xZ/NJs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ce2b892818cae9a5107e7b87e9cd7e46e3726bd0"
+        "version": "f8ab6a880785e42bd6ead706011d196e5b9c14ce"
     },
     "rpzblacklist": {
         "cargoLocks": null,
-        "date": "2025-03-16",
+        "date": "2025-03-17",
         "extract": null,
         "name": "rpzblacklist",
         "passthru": null,
@@ -112,11 +112,11 @@
             "name": null,
             "owner": "hagezi",
             "repo": "dns-blocklists",
-            "rev": "ffd6a7e6ef66e294e4d9229ace8ab3341973df45",
-            "sha256": "sha256-HPYpAw5d2vBjw4fgB8ykV3tjE7ZzZ1i4EElgLAaMbuE=",
+            "rev": "4c3a1ecf03f63322d3256544e9a25e97aef242c4",
+            "sha256": "sha256-R7mC1UD074Qulh53GIbOSPK3yotwRkelbiTydoDE49M=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ffd6a7e6ef66e294e4d9229ace8ab3341973df45"
+        "version": "4c3a1ecf03f63322d3256544e9a25e97aef242c4"
     }
 }

@@ -41,6 +41,7 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     wezterm.url = "github:wezterm/wezterm?dir=nix";
+    niri.url = "github:sodiboo/niri-flake";
   };
 
   # `outputs` are all the build result of the flake.
