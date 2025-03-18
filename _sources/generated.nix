@@ -47,15 +47,15 @@
   };
   neovim = {
     pname = "neovim";
-    version = "f8ab6a880785e42bd6ead706011d196e5b9c14ce";
+    version = "24505579e7d4bd2ed51abd81364b69934bd5d662";
     src = fetchFromGitHub {
       owner = "jordycoding";
       repo = "neovim-lua";
-      rev = "f8ab6a880785e42bd6ead706011d196e5b9c14ce";
+      rev = "24505579e7d4bd2ed51abd81364b69934bd5d662";
       fetchSubmodules = false;
-      sha256 = "sha256-/8ck/49HnNk+jRBJ8LY2B76W0aQZhJEmyBUN2xZ/NJs=";
+      sha256 = "sha256-LZRl90ro55fQNn8fashngCrIXI0NFBHBwbAJI4VEtlc=";
     };
-    date = "2025-03-17";
+    date = "2025-03-18";
   };
   rpzblacklist = {
     pname = "rpzblacklist";
