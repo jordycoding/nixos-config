@@ -3,7 +3,7 @@
         "nixd": {
             "nixpkgs": {
                 // For flake.
-                "expr": "import (builtins.getFlake \"/home/jordy/code/nixos-config/master\").inputs.nixpkgs { }   "
+                "expr": "import (builtins.getFlake \"/home/jordy/code/nixos-config\").inputs.nixpkgs { }   "
                 // This expression will be interpreted as "nixpkgs" toplevel
                 // Nixd provides package, lib completion/information from it.
                 ///
@@ -17,10 +17,10 @@
                 // If this is omitted, default search path (<nixpkgs>) will be used.
                 "nixos": { // This name "nixos" could be arbitrary.
                     // The expression to eval, interpret it as option declarations.
-                    "expr": "(builtins.getFlake \"/home/jordy/code/nixos-config/master\").nixosConfigurations.Argon.options"
+                    "expr": "(builtins.getFlake \"/home/jordy/code/nixos-config\").nixosConfigurations.Argon.options"
                 },
                 "home-manager": {
-                    "expr": "(builtins.getFlake \"/home/jordy/code/nixos-config/master\").nixosConfigurations.Argon.options.home-manager.users.type.getSubOptions []"
+                    "expr": "(builtins.getFlake \"/home/jordy/code/nixos-config\").nixosConfigurations.Argon.options.home-manager.users.type.getSubOptions []"
                 }
             },
             // Control the diagnostic system

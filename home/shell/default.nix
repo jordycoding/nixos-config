@@ -12,6 +12,6 @@ with lib;
     optionals (osConfig.shell.gnome) [
       ../gnome
     ]
-    # ++ [ ./niri ]
+    ++ [ ./niri ]
   );
 }

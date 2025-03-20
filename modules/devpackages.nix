@@ -44,6 +44,7 @@ in
         luajitPackages.luarocks
         emacs
         neovide
+        lemminx
       ];
     })
 
