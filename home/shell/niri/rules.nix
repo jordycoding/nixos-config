@@ -22,6 +22,7 @@
         top-left = radius;
         top-right = radius;
       };
+      clip-to-geometry = true;
     }
   ];
 }

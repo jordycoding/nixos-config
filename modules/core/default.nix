@@ -8,6 +8,7 @@ with lib;
   imports = [
     ./corecli.nix
     ./coreui.nix
+    ./dnscrypt.nix
   ];
   config = {
     system.stateVersion = "23.11";

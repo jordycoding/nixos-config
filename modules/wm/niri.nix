@@ -10,5 +10,8 @@ lib.mkIf (config.shell.niri)
     swww
     waypaper
     rofi-wayland
+    xwayland-satellite
+    libnotify
+    dunst
   ];
 }
