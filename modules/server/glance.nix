@@ -114,6 +114,34 @@ with lib;
               {
                 size = "small";
                 widgets = [
+                  {
+                    type = "markets";
+                    title = "Indices";
+                    markets = [
+                      {
+                        symbol = "DX-Y.NYB";
+                        name = "Dollar Index";
+                      }
+                      {
+                        symbol = "^XDE";
+                        name = "Euro Index";
+                      }
+                    ];
+                  }
+                  {
+                    type = "markets";
+                    title = "Crypto";
+                    markets = [
+                      {
+                        symbol = "BTC-USD";
+                        name = "Bitcoin";
+                      }
+                      {
+                        symbol = "ETH-USD";
+                        name = "Ethereum";
+                      }
+                    ];
+                  }
                 ];
               }
             ];

@@ -45,6 +45,7 @@ in
         emacs
         neovide
         lemminx
+        neovide
       ];
     })
 

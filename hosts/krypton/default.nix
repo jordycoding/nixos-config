@@ -40,6 +40,9 @@
 
   virtualisation.docker.enableNvidia = true;
   # nixpkgs.config.cudaSupport = true;
+  nixpkgs.overlays = [
+    outputs.overlays.fixups
+  ];
 
   boot.initrd.verbose = false;
   boot.initrd.systemd.enable = true;
