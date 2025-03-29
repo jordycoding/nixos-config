@@ -59,14 +59,14 @@
   };
   rpzblacklist = {
     pname = "rpzblacklist";
-    version = "929d1d25d054711ccc17ee12f870851ade9c8f8b";
+    version = "00a8060641e220a6550c7d11af763d9c2e0e7f74";
     src = fetchFromGitHub {
       owner = "hagezi";
       repo = "dns-blocklists";
-      rev = "929d1d25d054711ccc17ee12f870851ade9c8f8b";
+      rev = "00a8060641e220a6550c7d11af763d9c2e0e7f74";
       fetchSubmodules = false;
-      sha256 = "sha256-bke2xi6NMD1edU4gPrjbGLyNAbNQy75sPcfDj2VaEak=";
+      sha256 = "sha256-S99V6fg9YxOe1cXMGAUrHF8RDIXJYW66/jzk+WELfVo=";
     };
-    date = "2025-03-20";
+    date = "2025-03-29";
   };
 }

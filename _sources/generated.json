@@ -100,7 +100,7 @@
     },
     "rpzblacklist": {
         "cargoLocks": null,
-        "date": "2025-03-20",
+        "date": "2025-03-29",
         "extract": null,
         "name": "rpzblacklist",
         "passthru": null,
@@ -112,11 +112,11 @@
             "name": null,
             "owner": "hagezi",
             "repo": "dns-blocklists",
-            "rev": "929d1d25d054711ccc17ee12f870851ade9c8f8b",
-            "sha256": "sha256-bke2xi6NMD1edU4gPrjbGLyNAbNQy75sPcfDj2VaEak=",
+            "rev": "00a8060641e220a6550c7d11af763d9c2e0e7f74",
+            "sha256": "sha256-S99V6fg9YxOe1cXMGAUrHF8RDIXJYW66/jzk+WELfVo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "929d1d25d054711ccc17ee12f870851ade9c8f8b"
+        "version": "00a8060641e220a6550c7d11af763d9c2e0e7f74"
     }
 }
