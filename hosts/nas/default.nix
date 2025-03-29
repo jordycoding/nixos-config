@@ -124,6 +124,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
     };
     boot.kernelPackages = latestKernelPackage;
     boot.kernelParams = [ "i915.enable_guc=3" ];
+    boot.extraModprobeConfig = "options kvm_intel nested=1";
 
     networking.hostName = "Tungsten";
     services.fstrim.enable = true;

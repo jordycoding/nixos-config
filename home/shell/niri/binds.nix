@@ -4,6 +4,8 @@
   programs.niri.settings.binds = with config.lib.niri.actions;{
     "XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
     "XF86AudioLowerVolume".spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
+    "Shift+XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+" ];
+    "Shift+XF86AudioLowerVolume".spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-" ];
     "XF86AudioMute".spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
     "Mod+Return".action = spawn "wezterm";
     "Mod+D".action = spawn [ "rofi" "-show" "drun" ];
@@ -81,9 +83,9 @@
     "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
     "Mod+W".action = toggle-column-tabbed-display;
 
-    # "Print".action = screenshot;
-    # "Ctrl+Print".action = screenshot-screen;
-    # "Alt+Print".action = screenshot-window;
+    "Print".action = screenshot;
+    # "Ctrl+Print".action = screenshot-screen true;
+    "Alt+Print".action = screenshot-window;
 
     "Mod+Shift+E".action = quit;
     "Mod+Shift+P".action = power-off-monitors;

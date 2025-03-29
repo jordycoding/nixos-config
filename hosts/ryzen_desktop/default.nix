@@ -10,7 +10,6 @@
     ../../modules/usecases/downloading.nix
     ../../modules/wm
     ./hardware-configuration.nix
-    ../../modules/plymouth.nix
   ];
 
   users.users.jordy.extraGroups = [ "wheel" "libvirtd" "input" "wireshark" "video" "kvm" "incus-admin" ];
@@ -32,7 +31,15 @@
   virtualisation.incus.enable = true;
   networking.nftables.enable = true;
 
-  hardware.pulseaudio.enable = false;
+  services.printing.enable = true;
+  services.printing.drivers = [
+    pkgs.epson-escpr
+    pkgs.epson-escpr2
+  ];
+  services.avahi.enable = true;
+  services.avahi.nssmdns4 = true;
+
+  services.pulseaudio.enable = false;
   hardware.i2c.enable = true;
   services.pipewire = {
     enable = true;

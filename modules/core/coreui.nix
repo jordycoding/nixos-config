@@ -47,6 +47,7 @@ lib.mkIf (config.var.enableUI)
     nerd-fonts.ubuntu
     nerd-fonts.symbols-only
     monaspace
+    poppins
   ];
   services.ratbagd.enable = true;
   environment.etc = {

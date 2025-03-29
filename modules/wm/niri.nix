@@ -13,5 +13,6 @@ lib.mkIf (config.shell.niri)
     xwayland-satellite
     libnotify
     dunst
+    playerctl
   ];
 }
