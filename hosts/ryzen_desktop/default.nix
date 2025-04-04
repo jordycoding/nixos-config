@@ -104,6 +104,7 @@
       latex = true;
       lua = true;
       rust = true;
+      powershell = true;
     };
   };
   services.fstrim.enable = true;

@@ -20,6 +20,7 @@ in
     latex = mkEnableOption "Latex Support";
     lua = mkEnableOption "Lua Development";
     rust = mkEnableOption "Rust Development";
+    powershell = mkEnableOption "Powershell Development";
   };
   config = mkMerge [
     (mkIf dev.node {
@@ -140,6 +141,12 @@ in
       environment.systemPackages = with pkgs; [
         rust-analyzer
         rustup
+      ];
+    })
+
+    (mkIf dev.powershell {
+      environment.systemPackages = with pkgs;[
+        powershell
       ];
     })
 
