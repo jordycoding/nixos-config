@@ -43,6 +43,11 @@
       enableMDNS = true;
     };
   };
+  sambaFull = final: prev: {
+    samba4Full = prev.samba4Full.override {
+      enableCephFS = false;
+    };
+  };
   kdematerialyou = final: prev: {
     kde-material-you-colors = prev.callPackage ./pkgs/kde-material-you/derivation.nix;
   };

@@ -81,6 +81,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
         outputs.overlays.unstable-packages
         outputs.overlays.samba
         outputs.overlays.ffmpeg-vpl-overlay
+        outputs.overlays.sambaFull
       ];
     };
 
@@ -144,6 +145,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
     homelab.recyclarr = true;
     homelab.sabnzbd = true;
     homelab.samba = true;
+    homelab.ad = true;
     homelab.plex = true;
     homelab.caddy = true;
     homelab.bazarr = true;

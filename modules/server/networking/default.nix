@@ -11,5 +11,6 @@
     ./powerdns.nix
     ./pixiecore.nix
     ./headscale.nix
+    ./ad.nix
   ];
 }
