@@ -42,6 +42,7 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     wezterm.url = "github:wezterm/wezterm?dir=nix";
     niri.url = "github:sodiboo/niri-flake";
+    vlmcsd.url = "git+file:vlmcsd-flake/";
   };
 
   # `outputs` are all the build result of the flake.
@@ -54,7 +55,7 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, nixpkgs-stable, hyprland, agenix, lanzaboote, home-manager, pipewire-screenaudio, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, hyprland, agenix, lanzaboote, home-manager, vlmcsd, pipewire-screenaudio, ... }@inputs:
     let
       inherit (self) outputs;
     in
@@ -163,6 +164,7 @@
             }
             ./hosts/nas
             agenix.nixosModules.default
+            vlmcsd.nixosModules.default
             {
               environment.systemPackages = [ agenix.packages.x86_64-linux.default ];
             }
