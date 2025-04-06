@@ -1,0 +1,3 @@
+[submodule "vlmcsd-flake"]
+	path = vlmcsd-flake
+	url = gitea@gitea.alkema.co:jordy/vlmcsd-flake.git

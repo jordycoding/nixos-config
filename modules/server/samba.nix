@@ -44,7 +44,7 @@ lib.mkIf (config.homelab.samba)
         "create mask" = "0774";
         "directory mask" = "0770";
         "force group" = "media";
-        "valid users" = "@media @AD+localadmins";
+        "valid users" = "@AD+localadmins";
         "read only" = "no";
       };
       "movies" = {
@@ -54,7 +54,7 @@ lib.mkIf (config.homelab.samba)
         "create mask" = "0774";
         "directory mask" = "0770";
         "force group" = "media";
-        "valid users" = "@media";
+        "valid users" = "@AD+localadmins";
         "read only" = "no";
       };
       "anime" = {
@@ -64,7 +64,7 @@ lib.mkIf (config.homelab.samba)
         "create mask" = "0774";
         "directory mask" = "0770";
         "force group" = "media";
-        "valid users" = "@media";
+        "valid users" = "@AD+localadmins";
         "read only" = "no";
       };
       "software" = {
@@ -74,7 +74,8 @@ lib.mkIf (config.homelab.samba)
         "create mask" = "0775";
         "directory mask" = "0775";
         "read only" = "yes";
-        "write list" = "@pubwrite";
+        "force group" = "pubwrite";
+        "write list" = "@AD+localadmins";
       };
       "homes" = {
         "browseable" = "yes";
