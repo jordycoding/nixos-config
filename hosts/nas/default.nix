@@ -178,6 +178,10 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
     homelab.headscale = true;
     homelab.incus = true;
     homelab.glance = true;
+    services.vlmcsd = {
+      enable = true;
+      openFirewall = true;
+    };
 
     var.enableUI = false;
 
@@ -190,6 +194,7 @@ lib.warn "ASP.NET Core 6 is EOL, remove when *arr doesn't depend on it anymore"
       "d /mnt/Ssd/Downloads/Sab/complete 0770 root download - -"
       "d /mnt/Vault/Data/Software 0775 root pubwrite - -"
     ];
+    systemd.services.NetworkManager-wait-online.enable = false;
     services.fail2ban.enable = true;
 
     networking.hostId = "034146c2";
