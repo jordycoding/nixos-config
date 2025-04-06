@@ -163,8 +163,8 @@
               };
             }
             ./hosts/nas
-            agenix.nixosModules.x86_64-linux.default
-            vlmcsd.nixosModules.default
+            agenix.nixosModules.default
+            vlmcsd.nixosModules.x86_64-linux.default
             {
               environment.systemPackages = [ agenix.packages.x86_64-linux.default ];
             }
