@@ -76,7 +76,7 @@
 
     systemd = {
       services.realmd = {
-        desscription = "Realm discovery service";
+        description = "Realm discovery service";
         wantedBy = [ "multi-user.target" ];
         after = [ "network.target" ];
         serviceConfig = {
