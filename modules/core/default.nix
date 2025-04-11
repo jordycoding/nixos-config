@@ -9,6 +9,7 @@ with lib;
     ./corecli.nix
     ./coreui.nix
     ./dnscrypt.nix
+    ./ad.nix
   ];
   config = {
     system.stateVersion = "23.11";
